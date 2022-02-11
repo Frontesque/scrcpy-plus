@@ -42,7 +42,7 @@ export default {
 
     methods: {
         run(cmd, callback) {
-            exec('cd bin/scrcpy&'+cmd, (error, stdout, stderr) => {
+            exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
                 if (error) {
                     return callback("No Device Found");
                 }

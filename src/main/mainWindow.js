@@ -1,8 +1,9 @@
 import BrowserWinHandler from './BrowserWinHandler'
 
 const winHandler = new BrowserWinHandler({
-  height: 600,
-  width: 1000
+  height: 700,
+  width: 600,
+  autoHideMenuBar: true,
 })
 
 winHandler.onCreated(_browserWindow => {

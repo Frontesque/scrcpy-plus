@@ -30,20 +30,20 @@ export default {
   
   methods: {
     run(cmd, callback) {
-        exec('cd bin/scrcpy&'+cmd, (error, stdout, stderr) => {
-            return callback(error || stderr || stdout);
-        });
+      exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
+        return callback(error || stderr || stdout);
+      });
     },
 
     scrcpy() {
         let flags = new String();
         for (const i in this.selectedArgs) {
-            flags += ' '+this.selectedArgs[i].arg;
+          flags += ' '+this.selectedArgs[i].arg;
         }
-        console.log("scrcpy.exe"+flags)
+        console.log("scrcpy"+flags)
 
-        this.run("scrcpy.exe"+flags, (data) => {
-            console.log(data);
+        this.run("scrcpy"+flags, (data) => {
+          console.log(data);
         })
     }
 

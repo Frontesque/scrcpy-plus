@@ -31,27 +31,27 @@ export default {
                 },
                 {
                     title: "Device Codename",
-                    command: "adb shell getprop ro.product.vendor.device",
+                    command: "adb shell getprop ro.product.device",
                     data: "",
                 },
                 {
                     title: "Android Version",
-                    command: "adb shell getprop ro.system.build.version.release",
+                    command: "adb shell getprop ro.build.version.release",
                     data: "",
                 },
                 {
                     title: "Build",
-                    command: "adb shell getprop ro.system.build.id",
+                    command: "adb shell getprop ro.build.id",
                     data: "",
                 },
                 {
                     title: "SDK Version",
-                    command: "adb shell getprop ro.system.build.version.sdk",
+                    command: "adb shell getprop ro.build.version.sdk",
                     data: "",
                 },
                 {
                     title: "Fingerprint",
-                    command: "adb shell getprop ro.system.build.fingerprint",
+                    command: "adb shell getprop ro.build.fingerprint",
                     data: "",
                 }
             ]
@@ -60,7 +60,7 @@ export default {
 
     methods: {
         run(cmd, callback) {
-            exec('cd bin/scrcpy&'+cmd, (error, stdout, stderr) => {
+            exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
                 if (error) {
                     return callback("No Device Found");
                 }
