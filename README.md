@@ -1,6 +1,6 @@
 # SCRCPY+
 
-<img src="https://raw.githubusercontent.com/Frontesque/scrcpy-plus/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
+<img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
 ### Features
 - Supports most SCRCPY flags
