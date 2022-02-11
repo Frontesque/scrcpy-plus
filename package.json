@@ -1,0 +1,39 @@
+{
+  "name": "scrcpy-plus",
+  "version": "0.0.1",
+  "description": "A GUI for scrcpy",
+  "main": "./dist/main/index.js",
+  "scripts": {
+    "dev": "node .electron-nuxt/dev.js",
+    "build": "node .electron-nuxt/build.js",
+    "preinstall": "node .electron-nuxt/check-engines.js",
+    "postinstall": "electron-builder install-app-deps "
+  },
+  "keywords": [],
+  "author": "Front <27463495+Frontesque@users.noreply.github.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/michalzaq12/electron-nuxt/blob/master/README.md",
+  "engines" : {
+    "node" : ">=14.14.9"
+  },
+  "resolutions": {
+    "@types/node": "14.14.9"
+  },
+  "devDependencies": {
+    "@xpda-dev/core": "^0.1.6",
+    "@xpda-dev/electron-launcher": "^0.3.0",
+    "@xpda-dev/electron-builder": "^0.2.1",
+    "@xpda-dev/webpack-step": "^0.1.6",
+    "deepmerge": "^4.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5",
+    "nuxt": "^2.15.8",
+    "electron-devtools-installer": "^3.2.0",
+    "roboto-fontface": "^0.10.0",
+    "vuetify": "^2.5.10",
+    "@nuxtjs/vuetify": "^1.12.1",
+    "webpack": "^4.46.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

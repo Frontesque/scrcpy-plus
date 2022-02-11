@@ -1,0 +1,28 @@
+# Editor config helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# EditorConfig is awesome: http://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+# 2 space indentation
+# Matches multiple files with brace expansion notation
+[*.{yaml,yml}]
+indent_style = space
+indent_size = 2
+
+# https://google.github.io/styleguide/shell.xml#Indentation
+[*.{sh}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
