@@ -19,5 +19,5 @@ https://github.com/Genymobile/scrcpy
 Thanks a ton Genymobile!
 
 ### Screenshots
-<img src="https://legacy.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/kZM9uBcA.png" height="200" />
-<img src="https://legacy.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/kl7zZbQM.png" height="200" />
+<img src="https://legacy.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/kZM9uBcA.png" height="400" />
+<img src="https://legacy.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/kl7zZbQM.png" height="400" />
