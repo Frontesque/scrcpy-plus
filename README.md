@@ -8,9 +8,9 @@
 - Display connected device info
 
 ### Download
-[Windows v1.0.1](https://github.com/Frontesque/scrcpy-plus/releases/download/1.0.1/scrcpy-plus-1.0.1-windows.zip)
-Linux (MAYBE)
-MacOS (I have had a horrible experience compiling for mac. You can always try compiling it for yourself!)
+- [Windows v1.0.1](https://github.com/Frontesque/scrcpy-plus/releases/download/1.0.1/scrcpy-plus-1.0.1-windows.zip)
+- Linux (MAYBE)
+- MacOS (I have had a horrible experience compiling for mac. You can always try compiling it for yourself!)
 
 ### SCRCPY
 You can view the project that this is based off of here:
