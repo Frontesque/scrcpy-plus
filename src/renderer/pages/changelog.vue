@@ -11,6 +11,9 @@
             <ul>
                 <li>Removed unused files</li>
                 <li>Moved SCRCPY files to /resources instead of /bin as per a standard Electron application</li>
+                <li>Update windows binary information</li>
+                <li>Added optional windows installer file</li>
+                <li>General software cleanup</li>
             </ul>
         </section>
         

@@ -42,9 +42,9 @@ const macOS = {
 }
 
 module.exports = {
-  productName: 'scrcpy-plus',
+  productName: 'scrcpy+',
   appId: 'com.Frontesque.scrcpy.plus',
-  artifactName: 'setup-${version}.${ext}',
+  artifactName: 'scrcpy-plus-${os}-${arch}-${version}.${ext}',
   directories: {
     output: 'build'
   },
