@@ -7,6 +7,14 @@
         </section>
 
         <section>
+            <h3>1.0.2</h3>
+            <ul>
+                <li>Removed unused files</li>
+                <li>Moved SCRCPY files to /resources instead of /bin as per a standard Electron application</li>
+            </ul>
+        </section>
+        
+        <section>
             <h3>1.0.1</h3>
             <ul>
                 <li>Added changelog</li>
