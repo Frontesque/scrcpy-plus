@@ -7,7 +7,7 @@
         <v-list-item v-for="(item, i) in deviceInfo" :key="i" v-show="device">
             <div>
                 <v-list-item-title v-text="item.title" />
-                <v-list-item-title v-text="item.data" class="grey--text" />
+                <p v-text="item.data" class="grey--text" />
             </div>
         </v-list-item>
         

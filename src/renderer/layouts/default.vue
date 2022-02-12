@@ -5,6 +5,10 @@
 </template>
 
 <style>
+p {
+  word-break: break-word;
+}
+
 html, body, .v-application, .v-application--wrap {
   background: #1C1B1F !important;
 }

@@ -7,6 +7,13 @@
         </section>
 
         <section>
+            <h3>1.0.3</h3>
+            <ul>
+                <li>Wrapped text / Text doesn't leave the window without giving the option to scroll</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.0.2</h3>
             <ul>
                 <li>Removed unused files</li>
