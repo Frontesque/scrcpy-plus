@@ -59,21 +59,12 @@ export default {
     },
 
     methods: {
-        run(cmd, callback) {
-            exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
-                if (error) {
-                    return callback("No Device Found");
-                }
-                return callback(stderr || stdout);
-            });
-        },
-
         refreshList() {
             for (const i in this.deviceInfo) {
             const command = this.deviceInfo[i].command;
-                this.run(command, (data) => {
-                    if (data == "No Device Found") return this.device = false;
-                    this.deviceInfo[i].data = data;
+                this.$scrcpy.execute(command, (data) => {
+                    if (data.type == "error") return this.device = false;
+                    this.deviceInfo[i].data = data.res;
                     this.device = true;
                 })
             }

@@ -29,20 +29,15 @@ const { exec } = require("child_process");
 export default {
   
   methods: {
-    run(cmd, callback) {
-      exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
-        return callback(error || stderr || stdout);
-      });
-    },
 
     scrcpy() {
         let flags = new String();
         for (const i in this.selectedArgs) {
           flags += ' '+this.selectedArgs[i].arg;
         }
-        console.log("scrcpy"+flags)
+        //console.log("scrcpy"+flags);
 
-        this.run("scrcpy"+flags, (data) => {
+        this.$scrcpy.execute("scrcpy"+flags, (data) => {
           console.log(data);
         })
     }

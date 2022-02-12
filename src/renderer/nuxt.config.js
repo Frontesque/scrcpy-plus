@@ -10,8 +10,8 @@ module.exports = {
     version: "1.0.3",
     scrcpyVersion: "1.22",
     adbVersion: "31.0.3-7562133",
-    //scrcpyPath: "src/extraResources/scrcpy/", //Development
-    scrcpyPath: "resources/scrcpy/" //Production
+    scrcpyPath: "src/extraResources/scrcpy/", //Development
+    //scrcpyPath: "resources/scrcpy/" //Production
   },
   components: true,
 
@@ -22,7 +22,7 @@ module.exports = {
     meta: [{ charset: "utf-8" }]
   },
   loading: false,
-  plugins: [],
+  plugins: ['~/plugins/execute.js'],
   buildModules: [],
   modules: [
     '@nuxtjs/vuetify',

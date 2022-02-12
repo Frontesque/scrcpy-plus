@@ -10,6 +10,7 @@
 
     <!--   Import Modules   -->
     <device />
+    <backup />
     <adb />
     <scrcpy />
     <!--   End Import Modules   -->
