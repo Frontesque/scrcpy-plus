@@ -10,6 +10,7 @@
             <h3>1.0.3</h3>
             <ul>
                 <li>Wrapped text / Text doesn't leave the window without giving the option to scroll</li>
+                <li>Fixed a lot of issues with running or using ADB on the previous version</li>
             </ul>
         </section>
 

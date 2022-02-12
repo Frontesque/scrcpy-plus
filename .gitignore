@@ -3,4 +3,3 @@ dist
 build/*
 !build/icons
 node_modules
-src/extraResources/scrcpy/*
