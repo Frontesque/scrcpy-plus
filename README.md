@@ -8,7 +8,7 @@
 - Display connected device info
 
 ### Download
-- Windows [v1.0.2 Installer](https://github.com/Frontesque/scrcpy-plus/releases/download/1.0.3/scrcpy-plus-1.0.3-win-x64.exe) - [v1.0.2 Portable](https://github.com/Frontesque/scrcpy-plus/releases/download/1.0.3/scrcpy-plus-1.0.3-portable-win-x64.zip)
+- Windows [v1.0.3 Installer](https://github.com/Frontesque/scrcpy-plus/releases/download/1.0.3/scrcpy-plus-1.0.3-win-x64.exe) - [v1.0.3 Portable](https://github.com/Frontesque/scrcpy-plus/releases/download/1.0.3/scrcpy-plus-1.0.3-portable-win-x64.zip)
 - Linux (MAYBE)
 - MacOS (I have had a horrible experience compiling for mac. You can always try compiling it for yourself!)
 
