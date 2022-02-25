@@ -7,6 +7,17 @@
         </section>
 
         <section>
+            <h3>1.0.4</h3>
+            <ul>
+                <li>Improved error handling: Errors now show a popup box</li>
+                <li>Added SCRCPY Option: "--always-on-top"</li>
+                <li>Added SCRCPY Option: "--prefer-text"</li>
+                <li>Added SCRCPY Option: "--raw-key-events"</li>
+                <li>Added SCRCPY Option: "--no-key-repeat"</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.0.3</h3>
             <ul>
                 <li>Wrapped text / Text doesn't leave the window without giving the option to scroll</li>

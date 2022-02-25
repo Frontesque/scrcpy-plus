@@ -7,11 +7,11 @@
 
 module.exports = {
   env: {
-    version: "1.0.3",
+    version: "1.0.4",
     scrcpyVersion: "1.22",
     adbVersion: "31.0.3-7562133",
-    scrcpyPath: "src/extraResources/scrcpy/", //Development
-    //scrcpyPath: "resources/scrcpy/" //Production
+    //scrcpyPath: "src/extraResources/scrcpy/", //Development
+    scrcpyPath: "resources/scrcpy/" //Production
   },
   components: true,
 
