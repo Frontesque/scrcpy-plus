@@ -9,9 +9,9 @@
     </section>
 
     <!--   Import Modules   -->
-    <device />
-    <adb />
-    <scrcpy />
+    <device :device.sync="deviceConnected" />
+    <adb :v-if="deviceConnected" />
+    <scrcpy :v-if="deviceConnected" />
     <!--   End Import Modules   -->
 
   </div>
@@ -27,6 +27,8 @@ export default {
       scrcpyVersion: env.scrcpyVersion,
       scrcpyPath: env.scrcpyPath,
       adbVersion: env.adbVersion,
+
+      deviceConnected: false,
     }
   }
 }

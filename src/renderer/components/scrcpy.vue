@@ -87,7 +87,7 @@ export default {
         },
         {
           arg: "--otg",
-          description: "(LINUX ONLY) Simulate physical hardware connections for input devices"
+          description: "Simulate physical hardware connections for input devices"
         },
         {
           arg: "--forward-all-clicks",

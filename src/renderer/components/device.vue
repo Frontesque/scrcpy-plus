@@ -25,32 +25,32 @@ export default {
                 {
                     title: "Model",
                     command: "adb shell getprop ro.product.model",
-                    data: "",
+                    data: null,
                 },
                 {
                     title: "Device Codename",
                     command: "adb shell getprop ro.product.device",
-                    data: "",
+                    data: null,
                 },
                 {
                     title: "Android Version",
                     command: "adb shell getprop ro.build.version.release",
-                    data: "",
+                    data: null,
                 },
                 {
                     title: "Build",
                     command: "adb shell getprop ro.build.id",
-                    data: "",
+                    data: null,
                 },
                 {
                     title: "SDK Version",
                     command: "adb shell getprop ro.build.version.sdk",
-                    data: "",
+                    data: null,
                 },
                 {
                     title: "Fingerprint",
                     command: "adb shell getprop ro.build.fingerprint",
-                    data: "",
+                    data: null,
                 }
             ]
         }
@@ -60,14 +60,15 @@ export default {
         async refreshList() {
             for (const i in this.deviceInfo) {
 
-                await this.$scrcpy.execute(this.deviceInfo[i].command)
+                this.$scrcpy.execute(this.deviceInfo[i].command)
                     .then((data) => {
-                        console.log(this.deviceInfo)
                         this.deviceInfo[i].data = data;
                         this.device = true;
+                        this.$emit('update:device', true);
                     })
                     .catch((err) => {
                         this.device = false;
+                        this.$emit('update:device', false);
                     })
 
             }
