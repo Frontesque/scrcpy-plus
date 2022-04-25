@@ -4,7 +4,7 @@
 
         <v-list-item v-for="(item, i) in cmds" :key="i">
             <div>
-                <v-btn v-text="item.title" @click="run(item.cmd)" />
+                <v-btn v-text="item.title" @click="$scrcpy.execute(item.cmd)" />
             </div>
         </v-list-item>
         
@@ -37,17 +37,6 @@ export default {
                 }
             ],
 
-        }
-    },
-
-    methods: {
-        run(cmd, callback) {
-            exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
-                if (error) {
-                    return callback("No Device Found");
-                }
-                return callback(stderr || stdout);
-            });
         }
     }
 

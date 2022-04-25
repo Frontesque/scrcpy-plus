@@ -15,8 +15,6 @@
 </template>
 
 <script>
-const { exec } = require("child_process");
-
 export default {
     data() {
         return {
