@@ -16,7 +16,7 @@
       </v-list-item>
       <v-card-actions>
         <v-spacer />
-        <v-btn @click="scrcpy()" color="primary" class="rounded-xl">Start SCRCPY</v-btn>
+        <v-btn @click="scrcpy()" color="primary" class="rounded-xl" :disabled=loading :loading=loading>Start SCRCPY</v-btn>
       </v-card-actions>
     </section>
 
@@ -42,26 +42,30 @@ export default {
   
   methods: {
 
-    scrcpy() {
+    async scrcpy() {
+        this.loading = true; // Disable 'Start' Button
+
         let flags = new String();
         for (const i in this.selectedArgs) {
           flags += ' '+this.selectedArgs[i].arg;
         }
         //console.log("scrcpy"+flags);
 
-        this.$scrcpy.execute("scrcpy"+flags, (data) => {
-          if (data.type == "error") {
+        this.$scrcpy.execute("scrcpy"+flags)
+          .catch((err) => {
             this.dialog = true;
-            this.dialogText = data.res;
-          }
-          console.log(data)
-        })
+            this.dialogText = err;
+          })
+
+        setTimeout(() => { this.loading = false; }, 2000) // Enable 'Start' Button
+        
     }
 
   },
   
   data() {
     return {
+      loading: false,
 
       dialog: false,
       dialogText: null,

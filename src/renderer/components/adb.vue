@@ -4,7 +4,7 @@
 
         <v-list-item v-for="(item, i) in cmds" :key="i">
             <div>
-                <v-btn v-text="item.title" @click="$scrcpy.execute(item.cmd)" />
+                <v-btn v-text="item.title" @click="run(item.cmd)" />
             </div>
         </v-list-item>
         
@@ -12,8 +12,6 @@
 </template>
 
 <script>
-const { exec } = require("child_process");
-
 export default {
     data() {
         return {
@@ -37,6 +35,15 @@ export default {
                 }
             ],
 
+        }
+    },
+
+    methods: {
+        run(cmd) {
+            this.$scrcpy.execute(cmd)
+                .catch((err) => {
+                    console.log(err);
+                })
         }
     }
 

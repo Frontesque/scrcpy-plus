@@ -57,14 +57,19 @@ export default {
     },
 
     methods: {
-        refreshList() {
+        async refreshList() {
             for (const i in this.deviceInfo) {
-            const command = this.deviceInfo[i].command;
-                this.$scrcpy.execute(command, (data) => {
-                    if (data.type == "error") return this.device = false;
-                    this.deviceInfo[i].data = data.res;
-                    this.device = true;
-                })
+
+                await this.$scrcpy.execute(this.deviceInfo[i].command)
+                    .then((data) => {
+                        console.log(this.deviceInfo)
+                        this.deviceInfo[i].data = data;
+                        this.device = true;
+                    })
+                    .catch((err) => {
+                        this.device = false;
+                    })
+
             }
         }
 
