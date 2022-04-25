@@ -7,6 +7,13 @@
         </section>
 
         <section>
+            <h3>1.1.0</h3>
+            <ul>
+                <li>Bump SCRCPY Base Version (1.22 -> 1.23)</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.0.4</h3>
             <ul>
                 <li>Improved error handling: Errors now show a popup box</li>

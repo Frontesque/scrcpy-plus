@@ -15,7 +15,7 @@ const module = {
         output.res = error || stderr || stdout;
         return callback(output);
     });
-}
+  }
 }
 
 export default ({ app }, inject) => {
