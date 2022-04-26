@@ -8,9 +8,9 @@
 - Display connected device info
 
 ### Download
-- Windows [v1.1.0 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.0/scrcpy-plus-1.1.0-installer-win-x64.exe) - [v1.1.0 Portable (116 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.0/scrcpy-plus-1.1.0-portable-win-x64.zip)
-- Linux (MAYBE)
-- MacOS (I have had a horrible experience compiling for mac. You can always try compiling it for yourself!)
+- Windows [v1.1.1 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.1/scrcpy-plus-1.1.1-installer-win-x64.exe) - [v1.1.1 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.1/scrcpy-plus-1.1.1-portable-win-x64.zip)
+- Linux (Coming Soon... Hopefully 🤞)
+- MacOS (Coming Soon... Hopefully 🤞)
 
 ### SCRCPY
 You can view the project that this is based off of here:
