@@ -7,7 +7,7 @@
 
 module.exports = {
   env: {
-    version: "1.1.0 pre",
+    version: "1.1.0",
     scrcpyVersion: "1.23",
     adbVersion: "31.0.3-7562133",
     //scrcpyPath: "src/extraResources/scrcpy/", //Development
