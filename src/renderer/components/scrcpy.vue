@@ -2,8 +2,10 @@
   <div>
 
     <section>
-      <h3>SCRCPY Settings</h3>
+      <h2>SCRCPY Settings</h2>
 
+
+      <!--   Standard Actions   -->
       <v-list-item v-for="(item, i) in args" :key="i">
         <div style="display: flex;">
           <v-checkbox v-model="selectedArgs" :value="item" />
@@ -14,12 +16,17 @@
           </div>
         </div>
       </v-list-item>
-      <v-card-actions>
+      <!--   End Standard Actions   -->
+
+
+      <v-card-actions style="margin-top: 1em;">
         <v-spacer />
         <v-btn @click="scrcpy()" color="primary" class="rounded-xl" :disabled=loading :loading=loading>Start SCRCPY</v-btn>
       </v-card-actions>
     </section>
 
+
+    <!--   Error Dialog   -->
     <v-dialog v-model="dialog" width="500">
       <v-card>
         <v-card-title class="text-h5 grey darken-1">An error has occured</v-card-title>
@@ -33,6 +40,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <!--   End Error Dialog   -->
 
   </div>
 </template>
@@ -120,6 +128,10 @@ export default {
         {
           arg: "--no-key-repeat",
           description: "By default, holding a key down generates repeated key events. This can cause performance problems in some games, where these events are useless anyway."
+        },
+        {
+          arg: "--lock-video-orientation",
+          description: "Prevent the device screen from rotating."
         },
       ]
     }

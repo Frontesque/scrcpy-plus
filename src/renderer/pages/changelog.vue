@@ -10,10 +10,12 @@
             <h3>1.1.0</h3>
             <ul>
                 <li>Bump SCRCPY Version (1.22 -> 1.23)</li>
+                <li>General UI layout improvements</li>
                 <li>Huge memory optimization</li>
                 <li>Added loading icon on the 'Start SCRCPY' button to prevent the user from opening multiple SCRCPY instances</li>
                 <li>Changed "Device Not Found" notice</li>
                 <li>When a device isn't detected, all device options are now hidden</li>
+                <li>Added SCRCPY Option: "--lock-video-orientation"</li>
             </ul>
         </section>
 
