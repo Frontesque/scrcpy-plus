@@ -7,6 +7,16 @@
         </section>
 
         <section>
+            <h3>1.1.1</h3>
+            <ul>
+                <li>Fix error being thrown when closing the SCRCPY window</li>
+                <li>Increased device information/recognition polling rate 8x</li>
+                <li>Optimized device recognition to use less system resources</li>
+                <li>Fixed causing some devices to lag badly while having the main window open</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.1.0</h3>
             <ul>
                 <li>Bump SCRCPY Version (1.22 -> 1.23)</li>

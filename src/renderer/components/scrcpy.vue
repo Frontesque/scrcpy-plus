@@ -61,6 +61,7 @@ export default {
 
         this.$scrcpy.execute("scrcpy"+flags)
           .catch((err) => {
+            if (err.startsWith("INFO:")) return; // Catch information outputs
             this.dialog = true;
             this.dialogText = err;
           })
