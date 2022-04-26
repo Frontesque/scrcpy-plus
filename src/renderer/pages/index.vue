@@ -10,8 +10,8 @@
 
     <!--   Import Modules   -->
     <device :device.sync="deviceConnected" />
-    <adb :v-if="deviceConnected" />
-    <scrcpy :v-if="deviceConnected" />
+    <adb v-if="deviceConnected" />
+    <scrcpy v-if="deviceConnected" />
     <!--   End Import Modules   -->
 
   </div>

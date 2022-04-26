@@ -2,8 +2,14 @@
     <section>
         <h2>Device</h2>
 
-        <h1 v-show="!device">No Device Found</h1>
+        <!--   No Device Notice   -->
+        <center v-show="!device">
+            <v-icon size="50px">mdi-devices</v-icon>
+            <h1>No Device Found</h1>
+            <p style="color: #999;">You may need to plug your device in or enable 'USB Debugging'</p>
+        </center>
 
+        <!--   Show Device Information   -->
         <v-list-item v-for="(item, i) in deviceInfo" :key="i" v-show="device">
             <div>
                 <v-list-item-title v-text="item.title" />
