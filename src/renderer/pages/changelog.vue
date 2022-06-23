@@ -7,6 +7,15 @@
         </section>
 
         <section>
+            <h3>1.1.2</h3>
+            <ul>
+                <li>Added wireless pairing gui</li>
+                <li>Added support for ADB over Wi-Fi</li>
+                <li>(KNOWN BUG) having multiple devices connected crashes the app</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.1.1</h3>
             <ul>
                 <li>Fix error being thrown when closing the SCRCPY window</li>
