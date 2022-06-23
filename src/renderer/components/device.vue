@@ -7,6 +7,8 @@
       <v-icon size="50px">mdi-devices</v-icon>
       <h1>No Device Found</h1>
       <p style="color: #999;">You may need to plug your device in or enable 'USB Debugging'</p>
+      <p>or</p>
+      <v-btn rounded color="primary" @click="$router.push('/wirelessSetup')">Connect Wirelessly</v-btn>
     </center>
 
     <!--   Show Device Information   -->

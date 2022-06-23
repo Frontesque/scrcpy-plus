@@ -3,7 +3,7 @@
 
         <section>
             <h1>Changelog</h1>
-            <v-btn style="margin-top: 1em;" class="rounded-xl" color="primary" @click="$router.go(-1)">Back</v-btn>
+            <v-btn style="margin-top: 1em;" rounded color="primary" @click="$router.go(-1)">Back</v-btn>
         </section>
 
         <section>

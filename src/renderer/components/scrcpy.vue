@@ -21,7 +21,7 @@
 
       <v-card-actions style="margin-top: 1em;">
         <v-spacer />
-        <v-btn @click="scrcpy()" color="primary" class="rounded-xl" :disabled=loading :loading=loading>Start SCRCPY</v-btn>
+        <v-btn @click="scrcpy()" rounded color="primary" :disabled="loading" :loading="loading">Start SCRCPY</v-btn>
       </v-card-actions>
     </section>
 
