@@ -8,7 +8,7 @@
 - Display connected device info
 
 ### Download
-- Windows [v1.1.1 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.1/scrcpy-plus-1.1.1-installer-win-x64.exe) - [v1.1.1 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.1/scrcpy-plus-1.1.1-portable-win-x64.zip)
+- Windows [v1.1.2 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.2/scrcpy-plus-1.1.2-installer-win-x64.exe) - [v1.1.2 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.2/scrcpy-plus-1.1.2-portable-win-x64.zip)
 - Linux (Coming Soon... Hopefully 🤞)
 - MacOS (Coming Soon... Hopefully 🤞)
 
