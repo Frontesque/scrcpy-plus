@@ -8,8 +8,8 @@
 module.exports = {
   env: {
     version: "1.2.0",
-    scrcpyPath: "src/extraResources/scrcpy/", //Development
-    //scrcpyPath: "resources/scrcpy/", //Production
+    //scrcpyPath: "src/extraResources/scrcpy/", //Development
+    scrcpyPath: "resources/scrcpy/", //Production
     os: "windows",
 
     devicePollRate: 1250,

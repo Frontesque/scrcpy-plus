@@ -9,9 +9,13 @@
 - 📶 Wireless Screenshare
 
 ### Download
-- Windows [v1.1.2 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.2/scrcpy-plus-1.1.2-installer-win-x64.exe) - [v1.1.2 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.2/scrcpy-plus-1.1.2-portable-win-x64.zip)
-- Linux (Coming Soon... Hopefully 🤞)
-- MacOS (Coming Soon... Hopefully 🤞)
+- Windows [v1.1.2 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.2.0/scrcpy-plus-1.2.0-installer-win-x64.exe) - [v1.1.2 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.2.0/scrcpy-plus-1.2.0-portable-win-x64.zip)
+- Linux (Now Compatible // Build Yourself)
+- MacOS (Now Compatible // Build Yourself)
+
+### Prerequisites
+- WINDOWS: None; SCRCPY and ADB come packaged with the app in both the portable and installer versions.
+- LINUX:   Both SCRCPY & ADB need to be installed to your computer per [your distro's instructions](https://github.com/Genymobile/scrcpy#linux).
 
 ### SCRCPY
 You can view the project that this is based off of here:
