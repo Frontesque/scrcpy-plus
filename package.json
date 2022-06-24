@@ -1,6 +1,6 @@
 {
   "name": "scrcpy-plus",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A GUI for scrcpy",
   "main": "./dist/main/index.js",
   "scripts": {
@@ -35,5 +35,8 @@
     "vuetify": "^2.5.10",
     "webpack": "^4.46.0",
     "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6"
   }
 }

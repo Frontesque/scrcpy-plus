@@ -19,4 +19,9 @@ section {
   margin: 2em;
   padding: 1em;
 }
+
+.highlight {
+  background: #999;
+  border-radius: 3px;
+}
 </style>

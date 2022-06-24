@@ -7,11 +7,12 @@
 
 module.exports = {
   env: {
-    version: "1.2.0",
-    //scrcpyPath: "src/extraResources/scrcpy/", //Development
-    scrcpyPath: "resources/scrcpy/", //Production
+    version: "1.2.1",
+    scrcpyPath: "src/extraResources/scrcpy/", //Development
+    //scrcpyPath: "resources/scrcpy/", //Production
     os: "windows",
 
+    releasesUrl: "https://api.github.com/repos/Frontesque/scrcpy-plus/releases",
     devicePollRate: 1250,
   },
   components: true,
@@ -27,6 +28,7 @@ module.exports = {
   buildModules: [],
   modules: [
     '@nuxtjs/vuetify',
+    '@nuxtjs/axios'
   ],
   vuetify: {
     theme: {

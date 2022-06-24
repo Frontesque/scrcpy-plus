@@ -7,6 +7,14 @@
         </section>
 
         <section>
+            <h3>1.2.1</h3>
+            <ul>
+                <li>Added automatic update notification</li>
+                <li>Bump SCRCPY Version (1.23 -> 1.24)</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.2.0</h3>
             <ul>
                 <li>Refactored some of the app to be more modular</li>

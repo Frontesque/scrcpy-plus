@@ -1,15 +1,13 @@
 <template>
   <div>
-
-    
-
     <!--   Import Modules   -->
     <scrcpyPlusInfo />
     <device :device.sync="deviceConnected" />
     <adb v-if="deviceConnected" />
     <scrcpy v-if="deviceConnected" />
-    <!--   End Import Modules   -->
 
+    <updateNotice />
+    <!--   End Import Modules   -->
   </div>
 </template>
 
