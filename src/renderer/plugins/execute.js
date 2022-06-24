@@ -6,7 +6,10 @@ const module = {
   execute(cmd) {
     return new Promise((resolve, reject) => {
 
-      exec(`cd ${process.env.scrcpyPath}&`+cmd, (error, stdout, stderr) => {
+      exec(
+        (process.env.os === "windows" ? ('cd '+process.env.scrcpyPath+ '&') : ('')) // CD to PreInstalled SCRCPY On Windows
+        +cmd,
+        (error, stdout, stderr) => {
         if (error || stderr) reject(error || stderr);
         resolve(stdout);
       });

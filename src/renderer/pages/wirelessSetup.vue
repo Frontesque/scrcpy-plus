@@ -4,7 +4,7 @@
             <h1>Wireless Connection Setup</h1>
             <div style="color: #999">Android 11+ is required for a wireless connection to be established.</div>
             <a @click="$utils.openInternal('https://developer.android.com/studio/command-line/adb')">View More Information on Pairing Here</a>
-            <v-alert text type="warning">Wireless Connection is still under development and may not work properly on your device.</v-alert>
+            <v-spacer />
             <v-btn style="margin-top: 1em;" rounded color="primary" @click="$router.go(-1)">Cancel</v-btn>
         </section>
 
@@ -73,7 +73,7 @@ export default {
             ip: "",
             pairingLoading: false,
             pairingNotice: null,
-            step: 2,
+            step: 0,
 
             ip2: "",
             connectingLoading: false,

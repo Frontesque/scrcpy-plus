@@ -7,6 +7,19 @@
         </section>
 
         <section>
+            <h3>1.2.0</h3>
+            <ul>
+                <li>Refactored some of the app to be more modular</li>
+                <li>Dynamically get the installed version of SCRCPY</li>
+                <li>Dynamically get the installed version of ADB</li>
+                <li>Minor UI Tweaks</li>
+                <li>Multiplatform / Linux Support</li>
+                <li>Some Bug Fixes</li>
+                <li>Take 'Wireless Connection' Development Warning Away</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.1.2</h3>
             <ul>
                 <li>Added wireless pairing gui</li>

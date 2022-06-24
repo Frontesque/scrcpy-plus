@@ -29,7 +29,7 @@
     <!--   Error Dialog   -->
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title class="text-h5 grey darken-1">An error has occured</v-card-title>
+        <v-card-title class="text-h5 grey darken-3">An error has occured</v-card-title>
 
         <v-card-text v-text="dialogText" style="margin-top: 2em;" />
 

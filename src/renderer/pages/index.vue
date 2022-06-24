@@ -1,14 +1,10 @@
 <template>
   <div>
 
-    <section>
-      <h1>SCRCPY+ ({{ version }})</h1>
-      <h4>SCRCPY ({{ scrcpyVersion }})</h4>
-      <h4>ADB ({{ adbVersion }})</h4>
-      <v-btn style="margin-top: 1em;" rounded color="primary" to="/changelog">SCRCPY+ Changelog</v-btn>
-    </section>
+    
 
     <!--   Import Modules   -->
+    <scrcpyPlusInfo />
     <device :device.sync="deviceConnected" />
     <adb v-if="deviceConnected" />
     <scrcpy v-if="deviceConnected" />
@@ -18,16 +14,11 @@
 </template>
 
 <script>
-const env = process.env;
-
+import scrcpyPlusInfo from '../components/scrcpyPlusInfo.vue'
 export default {
+  components: { scrcpyPlusInfo },
   data() {
     return {
-      version: env.version,
-      scrcpyVersion: env.scrcpyVersion,
-      scrcpyPath: env.scrcpyPath,
-      adbVersion: env.adbVersion,
-
       deviceConnected: false,
     }
   }

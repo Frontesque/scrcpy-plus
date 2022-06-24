@@ -3,9 +3,10 @@
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
 ### Features
-- Supports most SCRCPY flags
-- Some ADB commands
-- Display connected device info
+- 🚩 Supports Most SCRCPY Flags
+- 🤖 Some ADB commands
+- 📱 Connected Device Information
+- 📶 Wireless Screenshare
 
 ### Download
 - Windows [v1.1.2 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.2/scrcpy-plus-1.1.2-installer-win-x64.exe) - [v1.1.2 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.1.2/scrcpy-plus-1.1.2-portable-win-x64.zip)
