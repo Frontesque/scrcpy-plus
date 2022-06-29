@@ -74,19 +74,19 @@
       },
 
       checkDevice() {
-          this.$scrcpy.execute("adb devices -l")
-            .then((data) => {
-                if (data.includes("device product:")) { // Device Detected
-                    if (data.includes("device product:") != this.device) {
-                        this.refreshList();
-                    }
-                    this.device = true;
-                    this.$emit('update:device', true);
-                } else {
-                    this.device = false;
-                    this.$emit('update:device', false);
-                }
-            })
+        this.$scrcpy.execute("adb devices -l")
+          .then((data) => {
+              if (data.includes("device product:")) { // Device Detected
+                  if (data.includes("device product:") != this.device) {
+                      this.refreshList();
+                  }
+                  this.device = true;
+                  this.$emit('update:device', true);
+              } else {
+                  this.device = false;
+                  this.$emit('update:device', false);
+              }
+          })
       }
 
     },

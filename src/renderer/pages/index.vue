@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="scrollbar-width: thin;">
     <!--   Import Modules   -->
     <scrcpyPlusInfo />
     <device :device.sync="deviceConnected" />

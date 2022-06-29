@@ -7,6 +7,23 @@
         </section>
 
         <section>
+            <h3>1.3.0</h3>
+            <ul>
+                <p style="color: #999;">In this update, I wanted to return some of the awesome UI/UX to the app that it used to have. Everything was getting too cluttered and hard to navigate for new users, so I took some time to clean it up and restore it to the "good ol' days".</p>
+                <li>Update "ADB Quick Actions" to fit the rounded theme of the app</li>
+                <li>Changed order of "ADB Quick Actions" buttons</li>
+                <li>Add "Advanced" SCRCPY Settings</li>
+                <li>Improved error handling</li>
+                <li>Add custom scrollbar to fit app theme</li>
+                <li>Pressing 'enter' in the wireless setup now pairs/connects to the device</li>
+                <li>Fix inputting nothing in the wireless setup causing the app to crash</li>
+                <li>Brand new title bar to fit the app theme!</li>
+                <li>Set minimum window width</li>
+                <li>Automatically continue back to home page after wireless pairing setup</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.2.1</h3>
             <ul>
                 <li>Added automatic update notification</li>

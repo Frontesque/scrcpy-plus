@@ -3,7 +3,13 @@ import BrowserWinHandler from './BrowserWinHandler'
 const winHandler = new BrowserWinHandler({
   height: 700,
   width: 600,
+  minWidth: 300,
   autoHideMenuBar: true,
+  titleBarStyle: 'hidden',
+  titleBarOverlay: {
+    color: '#1C1B1F',
+    symbolColor: '#8867c0'
+  }
 })
 
 winHandler.onCreated(_browserWindow => {

@@ -18,6 +18,30 @@
       </v-list-item>
       <!--   End Standard Actions   -->
 
+      <!--   Advanced Actions Wrapper   -->
+      <v-expansion-panels>
+        <v-expansion-panel class="rounded-xl" style="background-color: rgba(0,0,0, 0.25);">
+          <v-expansion-panel-header>Advanced</v-expansion-panel-header>
+          <v-expansion-panel-content>
+
+            <!--   Advanced Actions   -->
+            <v-list-item v-for="(item, i) in advArgs" :key="i">
+              <div style="display: flex;">
+                <v-checkbox v-model="selectedArgs" :value="item" />
+
+                <div style="display: block; transform: translateY(25%);">
+                  <v-list-item-title v-text="item.arg.replace(/-/g,' ')" />
+                  <p v-text="item.description" class="grey--text" />
+                </div>
+              </div>
+            </v-list-item>
+            <!--   End Advanced Actions   -->
+
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+      <!--   End Advanced Actions Wrapper   -->
+
 
       <v-card-actions style="margin-top: 1em;">
         <v-spacer />
@@ -95,20 +119,18 @@ export default {
           description: "Disable mouse/keyboard passthrough"
         },
         {
+          arg: "--disable-screensaver",
+          description: "What it says"
+        }
+      ],
+      advArgs: [
+        {
           arg: "--otg",
           description: "Simulate physical hardware connections for input devices"
         },
         {
           arg: "--forward-all-clicks",
           description: "Pass all mouse actions to the device"
-        },
-        {
-          arg: "--disable-screensaver",
-          description: "What it says"
-        },
-        {
-          arg: "--show-touches",
-          description: "Show physical touches and clicks"
         },
         {
           arg: "--power-off-on-close",
@@ -129,6 +151,10 @@ export default {
         {
           arg: "--no-key-repeat",
           description: "By default, holding a key down generates repeated key events. This can cause performance problems in some games, where these events are useless anyway."
+        },
+        {
+          arg: "--show-touches",
+          description: "Show physical touches and clicks"
         },
         {
           arg: "--lock-video-orientation",

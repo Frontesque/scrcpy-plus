@@ -20,6 +20,7 @@
                 rounded
                 v-model="ip"
                 :disabled="pairingLoading"
+                @keydown.enter="pair"
             />
             <v-alert text type="error" v-if="pairingNotice">{{ pairingNotice }}</v-alert>
             <v-card-actions>
@@ -39,6 +40,7 @@
                 rounded
                 v-model="ip2"
                 :disabled="connectingLoading"
+                 @keydown.enter="connect()"
             />
             <v-alert text type="error" v-if="connectingNotice">{{ connectingNotice }}</v-alert>
             <v-card-actions>
@@ -52,7 +54,7 @@
             <center>
                 <v-icon size="5em">mdi-cellphone-check</v-icon>
                 <h1>Success!</h1>
-                <v-btn style="margin-top: 1em;" rounded color="primary" @click="$router.go(-1)">Return Home</v-btn>
+                <v-progress-linear color="primary" indeterminate />
             </center>
         </section>
 
@@ -83,6 +85,8 @@ export default {
 
     methods: {
         async pair() {
+            if (this.ip == "" || this.pairCode == "") return; // Ensure No Error
+
             this.pairingLoading = true;
             const data = await this.$scrcpy.execute(`adb pair ${this.ip} ${this.pairCode}`);
             this.pairingNotice = data;
@@ -91,11 +95,18 @@ export default {
         },
 
         async connect() {
+            if (this.ip2 == "") return; // Ensure No Error
+
             this.connectingLoading = true;
             const data = await this.$scrcpy.execute(`adb connect ${this.ip2}`);
             this.connectingNotice = data;
             this.connectingLoading = false;
-            if (data.includes("connected")) return this.step++;
+            if (data.includes("connected")) {
+                this.step++;
+                setTimeout(() => {
+                    this.$router.go(-1)
+                }, 2000)
+            };
         }
     }
 }
