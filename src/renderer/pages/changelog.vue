@@ -3,13 +3,23 @@
 
         <section>
             <h1>Changelog</h1>
-            <v-btn style="margin-top: 1em;" rounded color="primary" @click="$router.go(-1)">Back</v-btn>
+            <back />
+        </section>
+
+        <section>
+            <h3>1.3.1</h3>
+            <ul>
+                <li>Add new section: "Tools"</li>
+                <li>Add tool "Package Manager"</li>
+                <li>Rework the "Back Button"</li>
+                <li>Fix issue where wireless connection sometimes crashes the app</li>
+            </ul>
         </section>
 
         <section>
             <h3>1.3.0</h3>
             <ul>
-                <p style="color: #999;">In this update, I wanted to return some of the awesome UI/UX to the app that it used to have. Everything was getting too cluttered and hard to navigate for new users, so I took some time to clean it up and restore it to the "good ol' days".</p>
+                <p class="accent--text">In this update, I wanted to return some of the awesome UI/UX to the app that it used to have. Everything was getting too cluttered and hard to navigate for new users, so I took some time to clean it up and restore it to the "good ol' days".</p>
                 <li>Update "ADB Quick Actions" to fit the rounded theme of the app</li>
                 <li>Changed order of "ADB Quick Actions" buttons</li>
                 <li>Add "Advanced" SCRCPY Settings</li>

@@ -3,6 +3,7 @@
     <!--   Import Modules   -->
     <scrcpyPlusInfo />
     <device :device.sync="deviceConnected" />
+    <tools v-if="deviceConnected" />
     <adb v-if="deviceConnected" />
     <scrcpy v-if="deviceConnected" />
 

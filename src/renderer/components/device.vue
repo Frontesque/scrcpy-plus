@@ -6,7 +6,7 @@
     <center v-show="!device">
       <v-icon size="50px">mdi-devices</v-icon>
       <h1>No Device Found</h1>
-      <p style="color: #999;">You may need to plug in your device or enable 'USB Debugging'</p>
+      <p class="accent--text">You may need to plug in your device or enable 'USB Debugging'</p>
       <p>or</p>
       <v-btn rounded color="primary" @click="$router.push('/wirelessSetup')">Connect Wirelessly</v-btn>
     </center>
@@ -15,7 +15,7 @@
     <v-list-item v-for="(item, i) in deviceInfo" :key="i" v-show="device">
       <div>
         <v-list-item-title v-text="item.title" />
-        <p v-text="item.data" class="grey--text" />
+        <p v-text="item.data" class="accent--text" />
       </div>
     </v-list-item>
 

@@ -12,7 +12,7 @@
 
           <div style="display: block; transform: translateY(25%);">
             <v-list-item-title v-text="item.arg.replace(/-/g,' ')" />
-            <p v-text="item.description" class="grey--text" />
+            <p v-text="item.description" class="accent--text" />
           </div>
         </div>
       </v-list-item>
@@ -31,7 +31,7 @@
 
                 <div style="display: block; transform: translateY(25%);">
                   <v-list-item-title v-text="item.arg.replace(/-/g,' ')" />
-                  <p v-text="item.description" class="grey--text" />
+                  <p v-text="item.description" class="accent--text" />
                 </div>
               </div>
             </v-list-item>

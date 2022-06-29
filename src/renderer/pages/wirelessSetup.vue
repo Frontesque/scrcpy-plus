@@ -2,10 +2,10 @@
     <div>
         <section>
             <h1>Wireless Connection Setup</h1>
-            <div style="color: #999">Android 11+ is required for a wireless connection to be established.</div>
+            <div class="accent--text">Android 11+ is required for a wireless connection to be established.</div>
             <a @click="$utils.openInternal('https://developer.android.com/studio/command-line/adb')">View More Information on Pairing Here</a>
             <v-spacer />
-            <v-btn style="margin-top: 1em;" rounded color="primary" @click="$router.go(-1)">Cancel</v-btn>
+            <back />
         </section>
 
         <section v-if="step == 0">
@@ -40,7 +40,7 @@
                 rounded
                 v-model="ip2"
                 :disabled="connectingLoading"
-                 @keydown.enter="connect()"
+                @keydown.enter="connect()"
             />
             <v-alert text type="error" v-if="connectingNotice">{{ connectingNotice }}</v-alert>
             <v-card-actions>
@@ -98,6 +98,7 @@ export default {
             if (this.ip2 == "") return; // Ensure No Error
 
             this.connectingLoading = true;
+            await this.$scrcpy.execute("adb disconnect"); // Prevent "Multiple Device" Connections
             const data = await this.$scrcpy.execute(`adb connect ${this.ip2}`);
             this.connectingNotice = data;
             this.connectingLoading = false;

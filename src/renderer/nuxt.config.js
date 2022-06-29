@@ -7,7 +7,7 @@
 
 module.exports = {
   env: {
-    version: "1.3.0",
+    version: "1.3.1",
     scrcpyPath: "src/extraResources/scrcpy/", //Development
     //scrcpyPath: "resources/scrcpy/", //Production
     os: "windows",
@@ -36,8 +36,9 @@ module.exports = {
       themes: {
         dark: {
           primary: '#8867c0',
+          accent: '#999',
+          
           secondary: '#b0bec5',
-          accent: '#8c9eff',
           error: '#b71c1c',
         },
       },
