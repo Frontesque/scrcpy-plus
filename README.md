@@ -9,7 +9,7 @@
 - 📶 Wireless Screenshare
 
 ### Download
-- Windows [v1.3.0 Installer (82 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.0/scrcpy-plus-1.3.0-installer-win-x64.exe) - [v1.3.0 Portable (110 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.0/scrcpy-plus-1.3.0-portable-win-x64.zip)
+- Windows [v1.3.0 Installer (83 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.0/scrcpy-plus-1.3.0-installer-win-x64.exe) - [v1.3.0 Portable (111 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.0/scrcpy-plus-1.3.0-portable-win-x64.zip)
 - Linux (Now Compatible // Build Yourself)
 - MacOS (Now Compatible // Build Yourself)
 
@@ -24,5 +24,7 @@ https://github.com/Genymobile/scrcpy
 Thanks a ton Genymobile!
 
 ### Screenshots
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/Y3xPnNUO.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/GK7edqcK.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/h9SaT1Vv.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/UN8KRbIc.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/nR9bPpdW.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/FpD7bxKj.png" height="400" />
