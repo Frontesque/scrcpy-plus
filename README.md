@@ -10,12 +10,12 @@
 
 ### Download
 - Windows [v1.3.1 Installer (83 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-installer-win-x64.exe) - [v1.3.1 Portable (111 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-portable-win-x64.zip)
-- Linux (Now Compatible // Build Yourself)
+- Linux  [v1.3.1 Portable (113 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-portable-linux-x64.zip)
 - MacOS (Now Compatible // Build Yourself)
 
 ### Prerequisites
-- WINDOWS: None; SCRCPY and ADB come packaged with the app in both the portable and installer versions.
-- LINUX:   Both SCRCPY & ADB need to be installed to your computer per [your distro's instructions](https://github.com/Genymobile/scrcpy#linux).
+- WINDOWS:       None; SCRCPY and ADB come packaged with the app in both the portable and installer versions.
+- LINUX & Mac:   Both SCRCPY & ADB need to be installed to your computer per [your distro's instructions](https://github.com/Genymobile/scrcpy#linux).
 
 ### SCRCPY
 You can view the project that this is based off of here:
