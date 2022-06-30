@@ -4,7 +4,8 @@
         <!--   Actions Menu   -->
         <v-card class="actions grey darken-4">
             <v-card-title>
-                <back style="margin-right: 1em;" />Package Manager
+                <back />
+                Package Manager
             </v-card-title>
             <v-card-actions>
                 <div v-for="(item, i) in actions" :key="i" style="margin-right: 0.5em;">

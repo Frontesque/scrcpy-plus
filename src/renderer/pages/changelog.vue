@@ -2,8 +2,18 @@
     <div>
 
         <section>
-            <h1>Changelog</h1>
-            <back />
+            <v-card-title>
+                <back />
+                Changelog
+            </v-card-title>
+        </section>
+
+        <section>
+            <h3>1.3.2</h3>
+            <ul>
+                <li>Make the back button more uniform throughout the app</li>
+                <li>Add new "Coming Soon" tool "Resource Monitor"</li>
+            </ul>
         </section>
 
         <section>

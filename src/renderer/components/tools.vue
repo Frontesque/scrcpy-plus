@@ -31,6 +31,12 @@ export default {
                     disabled: true
                 },
                 {
+                    title: "Resource Monitor (Coming Soon)",
+                    icon: "mdi-chart-bell-curve",
+                    to: "/tools/files",
+                    disabled: true
+                },
+                {
                     title: "Partition Dumper (Coming Soon)",
                     icon: "mdi-zip-box",
                     to: "/tools/dump",
