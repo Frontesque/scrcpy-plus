@@ -1,7 +1,7 @@
 <template>
     <div>
         
-
+        <!--   Actions Menu   -->
         <v-card class="actions grey darken-4">
             <v-card-title>
                 <back style="margin-right: 1em;" />Package Manager
@@ -11,9 +11,15 @@
                     <v-btn rounded :color="item.color" @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
                 </div>
             </v-card-actions>
-            <v-alert text type="warning" style="margin: 0.5em;">Modifying system apps may cause your device to break!</v-alert>
+            <v-checkbox v-model="showSystem" label="Show System Apps" style="margin-left: 1em;" />
         </v-card>
-        
+        <!--   End Actions Menu   -->
+
+        <!--   Loading Wheel   -->
+        <v-progress-circular indeterminate color="primary" size="50" class="loading" v-if="loading" />
+        <!--   End Loading Wheel   -->
+
+        <!--   Package Selector   -->
         <v-list-item-group v-model="selected" color="primary" style="margin-top: 12em;">
             <v-list-item v-for="(item, i) in apps" :key="i">
                 
@@ -22,13 +28,31 @@
                     <v-icon v-text="item.icon || 'mdi-package'" />
                 </v-list-item-icon>
                 <v-list-item-content>
-                    <v-list-item-title v-text="item.name"></v-list-item-title>
+                    <v-list-item-title>
+                        {{ item.name }}
+                        <v-chip v-if="item.disabled" style="height: 1.75em;">Disabled</v-chip>
+                    </v-list-item-title>
                 </v-list-item-content>
 
 
 
             </v-list-item>
         </v-list-item-group>
+        <!--   End Package Selector   -->
+
+        <!--   Notification Dialog   -->
+        <v-dialog v-model="dialog" width="500">
+            <v-card>
+                <v-card-title class="text-h5 grey darken-3">Complete</v-card-title>
+                <v-card-text v-text="dialogMessage" style="margin-top: 2em;" />
+                <v-divider />
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn color="primary" text @click="dialog = false">Close</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+        <!--   End Notification Dialog   -->
 
 
     </div>
@@ -41,6 +65,13 @@
     width: 100%;
     z-index: 10;
 }
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 </style>
 
 <script>
@@ -49,6 +80,11 @@ export default {
         return {
             apps: new Array(),
             selected: null,
+            disabledApps: new Array(),
+            showSystem: false,
+            loading: true,
+            dialog: false,
+            dialogMessage: "",
 
             actions: [
                 {
@@ -64,18 +100,20 @@ export default {
                     action: this.disable,
                 },
                 {
+                    name: "Uninstall",
+                    icon: "mdi-delete",
+                    color: "red",
+                    action: this.uninstall,
+                },
+                /*
+                {
                     name: "Install",
                     icon: "mdi-download",
                     color: "green",
                     requireSelected: false,
                     action: this.install,
                 },
-                {
-                    name: "Uninstall",
-                    icon: "mdi-delete",
-                    color: "red",
-                    action: this.uninstall,
-                },
+                */
             ],
 
             icons: [
@@ -87,51 +125,87 @@ export default {
         }
     },
 
-    /*
-    List Installed: pm list packages -f
-    Delete: pm uninstall -k –user 0 com.facebook.appmanager
-    Disable: pm disable-user --user 0 com.miui.cleanmaster
-    Enable: pm enable com.facebook.system
-    */
+   watch: {
+    showSystem() {
+        this.rebuild();
+    }
+   },
 
     async mounted() {
-        this.apps = await this.getInstalled()
+        this.rebuild();
     },
 
     methods: {
-        async getInstalled() {
+        // http://adbcommand.com/adbshell/pm
+        async getInstalled(flags="") {
             let apps = new Array();
 
-            let data = await this.$scrcpy.execute("adb shell pm list packages -f");
+            let data = await this.$scrcpy.execute("adb shell pm list packages "+flags);
             data = data.split('\r\n');
             for (const i in data) {
-                const packageName = data[i].split("=")[1];
+                const packageName = data[i].split("package:")[1];
                 if (packageName == "" || packageName == undefined) continue;
-                
-                let iconName;
-                for (const i in this.icons) {
-                    const icon = this.icons[i];
-                    if (packageName.includes(icon.package)) iconName = icon.icon;
-                }
-
-
-                apps.push({
-                    name: packageName,
-                    icon: iconName
-                });
+                apps.push(packageName);
             }
             return apps;
         },
 
+        icon(packageName) {
+            let iconName;
+            for (const i in this.icons) {
+                const icon = this.icons[i];
+                if (packageName.includes(icon.package)) iconName = icon.icon;
+            }
+            return iconName
+        },
 
+        isDisabled(packageName) {
+            if (this.disabledApps.includes(packageName)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+        addApps(list) {
+            for (const i in list) {
+                const app = list[i];
+                this.apps.push({
+                    name: app,
+                    icon: this.icon(app),
+                    disabled: this.isDisabled(app)
+                })
+            };
+        },
+
+        async rebuild() {
+            this.loading = true;
+            this.apps = new Array();
+            this.disabledApps = await this.getInstalled("-d");
+
+            const thirdParty = await this.getInstalled("-3");
+            const system     = await this.getInstalled("-s");
+            
+            this.addApps(thirdParty);
+            if (this.showSystem) this.addApps(system);
+            this.loading = false;
+        },
+
+
+        showMsg(msg) {
+            this.dialog = true;
+            this.dialogMessage = msg;
+        },
 
         async enable() {
             const app = this.apps[this.selected];
-            await this.$scrcpy.execute(`adb shell pm enable ${app.name}`)
+            const output = await this.$scrcpy.execute(`adb shell pm enable ${app.name}`)
+            this.showMsg(output);
         },
         async disable() {
             const app = this.apps[this.selected];
-            await this.$scrcpy.execute(`adb shell pm disable-user --user 0  ${app.name}`)
+            const output = await this.$scrcpy.execute(`adb shell pm disable-user --user 0 ${app.name}`)
+            this.showMsg(output);
         },
         async install() {
             const app = this.apps[this.selected];
@@ -140,7 +214,8 @@ export default {
         },
         async uninstall() {
             const app = this.apps[this.selected];
-            await this.$scrcpy.execute(`adb shell pm uninstall -k –user 0 ${app.name}`)
+            const output = await this.$scrcpy.execute(`adb shell pm uninstall -k --user 0 ${app.name}`)
+            this.showMsg(output);
         }
     }
 }
