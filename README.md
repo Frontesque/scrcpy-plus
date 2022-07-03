@@ -9,7 +9,7 @@
 - 📶 Wireless Screenshare
 
 ### Download
-- Windows [v1.3.1 Installer (83 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-installer-win-x64.exe) - [v1.3.1 Portable (111 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-portable-win-x64.zip)
+- Windows [v1.3.2 Installer (83 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.2/scrcpy-plus-1.3.2-installer-win-x64.exe) - [v1.3.2 Portable (111 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.2/scrcpy-plus-1.3.2-portable-win-x64.zip)
 - Linux  [v1.3.1 Portable (113 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-portable-linux-x64.zip)
 - MacOS (Now Compatible // Build Yourself)
 
