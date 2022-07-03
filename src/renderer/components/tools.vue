@@ -49,7 +49,7 @@ export default {
 
     methods: {
         run(cmd) {
-            this.$scrcpy.execute(cmd)
+            this.$execute(cmd)
                 .catch((err) => {
                     console.log(err);
                 })

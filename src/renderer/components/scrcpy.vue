@@ -93,7 +93,7 @@ export default {
         }
         //console.log("scrcpy"+flags);
 
-        this.$scrcpy.execute(`scrcpy --bit-rate ${this.bitrate}M`+flags)
+        this.$execute(`scrcpy --bit-rate ${this.bitrate}M`+flags)
           .catch((err) => {
             if (err.startsWith("INFO:")) return; // Catch information outputs
             this.dialog = true;

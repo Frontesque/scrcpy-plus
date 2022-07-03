@@ -38,13 +38,13 @@ export default {
     }
   },
   async mounted() {
-    await this.$scrcpy.execute("adb --version")
+    await this.$execute("adb --version")
     .then(data => {
         this.adbVersion = data.split('\n')[1].split(" ")[1].trim();
     })
     .catch(err => this.errHandler(err));
 
-    await this.$scrcpy.execute("scrcpy --version")
+    await this.$execute("scrcpy --version")
     .then(data => {
         this.scrcpyVersion = data.split('\n')[0].split(" ")[1].trim();
     })

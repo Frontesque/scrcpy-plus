@@ -86,7 +86,7 @@ export default {
             if (this.ip == "" || this.pairCode == "") return; // Ensure No Error
 
             this.pairingLoading = true;
-            const data = await this.$scrcpy.execute(`adb pair ${this.ip} ${this.pairCode}`);
+            const data = await this.$execute(`adb pair ${this.ip} ${this.pairCode}`);
             this.pairingNotice = data;
             this.pairingLoading = false;
             if (data.includes("Successfully")) return this.step++;
@@ -96,8 +96,8 @@ export default {
             if (this.ip2 == "") return; // Ensure No Error
 
             this.connectingLoading = true;
-            await this.$scrcpy.execute("adb disconnect"); // Prevent "Multiple Device" Connections
-            const data = await this.$scrcpy.execute(`adb connect ${this.ip2}`);
+            await this.$execute("adb disconnect"); // Prevent "Multiple Device" Connections
+            const data = await this.$execute(`adb connect ${this.ip2}`);
             this.connectingNotice = data;
             this.connectingLoading = false;
             if (data.includes("connected")) {

@@ -141,7 +141,7 @@ export default {
         async getInstalled(flags="") {
             let apps = new Array();
 
-            let data = await this.$scrcpy.execute("adb shell pm list packages "+flags);
+            let data = await this.$execute("adb shell pm list packages "+flags);
             data = data.split('\r\n');
             for (const i in data) {
                 const packageName = data[i].split("package:")[1];
@@ -200,12 +200,12 @@ export default {
 
         async enable() {
             const app = this.apps[this.selected];
-            const output = await this.$scrcpy.execute(`adb shell pm enable ${app.name}`)
+            const output = await this.$execute(`adb shell pm enable ${app.name}`)
             this.showMsg(output);
         },
         async disable() {
             const app = this.apps[this.selected];
-            const output = await this.$scrcpy.execute(`adb shell pm disable-user --user 0 ${app.name}`)
+            const output = await this.$execute(`adb shell pm disable-user --user 0 ${app.name}`)
             this.showMsg(output);
         },
         async install() {
@@ -215,7 +215,7 @@ export default {
         },
         async uninstall() {
             const app = this.apps[this.selected];
-            const output = await this.$scrcpy.execute(`adb shell pm uninstall -k --user 0 ${app.name}`)
+            const output = await this.$execute(`adb shell pm uninstall -k --user 0 ${app.name}`)
             this.showMsg(output);
         }
     }

@@ -66,7 +66,7 @@
     methods: {
       refreshList() {
         for (const i in this.deviceInfo) {
-          this.$scrcpy.execute(this.deviceInfo[i].command)
+          this.$execute(this.deviceInfo[i].command)
             .then((data) => {
               this.deviceInfo[i].data = data;
             })
@@ -75,7 +75,7 @@
 
       checkDevice() {
         console.log("run")
-        this.$scrcpy.execute("adb devices -l")
+        this.$execute("adb devices -l")
           .then((data) => {
               if (data.includes("device product:")) { // Device Detected
                   if (data.includes("device product:") != this.device) {

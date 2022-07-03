@@ -1,25 +1,17 @@
-const { exec } = require("child_process");
+const execute = (cmd) => {
+  return new Promise((resolve, reject) => {
 
-const module = {
-  
+    require('./modules/execute')(cmd)
+    .then(res => {
+      resolve(res);
+    })
+    .catch(err => {
+      reject(err);
+    })
 
-  execute(cmd) {
-    return new Promise((resolve, reject) => {
-
-      exec(
-        (process.env.os === "windows" ? ('cd '+process.env.scrcpyPath+ '&') : ('')) // CD to PreInstalled SCRCPY On Windows
-        +cmd,
-        (error, stdout, stderr) => {
-        if (error || stderr) reject(error || stderr);
-        resolve(stdout);
-      });
-
-    });
-  }
-
-
+  })
 }
 
 export default ({ app }, inject) => {
-  inject('scrcpy', module)
+  inject('execute', execute)
 }
