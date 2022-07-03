@@ -25,10 +25,9 @@ export default {
                     beta: true
                 },
                 {
-                    title: "File Manager (Coming Soon)",
+                    title: "File Manager",
                     icon: "mdi-folder-open",
-                    to: "/tools/files",
-                    disabled: true
+                    to: "/tools/files"
                 },
                 {
                     title: "Resource Monitor (Coming Soon)",

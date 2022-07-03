@@ -74,7 +74,6 @@
       },
 
       checkDevice() {
-        console.log("run")
         this.$execute("adb devices -l")
           .then((data) => {
               if (data.includes("device product:")) { // Device Detected

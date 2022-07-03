@@ -23,7 +23,7 @@ module.exports = {
     meta: [{ charset: "utf-8" }]
   },
   loading: false,
-  plugins: ['~/plugins/execute.js','~/plugins/utils.js'],
+  plugins: ['~/plugins/execute.js','~/plugins/utils.js','~/plugins/fileManager.js'],
   buildModules: [],
   modules: [
     '@nuxtjs/vuetify',
