@@ -7,7 +7,7 @@
 
 module.exports = {
   env: {
-    version: "1.3.4",
+    version: "1.4.0",
     scrcpyPath: "resources/scrcpy/",
     os: "windows",
 

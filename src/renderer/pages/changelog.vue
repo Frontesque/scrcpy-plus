@@ -9,13 +9,14 @@
         </section>
 
         <section>
-            <h3>1.3.4</h3>
+            <h3>1.4.0</h3>
             <ul>
                 <li>Refactor the build process for the app</li>
                 <li>The app now fully uninstalls itself properly if you use the built in uninstaller after using the "installer" build</li>
                 <li>Bump Electron from 16.2.8 to ^19.0.7</li>
                 <li>Huge performance improvements</li>
                 <li>Refactor the `execute` command in the backend</li>
+                <li>Add file manager</li>
             </ul>
         </section>
 
