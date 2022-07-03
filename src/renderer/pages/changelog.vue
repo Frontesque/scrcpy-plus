@@ -13,6 +13,10 @@
             <ul>
                 <li>Make the back button more uniform throughout the app</li>
                 <li>Add new "Coming Soon" tool "Resource Monitor"</li>
+                <li>Add building guide to the github (BUILDING.md)</li>
+                <li>Major device polling improvements</li>
+                <li>Fix spelling error (im human too)</li>
+                <li>Finally add a bitrate slider after MANY requests</li>
             </ul>
         </section>
 
@@ -58,7 +62,7 @@
                 <li>Dynamically get the installed version of SCRCPY</li>
                 <li>Dynamically get the installed version of ADB</li>
                 <li>Minor UI Tweaks</li>
-                <li>Multiplatform / Linux Support</li>
+                <li>Multi-platform / Linux Support</li>
                 <li>Some Bug Fixes</li>
                 <li>Take 'Wireless Connection' Development Warning Away</li>
             </ul>

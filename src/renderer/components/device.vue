@@ -74,6 +74,7 @@
       },
 
       checkDevice() {
+        console.log(this.$router)
         this.$scrcpy.execute("adb devices -l")
           .then((data) => {
               if (data.includes("device product:")) { // Device Detected
@@ -92,12 +93,7 @@
     },
 
     mounted() {
-
-      setInterval(() => {
-        this.checkDevice()
-      }, process.env.devicePollRate);
-      this.checkDevice()
-
+      setInterval(this.checkDevice(), process.env.devicePollRate);
     }
 
   }

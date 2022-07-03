@@ -8,8 +8,8 @@
 module.exports = {
   env: {
     version: "1.3.2",
-    scrcpyPath: "src/extraResources/scrcpy/", //Development
-    //scrcpyPath: "resources/scrcpy/", //Production
+    //scrcpyPath: "src/extraResources/scrcpy/", //Development
+    scrcpyPath: "resources/scrcpy/", //Production
     os: "windows",
 
     releasesUrl: "https://api.github.com/repos/Frontesque/scrcpy-plus/releases",

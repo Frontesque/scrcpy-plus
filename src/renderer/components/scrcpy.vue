@@ -24,6 +24,16 @@
           <v-expansion-panel-header>Advanced</v-expansion-panel-header>
           <v-expansion-panel-content>
 
+
+
+            <!--   Sliders   -->
+            <div>Bitrate {{ bitrate }}M</div>
+            <v-slider v-model="bitrate" max="64" min="1" hint="A higher bitrate makes a clearer image but may increase lag"      dense persistent-hint />
+            <!--   End Sliders   -->
+
+
+
+
             <!--   Advanced Actions   -->
             <v-list-item v-for="(item, i) in advArgs" :key="i">
               <div style="display: flex;">
@@ -53,7 +63,7 @@
     <!--   Error Dialog   -->
     <v-dialog v-model="dialog" width="500">
       <v-card>
-        <v-card-title class="text-h5 grey darken-3">An error has occured</v-card-title>
+        <v-card-title class="text-h5 grey darken-3">An error has occurred</v-card-title>
 
         <v-card-text v-text="dialogText" style="margin-top: 2em;" />
 
@@ -83,7 +93,7 @@ export default {
         }
         //console.log("scrcpy"+flags);
 
-        this.$scrcpy.execute("scrcpy"+flags)
+        this.$scrcpy.execute(`scrcpy --bit-rate ${this.bitrate}M`+flags)
           .catch((err) => {
             if (err.startsWith("INFO:")) return; // Catch information outputs
             this.dialog = true;
@@ -104,6 +114,8 @@ export default {
       dialogText: null,
 
       selectedArgs: [],
+
+      bitrate: 8,
 
       args: [
         {
