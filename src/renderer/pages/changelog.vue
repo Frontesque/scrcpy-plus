@@ -9,6 +9,13 @@
         </section>
 
         <section>
+            <h3>1.3.3</h3>
+            <ul>
+                <li>Fix device not being recognized when plugged in</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.3.2</h3>
             <ul>
                 <li>Make the back button more uniform throughout the app</li>
