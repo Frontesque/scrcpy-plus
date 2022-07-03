@@ -5,8 +5,9 @@ For SCRCPY+ & ADB compatable devices
 This code uses file browsing via the `ls` command
 */
 
+const execute = require('./modules/execute');
 async function shell(cmd) {
-    return require('./modules/execute')(`adb shell "${cmd}"`);
+    return execute(`adb shell "${cmd}"`);
 }
 
 module = {
@@ -18,7 +19,21 @@ module = {
         if (directories) directories = directories.replace(/\r/g,"").split('\n');
 
         return { files: files || [], directories: directories || [] }
+    },
+
+    async download(file) {
+        if (!file) return;
+        const desktop = `${require('os').homedir()}/Desktop`;
+
+        return execute(`adb pull ${file} ${desktop}`);
+    },
+
+    async delete(file) {
+        if (!file) return;
+
+        return await execute(`adb shell "rm ${file}"`);
     }
+
 }
 
 export default ({ app }, inject) => {

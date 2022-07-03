@@ -7,12 +7,13 @@
                 <back />
                 File Manager
             </v-card-title>
+            <v-text-field v-model="path" label="Path" outlined style="margin: 0 1em -1.5em 1em" disabled />
             <v-card-actions>
                 <div v-for="(item, i) in actions" :key="i" style="margin-right: 0.5em;">
                     <v-btn rounded :color="item.color" @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
                 </div>
             </v-card-actions>
-            <div>Path: {{ path }}</div>
+            
         </v-card>
         <!--   End Actions Menu   -->
 
@@ -85,16 +86,16 @@ export default {
                     requireSelected: false,
                 },
                 {
-                    name: "Transfer",
+                    name: "Download",
                     icon: "mdi-download",
                     color: "green",
-                    action: this.enable,
+                    action: this.download,
                 },
                 {
                     name: "Delete",
                     icon: "mdi-delete",
                     color: "red",
-                    action: this.uninstall,
+                    action: this.delete,
                 }
             ]
         }
@@ -154,15 +155,13 @@ export default {
             this.rebuild();
         },
 
-        async enable() {
-            const app = this.apps[this.selected];
-            const output = await this.$execute(`adb shell pm enable ${app.name}`)
-            this.showMsg(output);
+        download() {
+            this.$fm.download(this.path + this.files[this.selected].name);
         },
-        async uninstall() {
-            const app = this.apps[this.selected];
-            const output = await this.$execute(`adb shell pm uninstall -k --user 0 ${app.name}`)
-            this.showMsg(output);
+
+        async delete() {
+            await this.$fm.delete(this.path + this.files[this.selected].name);
+            this.rebuild();
         }
     }
 }
