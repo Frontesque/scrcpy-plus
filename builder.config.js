@@ -8,7 +8,9 @@ const windowsOS = {
   },
 
   nsis: {
-    differentialPackage: true
+    differentialPackage: true,
+    deleteAppDataOnUninstall: true,
+    //license: "LICENSE"
   }
 }
 
