@@ -20,7 +20,13 @@
         <v-progress-circular indeterminate color="primary" size="50" class="loading" v-if="loading" />
         <!--   End Loading Wheel   -->
 
-        <!--   Package Selector   -->
+        <!--   Empty Notice   -->
+        <div class="loading" v-if="loading == false && files.length == 0">
+            No files or directories
+        </div>
+        <!--   End Empty Notice   -->
+
+        <!--   File Selector   -->
         <v-list-item-group v-model="selected" color="primary" style="margin-top: 12em;">
             <v-list-item v-for="(item, i) in files" :key="i">
                 
@@ -39,7 +45,7 @@
 
             </v-list-item>
         </v-list-item-group>
-        <!--   End Package Selector   -->
+        <!--   End File Selector   -->
 
 
     </div>
@@ -65,16 +71,23 @@
 export default {
     data() {
         return {
-            path: "/",
+            path: "/sdcard/",
             files: new Array(),
             selected: null,
             loading: true,
 
             actions: [
                 {
-                    name: "Download",
-                    icon: "mdi-download",
+                    name: "Back",
+                    icon: "mdi-arrow-up",
                     color: "primary",
+                    action: this.back,
+                    requireSelected: false,
+                },
+                {
+                    name: "Transfer",
+                    icon: "mdi-download",
+                    color: "green",
                     action: this.enable,
                 },
                 {
@@ -83,13 +96,6 @@ export default {
                     color: "red",
                     action: this.uninstall,
                 }
-            ],
-
-            icons: [
-                { package: "com.android", icon:"mdi-android" },
-                { package: "com.google",  icon:"mdi-google" },
-                { package: "theme",  icon:"mdi-brush-variant" },
-                { package: "font",  icon:"mdi-format-font" },
             ]
         }
     },
@@ -100,9 +106,9 @@ export default {
 
     watch: {
         selected() {
-            if (!this.selected) return;
-
             const sel = this.files[this.selected];
+            if (!sel) return;
+
             if (sel.type == "directory") {
                 this.selected = null;
                 this.path += sel.name;
@@ -116,23 +122,36 @@ export default {
             this.loading = true;
             this.files = new Array();
             
-            const dir = await this.$fm.getDir(this.path);
-            for (const i in dir.directories) {
-                this.files.push({
-                    name: dir.directories[i],
-                    icon: "mdi-folder",
-                    type: "directory"
-                })
+            const dir = await this.$fm.getDir(this.path).catch(err => console.log(err));
+            if (dir.directories) {
+                for (const i in dir.directories) {
+                    const name = dir.directories[i];
+                    if (name == "" || name == "*/: No such file or directory") continue;
+                    this.files.push({
+                        name: name,
+                        icon: "mdi-folder",
+                        type: "directory"
+                    })
+                }
             }
-            for (const i in dir.files) {
-                this.files.push({
-                    name: dir.files[i],
-                    icon: "mdi-file",
-                    type: "file"
-                })
+            if (dir.files) {
+                for (const i in dir.files) {
+                    const name = dir.files[i]
+                    if (name == "" || name == "*.*: No such file or directory") continue;
+                    this.files.push({
+                        name: name,
+                        icon: "mdi-file",
+                        type: "file"
+                    })
+                }
             }
 
             this.loading = false;
+        },
+
+        back() {
+            this.path = this.path.slice(0, this.path.slice(0, -1).lastIndexOf('/')) + "/";
+            this.rebuild();
         },
 
         async enable() {

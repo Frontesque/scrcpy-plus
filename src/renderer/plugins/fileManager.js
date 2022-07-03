@@ -5,18 +5,19 @@ For SCRCPY+ & ADB compatable devices
 This code uses file browsing via the `ls` command
 */
 
-import { Dir } from 'original-fs';
-
 async function shell(cmd) {
     return require('./modules/execute')(`adb shell "${cmd}"`);
 }
 
 module = {
     async getDir(dir="/") {
-        const files = await shell(`cd ${dir} && ls -d *.*`);
-        const directories = await shell(`cd ${dir} && ls -d */`);
+        let files = await shell(`cd ${dir} && ls -d *.*`).catch(err => console.log(err));
+        let directories = await shell(`cd ${dir} && ls -d */`).catch(err => console.log(err));
 
-        return { files: files.split('\n'), directories: directories.split('\n') }
+        if (files) files = files.replace(/\r/g,"").split('\n');
+        if (directories) directories = directories.replace(/\r/g,"").split('\n');
+
+        return { files: files || [], directories: directories || [] }
     }
 }
 
