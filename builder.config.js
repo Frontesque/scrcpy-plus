@@ -62,7 +62,7 @@ module.exports = {
   ],
   extraResources: [
     {
-      from: 'src/extraResources/',
+      from: 'resources/',
       to: ''
     }
   ],

@@ -9,6 +9,13 @@
         </section>
 
         <section>
+            <h3>1.3.4</h3>
+            <ul>
+                <li>Refactor the build process for the app</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.3.3</h3>
             <ul>
                 <li>Fix device not being recognized when plugged in</li>
