@@ -15,7 +15,6 @@ This is the guide to building the latest version of SCRCPY+ for all operating sy
 ## Build
 - Windows
     - run `yarn install`
-    - run `yarn install`
     - run `yarn build`
     - the output files should be in the `build` folder
 - Linux / Mac
