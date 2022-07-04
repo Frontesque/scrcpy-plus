@@ -8,7 +8,7 @@
 - 📶 **Wireless Connectivity**  • *Connect to a Device on your WiFi Network*
 - 📦 **Easily Manage Packages** • *Remove System Bloat Without Root*
 - 📂 **File Manager**           • *Download & Delete Files*
-- 📈 **Resource Monitor**       • *Coming Soon*
+- 📈 **Resource Monitor**       • *View Device CPU Usage*
 - 💾 **Partition Dumper**       • *Coming Soon*
 
 ### Download
@@ -27,6 +27,8 @@ https://github.com/Genymobile/scrcpy
 Thanks a ton Genymobile!
 
 ### Screenshots
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/EwCFwM4n.gif" height="400" />
+
 <img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/h9SaT1Vv.png" height="400" />
 <img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/UN8KRbIc.png" height="400" />
 <img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/nR9bPpdW.png" height="400" />
