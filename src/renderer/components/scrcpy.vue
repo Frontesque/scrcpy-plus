@@ -28,7 +28,7 @@
 
             <!--   Sliders   -->
             <div>Bitrate {{ bitrate }}M</div>
-            <v-slider v-model="bitrate" max="64" min="1" hint="A higher bitrate makes a clearer image but may increase lag"      dense persistent-hint />
+            <v-slider v-model="bitrate" max="64" min="1" hint="A higher bitrate creates a clearer image but may increase lag"      dense persistent-hint />
             <!--   End Sliders   -->
 
 

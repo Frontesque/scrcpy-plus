@@ -9,6 +9,13 @@
         </section>
 
         <section>
+            <h3>1.4.1</h3>
+            <ul>
+                <li>Minor language tweaks / better action description</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.4.0</h3>
             <ul>
                 <li>Refactor the build process for the app</li>

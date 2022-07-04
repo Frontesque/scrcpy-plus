@@ -3,10 +3,13 @@
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
 ### Features
-- 🚩 Supports Most SCRCPY Flags
-- 🤖 Some ADB commands
-- 📱 Connected Device Information
-- 📶 Wireless Screenshare
+- 🚩 **Supports Most SCRCPY Flags**
+- 📱 **Device Information**     • *Get Model Information About the Active Device*
+- 📶 **Wireless Connectivity**  • *Connect to a Device on your WiFi Network*
+- 📦 **Easily Manage Packages** • *Remove System Bloat Without Root*
+- 📂 **File Manager**           • *Download & Delete Files*
+- 📈 **Resource Monitor**       • *Coming Soon*
+- 📈 **Partition Dumper**       • *Coming Soon*
 
 ### Download
 - Windows [v1.4.0 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.0/scrcpy-plus-1.4.0-installer-win-x64.exe) - [v1.4.0 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.0/scrcpy-plus-1.4.0-portable-win-x64.zip)
