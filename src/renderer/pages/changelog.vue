@@ -14,6 +14,8 @@
                 <li>Minor language tweaks / better action description</li>
                 <li>Improve device recognition time</li>
                 <li>Fix memory leak in device detection</li>
+                <li>Refactor how the loading wheel is shown</li>
+                <li>Show the loading wheel when connecting to a new device</li>
             </ul>
         </section>
 

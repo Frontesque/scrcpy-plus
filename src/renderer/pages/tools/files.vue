@@ -18,7 +18,7 @@
         <!--   End Actions Menu   -->
 
         <!--   Loading Wheel   -->
-        <v-progress-circular indeterminate color="primary" size="50" class="loading" v-if="loading" />
+        <wheel class="loading" v-if="loading" />
         <!--   End Loading Wheel   -->
 
         <!--   Empty Notice   -->
