@@ -12,6 +12,7 @@
             <h3>1.4.1</h3>
             <ul>
                 <li>Minor language tweaks / better action description</li>
+                <li>Improve device recognition time</li>
             </ul>
         </section>
 

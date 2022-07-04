@@ -92,9 +92,8 @@
     },
 
     mounted() {
-      setInterval(() => {
-        this.checkDevice();
-      }, process.env.devicePollRate);
+      setInterval(this.checkDevice, process.env.devicePollRate);
+      this.checkDevice();
     }
 
   }
