@@ -16,6 +16,7 @@
                 <li>Fix memory leak in device detection</li>
                 <li>Refactor how the loading wheel is shown</li>
                 <li>Show the loading wheel when connecting to a new device</li>
+                <li>App automatically detects your OS and builds for it :)</li>
             </ul>
         </section>
 

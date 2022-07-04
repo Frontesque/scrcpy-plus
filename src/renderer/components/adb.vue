@@ -3,7 +3,7 @@
         <h2>ADB Quick Actions</h2>
 
         <v-list-item v-for="(item, i) in cmds" :key="i">
-            <v-btn rounded v-text="item.title" @click="run(item.cmd)" />
+            <v-btn rounded v-text="item.title" @click="run(item)" />
         </v-list-item>
         
     </section>
@@ -30,15 +30,15 @@ export default {
                 {
                     title: "Reboot Bootloader",
                     cmd: "adb reboot bootloader"
-                }
+                },
             ],
 
         }
     },
 
     methods: {
-        run(cmd) {
-            this.$execute(cmd)
+        run(item) {
+            this.$execute(item.cmd)
                 .catch((err) => {
                     console.log(err);
                 })

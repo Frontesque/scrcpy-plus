@@ -13,13 +13,8 @@ This is the guide to building the latest version of SCRCPY+ for all operating sy
     - Yarn Package Manager // [Download](https://yarnpkg.com/) OR RUN `sudo npm i -g yarn`
 
 ## Build
-- Windows
+- Windows, Linux & MacOS
+    ***ALL COMMANDS ARE RUN IN THE ROOT FOLDER OF THE PROJECT***
     - run `yarn install`
     - run `yarn build`
-    - the output files should be in the `build` folder
-- Linux / Mac
-    - Edit `src/renderer/nuxt.config.js` & change the line that says `os: "windows",` to say `os: "linux",` 
-    ***NOTE: IF YOU ARE ON MACOS, IT SHOULD STILL SAY LINUX, NOT MACOS***
-    - run `yarn install`
-    - run `yarn build`
-    - the output files should be in the `build` folder
+    - 🎉 The compiled project should be in the `build` folder
