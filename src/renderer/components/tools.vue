@@ -30,10 +30,9 @@ export default {
                     to: "/tools/files"
                 },
                 {
-                    title: "Resource Monitor (Coming Soon)",
+                    title: "Resource Monitor",
                     icon: "mdi-chart-bell-curve",
-                    to: "/tools/files",
-                    disabled: true
+                    to: "/tools/resources"
                 },
                 {
                     title: "Partition Dumper (Coming Soon)",

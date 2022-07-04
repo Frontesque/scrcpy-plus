@@ -17,6 +17,7 @@
                 <li>Refactor how the loading wheel is shown</li>
                 <li>Show the loading wheel when connecting to a new device</li>
                 <li>App automatically detects your OS and builds for it :)</li>
+                <li>Add basic resource monitor</li>
             </ul>
         </section>
 
