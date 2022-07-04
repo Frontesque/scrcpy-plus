@@ -65,8 +65,7 @@ export default {
             systemUsage: 0,
             systemThreads: 0,
 
-            idleThreads: 0,
-            raw: null
+            idleThreads: 0
         }
     },
 
@@ -75,14 +74,12 @@ export default {
             const data = await this.$execute("adb shell top -n 1 -m 1");
 
             this.userUsage = data.split("User ")[1].split("%")[0];
+            this.userThreads = data.split("User ")[2].split(" ")[0];
 
             this.systemUsage = data.split("System ")[1].split("%")[0];
             this.systemThreads = data.split("Sys ")[1].split(" ")[0];
 
             this.idleThreads = data.split("Idle ")[1].split(" ")[0];
-
-
-            this.raw = data;
         }
     },
 
