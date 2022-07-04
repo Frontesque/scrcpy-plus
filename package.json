@@ -14,7 +14,7 @@
   "license": "MIT",
   "homepage": "https://github.com/michalzaq12/electron-nuxt/blob/master/README.md",
   "engines": {
-    "node": ">=14.14.9"
+    "node": ">=16.0.0"
   },
   "resolutions": {
     "@types/node": "14.14.9"
