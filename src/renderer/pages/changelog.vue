@@ -13,6 +13,7 @@
             <ul>
                 <li>Minor language tweaks / better action description</li>
                 <li>Improve device recognition time</li>
+                <li>Fix memory leak in device detection</li>
             </ul>
         </section>
 

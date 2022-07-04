@@ -28,6 +28,7 @@
       return {
 
         device: false,
+        scanning: false,
 
         deviceInfo: [{
             title: "Model",
@@ -74,6 +75,7 @@
       },
 
       checkDevice() {
+        console.log("Test")
         this.$execute("adb devices -l")
           .then((data) => {
               if (data.includes("device product:")) { // Device Detected
@@ -92,8 +94,12 @@
     },
 
     mounted() {
-      setInterval(this.checkDevice, process.env.devicePollRate);
+      this.interval = setInterval(this.checkDevice, process.env.devicePollRate);
       this.checkDevice();
+    },
+
+    beforeDestroy() {
+      clearInterval(this.interval); // Prevent Memory Leak
     }
 
   }
