@@ -12,9 +12,9 @@
 - 💾 **Partition Dumper**       • *Coming Soon*
 
 ### Download
-- Windows [v1.4.0 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.0/scrcpy-plus-1.4.0-installer-win-x64.exe) - [v1.4.0 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.0/scrcpy-plus-1.4.0-portable-win-x64.zip)
-- Linux  [v1.3.1 Portable (113 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.3.1/scrcpy-plus-1.3.1-portable-linux-x64.zip)
-- MacOS (Now Compatible // Build Yourself)
+- Windows [v1.4.1 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-installer-win-x64.exe) - [v1.4.1 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-win-x64.zip)
+- Linux [v1.4.1 Portable (114 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip)
+- MacOS [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/README.md)
 
 ### Prerequisites
 - WINDOWS:       None; SCRCPY and ADB come packaged with the app in both the portable and installer versions.
