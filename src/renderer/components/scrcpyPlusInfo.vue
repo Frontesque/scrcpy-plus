@@ -5,7 +5,17 @@
         <h1>SCRCPY+ ({{ version }})</h1>
         <h4>SCRCPY ({{ scrcpyVersion }})</h4>
         <h4>ADB ({{ adbVersion }})</h4>
-        <v-btn style="margin-top: 1em;" rounded color="primary" to="/changelog">SCRCPY+ Changelog</v-btn>
+        <v-card-actions>
+          <v-btn rounded color="primary" to="/changelog">
+            <v-icon>mdi-script-text</v-icon>
+            SCRCPY+ Changelog
+          </v-btn>
+          <v-btn rounded to="/settings">
+            <v-icon>mdi-cog</v-icon>
+            Settings
+          </v-btn>
+          
+        </v-card-actions>
         </section>
 
         <!--   Error Dialog   -->

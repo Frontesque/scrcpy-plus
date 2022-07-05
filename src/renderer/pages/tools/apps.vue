@@ -26,7 +26,7 @@
                 
                 
                 <v-list-item-icon>
-                    <v-icon v-text="item.icon || 'mdi-package'" />
+                    <v-icon v-text="item.icon || 'mdi-package'" style="margin-right: 0;"/>
                 </v-list-item-icon>
                 <v-list-item-content>
                     <v-list-item-title>

@@ -28,24 +28,26 @@
         <!--   End Empty Notice   -->
 
         <!--   File Selector   -->
-        <v-list-item-group v-model="selected" color="primary" style="margin-top: 12em;">
-            <v-list-item v-for="(item, i) in files" :key="i">
-                
-                
-                <v-list-item-icon>
-                    <v-icon v-text="item.icon || 'mdi-package'" />
-                </v-list-item-icon>
-                <v-list-item-content>
-                    <v-list-item-title>
-                        {{ item.name }}
-                        <v-chip v-if="item.disabled" style="height: 1.75em;">Disabled</v-chip>
-                    </v-list-item-title>
-                </v-list-item-content>
+        <v-list nav>
+            <v-list-item-group v-model="selected" color="primary" style="margin-top: 12em;">
+                <v-list-item v-for="(item, i) in files" :key="i" nav>
+                    
+                    
+                    <v-list-item-icon>
+                        <v-icon v-text="item.icon || 'mdi-package'" />
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            {{ item.name }}
+                            <v-chip v-if="item.disabled" style="height: 1.75em;">Disabled</v-chip>
+                        </v-list-item-title>
+                    </v-list-item-content>
 
 
 
-            </v-list-item>
-        </v-list-item-group>
+                </v-list-item>
+            </v-list-item-group>
+        </v-list>
         <!--   End File Selector   -->
 
 

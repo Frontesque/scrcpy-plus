@@ -2,8 +2,8 @@ import BrowserWinHandler from './BrowserWinHandler'
 
 const winHandler = new BrowserWinHandler({
   height: 700,
-  width: 600,
-  minWidth: 300,
+  width: 720,
+  minWidth: 720,
   autoHideMenuBar: true,
   titleBarStyle: 'hidden',
   titleBarOverlay: {

@@ -1,25 +1,28 @@
 <template>
   <div>
 
-    <section>
+    <section style="margin-top: 0;">
       <h2>SCRCPY Settings</h2>
 
 
       <!--   Standard Actions   -->
       <v-list-item v-for="(item, i) in args" :key="i">
         <div style="display: flex;">
-          <v-checkbox v-model="selectedArgs" :value="item" />
+          
+          <v-checkbox
+            v-model="selectedArgs"
+            :value="item"
+            :label="item.arg.replace(/-/g,' ')"
+            persistent-hint
+            :hint="item.description"
+          />
 
-          <div style="display: block; transform: translateY(25%);">
-            <v-list-item-title v-text="item.arg.replace(/-/g,' ')" />
-            <p v-text="item.description" class="accent--text" />
-          </div>
         </div>
       </v-list-item>
       <!--   End Standard Actions   -->
 
       <!--   Advanced Actions Wrapper   -->
-      <v-expansion-panels>
+      <v-expansion-panels style="margin-top: 1em;">
         <v-expansion-panel class="rounded-xl" style="background-color: rgba(0,0,0, 0.25);">
           <v-expansion-panel-header>Advanced</v-expansion-panel-header>
           <v-expansion-panel-content>
@@ -37,12 +40,15 @@
             <!--   Advanced Actions   -->
             <v-list-item v-for="(item, i) in advArgs" :key="i">
               <div style="display: flex;">
-                <v-checkbox v-model="selectedArgs" :value="item" />
 
-                <div style="display: block; transform: translateY(25%);">
-                  <v-list-item-title v-text="item.arg.replace(/-/g,' ')" />
-                  <p v-text="item.description" class="accent--text" />
-                </div>
+                <v-checkbox
+                  v-model="selectedArgs"
+                  :value="item"
+                  :label="item.arg.replace(/-/g,' ')"
+                  persistent-hint
+                  :hint="item.description"
+                />
+
               </div>
             </v-list-item>
             <!--   End Advanced Actions   -->
@@ -95,7 +101,7 @@ export default {
 
         this.$execute(`scrcpy --bit-rate ${this.bitrate}M`+flags)
           .catch((err) => {
-            if (err.startsWith("INFO:")) return; // Catch information outputs
+            if (typeof err != "object" && err.startsWith("INFO:")) return; // Catch information outputs
             this.dialog = true;
             this.dialogText = err;
           })

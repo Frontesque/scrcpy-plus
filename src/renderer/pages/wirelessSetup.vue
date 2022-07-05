@@ -52,7 +52,7 @@
             <center>
                 <v-icon size="5em">mdi-cellphone-check</v-icon>
                 <h1>Success!</h1>
-                <v-progress-linear color="primary" indeterminate />
+                <v-progress-linear color="primary" indeterminate style="margin-top: 1em;" />
             </center>
         </section>
 

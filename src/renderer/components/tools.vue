@@ -1,11 +1,11 @@
 <template>
-    <section>
+    <section style="margin-right: 0.5em;">
         <h2>Tools <v-chip color="primary" style="margin-left: 0.5em; height: 2em;">Beta</v-chip></h2>
         <div class="accent--text">All tools are written by me for SCRCPY+. All bug reports should go through the GitHub!</div>
 
         <v-list-item v-for="(item, i) in cmds" :key="i">
             <v-btn rounded :to="item.to" :disabled="item.disabled">
-                <v-icon v-text="item.icon" style="margin-right: 0.5em;"/>
+                <v-icon v-text="item.icon"/>
                 {{ item.title }}
             </v-btn>
         </v-list-item>
@@ -32,10 +32,11 @@ export default {
                 {
                     title: "Resource Monitor",
                     icon: "mdi-chart-bell-curve",
-                    to: "/tools/resources"
+                    to: "/tools/resources",
+                    disabled: true,
                 },
                 {
-                    title: "Partition Dumper (Coming Soon)",
+                    title: "Partition Dumper",
                     icon: "mdi-zip-box",
                     to: "/tools/dump",
                     disabled: true

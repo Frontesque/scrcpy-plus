@@ -72,6 +72,7 @@ export default {
     methods: {
         async getProcesses() {
             const data = await this.$execute("adb shell top -n 1 -m 1");
+            console.log(data)
 
             this.userUsage = data.split("User ")[1].split("%")[0];
             this.userThreads = data.split("User ")[2].split(" ")[0];

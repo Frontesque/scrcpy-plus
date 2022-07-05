@@ -51,4 +51,8 @@ section {
   background: #999;
   border-radius: 3px;
 }
+
+.v-icon {
+  margin-right: 0.5em;
+}
 </style>

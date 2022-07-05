@@ -9,6 +9,23 @@
         </section>
 
         <section>
+            <h3>1.5.0</h3>
+            <ul>
+                <li>Slight UI Tweaks</li>
+                <li>Disable Resource Monitor tool since it only worked on older samsung devices</li>
+                <li>Move Tools and ADB Quick Commands next to eachother as per the request of reddit/u/aroonz</li>
+                <li>Fix errors not showing on some devices when starting SCRCPY</li>
+                <li>Change how SCRCPY flags are rendered for better performance and style</li>
+                <li>Change how the file manager renders list items</li>
+                <li>Change how icons are rendered</li>
+                <li>Add settings page</li>
+                <li>Add the ability do disable sections of the app in settings</li>
+                <li>Change default window bounds</li>
+                <li>Adjust bounding on wireless connecting success screen</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.4.1</h3>
             <ul>
                 <li>Minor language tweaks / better action description</li>
