@@ -9,6 +9,15 @@
         </section>
 
         <section>
+            <h3>1.5.1</h3>
+            <ul>
+                <li>Clean up some code</li>
+                <li>Improve app stability</li>
+                <li>Add "Restart App" button when app fails to start properly</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.5.0</h3>
             <ul>
                 <li>Slight UI Tweaks</li>

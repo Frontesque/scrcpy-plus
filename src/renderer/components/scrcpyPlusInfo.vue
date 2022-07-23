@@ -20,12 +20,14 @@
 
         <!--   Error Dialog   -->
         <v-dialog v-model="dialog" width="500" persistent>
-            <v-card>
-                <v-card-title class="text-h5 grey darken-3">Error Starting SCRCPY+</v-card-title>
-                <v-card-text v-text="error" style="margin-top: 2em;" />
-                <v-alert text type="error" style="margin: 0 2em 0 2em;">This error could be caused by {{ reason }} not being properly installed on your OS.</v-alert>
-                <br />
-            </v-card>
+          <v-card>
+            <v-card-title class="text-h5 grey darken-3">Error Starting SCRCPY+</v-card-title>
+            <v-card-text v-text="error" style="margin-top: 2em;" />
+            <v-alert text type="error" style="margin: 0 2em 1em 2em;">This error could be caused by {{ reason }} not being properly installed on your OS.</v-alert>
+            <v-card-actions>
+              <v-btn rounded style="width: 100%;" color="primary">Restart App</v-btn>
+            </v-card-actions>
+          </v-card>
         </v-dialog>
         <!--   End Error Dialog   -->
 

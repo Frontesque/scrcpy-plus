@@ -2,11 +2,11 @@
   <div style="scrollbar-width: thin;">
     <!--   Import Modules   -->
     <scrcpyPlusInfo />
-    <device :device.sync="deviceConnected" style="margin-bottom: 0;" v-show="settings.device == 'true' || !deviceConnected" />
+    <device :device.sync="deviceConnected" style="margin-bottom: 0;" v-show="settings.device || !deviceConnected" />
     
     <div style="display: flex; width: 100%;">
-      <tools v-if="deviceConnected && settings.tools == 'true'" />
-      <adb v-if="deviceConnected && settings.adb == 'true'" />
+      <tools v-if="deviceConnected && settings.tools" />
+      <adb v-if="deviceConnected && settings.adb" />
     </div>
 
     <scrcpy v-if="deviceConnected" />
@@ -30,9 +30,9 @@ export default {
 
   mounted() {
     this.settings = {
-      device: localStorage.getItem("deviceInformation") || true,
-      tools: localStorage.getItem("tools") || true,
-      adb: localStorage.getItem("adbQuickActions") || true,
+      device: ( localStorage.getItem("deviceInformation") == 'true' ) || true,
+      tools: ( localStorage.getItem("tools") == 'true' ) || true,
+      adb: ( localStorage.getItem("adbQuickActions") == 'true' ) || true,
     }
     console.log(this.settings)
   }
