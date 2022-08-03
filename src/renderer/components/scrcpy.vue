@@ -38,7 +38,7 @@
 
 
             <!--   Advanced Actions   -->
-            <v-list-item v-for="(item, i) in advArgs" :key="i">
+            <v-list-item v-for="(item, i) in advArgs" :key="i" style="padding: 0;">
               <div style="display: flex;">
 
                 <v-checkbox

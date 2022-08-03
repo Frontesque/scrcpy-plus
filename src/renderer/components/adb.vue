@@ -2,7 +2,7 @@
     <section>
         <h2>ADB Quick Actions</h2>
 
-        <v-list-item v-for="(item, i) in cmds" :key="i">
+        <v-list-item v-for="(item, i) in cmds" :key="i" style="padding: 0;">
             <v-btn rounded v-text="item.title" @click="run(item)" />
         </v-list-item>
         

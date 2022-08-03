@@ -12,9 +12,12 @@
     </center>
 
     <!--   Show Device Information   -->
-    <v-list-item v-for="(item, i) in deviceInfo" :key="i" v-show="device && !loading">
+    <v-list-item v-for="(item, i) in deviceInfo" :key="i" v-show="device && !loading" style="padding: 0;">
       <div>
-        <v-list-item-title v-text="item.title" />
+        <v-list-item-title>
+          <v-icon v-text="item.icon" style="margin-right: 0;" small />
+          {{item.title}}
+        </v-list-item-title>
         <p v-text="item.data" class="accent--text" />
       </div>
     </v-list-item>
@@ -38,32 +41,32 @@
 
         deviceInfo: [{
             title: "Model",
+            icon: "mdi-devices",
             command: "adb shell getprop ro.product.model",
             data: null,
           },
           {
             title: "Device Codename",
+            icon: "mdi-cellphone-key",
             command: "adb shell getprop ro.product.device",
             data: null,
           },
           {
             title: "Android Version",
+            icon: "mdi-android",
             command: "adb shell getprop ro.build.version.release",
             data: null,
           },
           {
-            title: "Build",
+            title: "Build Number",
+            icon: "mdi-wrench",
             command: "adb shell getprop ro.build.id",
             data: null,
           },
           {
             title: "SDK Version",
+            icon: "mdi-android-studio",
             command: "adb shell getprop ro.build.version.sdk",
-            data: null,
-          },
-          {
-            title: "Fingerprint",
-            command: "adb shell getprop ro.build.fingerprint",
             data: null,
           }
         ]

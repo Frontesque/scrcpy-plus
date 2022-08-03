@@ -10,10 +10,6 @@
             <v-icon>mdi-script-text</v-icon>
             SCRCPY+ Changelog
           </v-btn>
-          <v-btn rounded to="/settings">
-            <v-icon>mdi-cog</v-icon>
-            Settings
-          </v-btn>
           
         </v-card-actions>
         </section>

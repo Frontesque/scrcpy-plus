@@ -14,6 +14,11 @@
                 <li>Clean up some code</li>
                 <li>Improve app stability</li>
                 <li>Add "Restart App" button when app fails to start properly</li>
+                <li>Remove app settings (sorry for feature loss, i hate to do that but the code was so annoying to maintain for something useless imho)</li>
+                <li>Remove fingerprint from "Device" information section</li>
+                <li>Add icons to "Device" information section</li>
+                <li>Improve rendering of "Device", "SCRCPY Settings", "Tools" and "ADB Quick Actions" sections</li>
+                <li>Change "Build" to "Build Number" under the "Device" section</li>
             </ul>
         </section>
 
