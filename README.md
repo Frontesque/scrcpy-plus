@@ -12,7 +12,7 @@
 - 💾 **Partition Dumper**       • *Coming Soon*
 
 ### Download
-- Windows [v1.5.0 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.5.0/scrcpy-plus-1.5.0-installer-win-x64.exe) - [v1.5.0 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.5.0/scrcpy-plus-1.5.0-portable-win-x64.zip)
+- Windows [v1.5.1 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.5.1/scrcpy-plus-1.5.1-installer-win-x64.exe) - [v1.5.1 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.5.1/scrcpy-plus-1.5.1-portable-win-x64.zip)
 - Linux [v1.4.1 Portable (114 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip)
 - MacOS [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)
 
