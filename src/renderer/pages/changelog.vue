@@ -9,6 +9,19 @@
         </section>
 
         <section>
+            <h3>1.5.2</h3>
+            <ul>
+                <li>Upgrade Dependencies:</li>
+                <span style="white-space: pre-line; color: #999;">
+                    @nuxtjs/vuetify    ^1.12.1  →  ^1.12.3
+                    electron           ^19.0.7  →  ^20.1.0
+                    electron-builder  ^22.14.5  →  ^23.3.3
+                    vuetify            ^2.5.10  →   ^2.6.9
+                </span>
+            </ul>
+        </section>
+
+        <section>
             <h3>1.5.1</h3>
             <ul>
                 <li>Clean up some code</li>
@@ -18,7 +31,7 @@
                 <li>Remove fingerprint from "Device" information section</li>
                 <li>Add icons to "Device" information section</li>
                 <li>Improve rendering of "Device", "SCRCPY Settings", "Tools" and "ADB Quick Actions" sections</li>
-                <li>Change "Build" to "Build Number" under the "Device" section</li>
+                <li>Change "Build" to "Build Number" under the "Device"</li>
             </ul>
         </section>
 

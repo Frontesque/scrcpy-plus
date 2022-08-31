@@ -1,6 +1,6 @@
 {
   "name": "scrcpy-plus",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A GUI for scrcpy",
   "main": "./dist/main/index.js",
   "scripts": {
@@ -20,19 +20,19 @@
     "@types/node": "14.14.9"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.1",
+    "@nuxtjs/vuetify": "^1.12.3",
     "@xpda-dev/core": "^0.1.6",
     "@xpda-dev/electron-builder": "^0.2.1",
     "@xpda-dev/electron-launcher": "^0.3.0",
     "@xpda-dev/webpack-step": "^0.1.6",
     "cross-env": "^7.0.3",
     "deepmerge": "^4.2.2",
-    "electron": "^19.0.7",
-    "electron-builder": "^22.14.5",
+    "electron": "^20.1.0",
+    "electron-builder": "^23.3.3",
     "electron-devtools-installer": "^3.2.0",
     "nuxt": "^2.15.8",
     "roboto-fontface": "^0.10.0",
-    "vuetify": "^2.5.10",
+    "vuetify": "^2.6.9",
     "webpack": "^4.46.0",
     "webpack-node-externals": "^3.0.0"
   },
