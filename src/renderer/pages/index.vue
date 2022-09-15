@@ -1,6 +1,7 @@
 <template>
   <div style="scrollbar-width: thin;">
     <!--   Import Modules   -->
+    <updateNotice />
     <scrcpyPlusInfo />
     <device :device.sync="deviceConnected" style="margin-bottom: 0;" />
     
@@ -10,8 +11,6 @@
     </div>
 
     <scrcpy v-if="deviceConnected" />
-
-    <updateNotice />
     <!--   End Import Modules   -->
   </div>
 </template>

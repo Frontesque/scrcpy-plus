@@ -37,8 +37,8 @@ export default {
   data() {
     return {
       version: env.version,
-      scrcpyVersion: new String(),
-      adbVersion: new String(),
+      scrcpyVersion: localStorage.getItem("scrcpyVersion"),
+      adbVersion: localStorage.getItem("adbVersion"),
 
       dialog: false,
       error: new String(),
@@ -48,13 +48,17 @@ export default {
   async mounted() {
     await this.$execute("adb --version")
     .then(data => {
-        this.adbVersion = data.split('\n')[1].split(" ")[1].trim();
+      const version = data.split('\n')[1].split(" ")[1].trim();
+      this.adbVersion = version;
+      localStorage.setItem("adbVersion", version);
     })
     .catch(err => this.errHandler(err));
 
     await this.$execute("scrcpy --version")
     .then(data => {
-        this.scrcpyVersion = data.split('\n')[0].split(" ")[1].trim();
+      const version = data.split('\n')[0].split(" ")[1].trim();
+      this.scrcpyVersion = version;
+      localStorage.setItem("scrcpyVersion", version);
     })
     .catch(err => this.errHandler(err));
   },

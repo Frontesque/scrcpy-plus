@@ -8,14 +8,14 @@
       <h1>No Device Found</h1>
       <p class="accent--text">You may need to plug in your device or enable 'USB Debugging'</p>
       <p>or</p>
-      <v-btn rounded color="primary" @click="$router.push('/wirelessSetup')">Connect Wirelessly</v-btn>
+      <v-btn rounded color="primary" @click="$router.push('/wirelessSetup')"><v-icon>mdi-link-variant</v-icon>Connect Wirelessly</v-btn>
     </center>
 
     <!--   Show Device Information   -->
     <v-list-item v-for="(item, i) in deviceInfo" :key="i" v-show="device && !loading" style="padding: 0;">
       <div>
         <v-list-item-title>
-          <v-icon v-text="item.icon" style="margin-right: 0;" small />
+          <v-icon v-text="item.icon" style="margin-right: 0; transform: translateY(-10%)" small />
           {{item.title}}
         </v-list-item-title>
         <p v-text="item.data" class="accent--text" />

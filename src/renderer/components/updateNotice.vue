@@ -1,22 +1,19 @@
 <template>
-    <v-dialog v-model="updateAvailable" width="500">
-        <v-card>
-            <v-card-title class="text-h5 grey darken-3">Update Available</v-card-title>
-            <v-card-text style="margin-top: 2em;">A new version of SCRCPY+ is ready to be downloaded at your next convenience!</v-card-text>
-            <v-card-text>
-                <center>
-                    <span>{{ currentVersion }}</span>
-                    <v-icon>mdi-arrow-right</v-icon>
-                    <span>{{ latestVersion }}</span>
-                </center>
-            </v-card-text>
-            <v-card-actions>
+    <div>
+        <v-alert text color="primary" v-model="updateAvailable" style="margin: 2em; border-radius: 1em;">
+            <h3>Update Available</h3>
+            <div style="color: #999;">A new version of SCRCPY+ is ready to be downloaded</div>
+            <div>
+                <span>{{ currentVersion }}</span>
+                <v-icon style="margin-right: 0; transform: translateY(-10%);" color="primary">mdi-arrow-right</v-icon>
+                <span>{{ latestVersion }}</span>
+            </div>
+            <div style="display: flex;">
                 <v-spacer />
-                <v-btn text @click="updateAvailable = false">Later</v-btn>
-                <v-btn text color="primary" @click="open">Download</v-btn>
-            </v-card-actions>
-        </v-card>
-    </v-dialog>
+                <v-btn rounded color="primary" @click="open"><v-icon>mdi-download</v-icon>Download</v-btn>
+            </div>
+        </v-alert>
+    </div>
 </template>
 
 <script>
