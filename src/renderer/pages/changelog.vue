@@ -11,9 +11,10 @@
         <section>
             <h3>1.6.0</h3>
             <ul>
-                <li>Rewrite update notification modal to banner</li>
+                <li>Rewrite update notice modal to banner</li>
                 <li>Add more icons to buttons</li>
                 <li>Cache SCRCPY and ADB versions so the homepage loads faster</li>
+                <li>Rewrite start error notice modal to banner</li>
             </ul>
         </section>
 
