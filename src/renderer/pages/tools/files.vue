@@ -7,7 +7,7 @@
                 <back />
                 File Manager
             </v-card-title>
-            <v-text-field v-model="path" label="Path" outlined style="margin: 0 1em -1.5em 1em" disabled />
+            <v-text-field outlined rounded v-model="path" label="Path" style="margin: 0 1em -1.5em 1em" disabled />
             <v-card-actions>
                 <div v-for="(item, i) in actions" :key="i" style="margin-right: 0.5em;">
                     <v-btn rounded :color="item.color" @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
@@ -28,9 +28,9 @@
         <!--   End Empty Notice   -->
 
         <!--   File Selector   -->
-        <v-list nav>
+        <v-list> <!--   nav rounded   -->
             <v-list-item-group v-model="selected" color="primary" style="margin-top: 12em;">
-                <v-list-item v-for="(item, i) in files" :key="i" nav>
+                <v-list-item v-for="(item, i) in files" :key="i">
                     
                     
                     <v-list-item-icon>

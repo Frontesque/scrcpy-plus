@@ -15,6 +15,7 @@
                 <li>Add more icons to buttons</li>
                 <li>Cache SCRCPY and ADB versions so the homepage loads faster</li>
                 <li>Rewrite start error notice modal to banner</li>
+                <li>Improve the UI for the file manager</li>
             </ul>
         </section>
 
