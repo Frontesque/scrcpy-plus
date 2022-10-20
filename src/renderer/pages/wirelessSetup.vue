@@ -3,7 +3,7 @@
         <section>
             <v-card-title><back />Wireless Connection Setup</v-card-title>
             <div class="accent--text">Android 11+ is required for a wireless connection to be established.</div>
-            <a @click="$utils.openInternal('https://developer.android.com/studio/command-line/adb')">View More Information on Pairing Here</a>
+            <a @click="$utils.openInternal('https://developer.android.com/studio/command-line/adb')">More information on pairing</a>
         </section>
 
         <section v-if="step == 0">
