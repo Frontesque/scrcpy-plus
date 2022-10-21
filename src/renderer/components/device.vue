@@ -4,7 +4,7 @@
 
     <!--   No Device Notice   -->
     <center v-show="!device">
-      <v-icon size="50px">mdi-devices</v-icon>
+      <v-icon size="50px" style="margin: 0;">mdi-devices</v-icon>
       <h1>No Device Found</h1>
       <p class="accent--text">You may need to plug in your device or enable 'USB Debugging'</p>
       <p>or</p>

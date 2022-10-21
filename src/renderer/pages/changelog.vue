@@ -9,7 +9,7 @@
         </section>
 
         <section>
-            <h3>1.6.0</h3>
+            <h3>2.0.0</h3>
             <ul>
                 <li>Rewrite update notice modal to banner</li>
                 <li>Add more icons to buttons</li>
