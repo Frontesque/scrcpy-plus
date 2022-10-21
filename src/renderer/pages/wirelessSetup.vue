@@ -24,7 +24,7 @@
             <v-card-actions>
                 <v-spacer />
                 <v-btn rounded :disabled="pairingLoading" @click="step++">Skip</v-btn>
-                <v-btn rounded :loading="pairingLoading" color="primary" @click="pair">Connect</v-btn>
+                <v-btn rounded :loading="pairingLoading" class="primaryButton" @click="pair">Connect</v-btn>
             </v-card-actions>
         </section>
 
@@ -44,7 +44,7 @@
             <v-card-actions>
                 <v-spacer />
                 <v-btn rounded :disabled="connectingLoading" @click="step--">Back</v-btn>
-                <v-btn rounded :loading="connectingLoading" color="primary" @click="connect">Connect</v-btn>
+                <v-btn rounded :loading="connectingLoading" class="primaryButton" @click="connect">Connect</v-btn>
             </v-card-actions>
         </section>
 

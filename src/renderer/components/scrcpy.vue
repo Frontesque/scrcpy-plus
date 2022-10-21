@@ -61,7 +61,7 @@
 
       <v-card-actions style="margin-top: 1em;">
         <v-spacer />
-        <v-btn @click="scrcpy()" rounded color="primary" :disabled="loading" :loading="loading">Start SCRCPY</v-btn>
+        <v-btn @click="scrcpy()" rounded class="primaryButton" :disabled="loading" :loading="loading">Start SCRCPY</v-btn>
       </v-card-actions>
     </section>
 
@@ -76,7 +76,7 @@
         <v-divider />
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" text @click="dialog = false">Close</v-btn>
+          <v-btn class="primaryButton" text @click="dialog = false">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

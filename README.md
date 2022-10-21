@@ -8,7 +8,6 @@
 - 📶 **Wireless Connectivity**  • *Connect to a Device on your WiFi Network*
 - 📦 **Easily Manage Packages** • *Remove System Bloat Without Root*
 - 📂 **File Manager**           • *Download & Delete Files*
-- 📈 **Resource Monitor**       • *View Device CPU Usage*
 - 💾 **Partition Dumper**       • *Coming Soon*
 
 ### Download

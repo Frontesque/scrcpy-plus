@@ -9,7 +9,7 @@
         </div>
         <div style="display: flex;">
             <v-spacer />
-            <v-btn rounded color="primary" @click="open"><v-icon>mdi-download</v-icon>Download</v-btn>
+            <v-btn rounded class="primaryButton" @click="open"><v-icon>mdi-download</v-icon>Download</v-btn>
         </div>
     </v-alert>
 </template>

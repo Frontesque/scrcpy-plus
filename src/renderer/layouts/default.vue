@@ -55,4 +55,13 @@ section {
 .v-icon {
   margin-right: 0.5em;
 }
+
+.v-btn {
+  box-shadow: none !important;
+  background: none !important;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+.primaryButton {
+  border: 2px solid #8867c0;
+}
 </style>

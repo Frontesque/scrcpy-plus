@@ -8,7 +8,7 @@
       <h1>No Device Found</h1>
       <p class="accent--text">You may need to plug in your device or enable 'USB Debugging'</p>
       <p>or</p>
-      <v-btn rounded color="primary" @click="$router.push('/wirelessSetup')"><v-icon>mdi-link-variant</v-icon>Connect Wirelessly</v-btn>
+      <v-btn rounded class="primaryButton" @click="$router.push('/wirelessSetup')"><v-icon>mdi-link-variant</v-icon>Connect Wirelessly</v-btn>
     </center>
 
     <!--   Show Device Information   -->

@@ -16,6 +16,9 @@
                 <li>Cache SCRCPY and ADB versions so the homepage loads faster</li>
                 <li>Rewrite start error notice modal to banner</li>
                 <li>Improve the UI for the file manager</li>
+                <li>Remove "Resource Monitor" from tools</li>
+                <li>Restyle all buttons</li>
+                <li>Various UI tweaks</li>
             </ul>
         </section>
 

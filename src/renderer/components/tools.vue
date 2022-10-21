@@ -30,12 +30,6 @@ export default {
                     to: "/tools/files"
                 },
                 {
-                    title: "Resource Monitor",
-                    icon: "mdi-chart-bell-curve",
-                    to: "/tools/resources",
-                    disabled: true,
-                },
-                {
                     title: "Partition Dumper",
                     icon: "mdi-zip-box",
                     to: "/tools/dump",
