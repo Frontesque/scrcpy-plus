@@ -1,5 +1,5 @@
 <template>
-    <v-alert text color="primary" v-model="updateAvailable" style="margin: 2em; border-radius: 1em;">
+    <v-alert text color="primary" v-model="updateAvailable" style="margin: 2em; border-radius: 1.5em;">
         <h3>Update Available</h3>
         <div style="color: #999;">A new version of SCRCPY+ is ready to be downloaded</div>
         <div>

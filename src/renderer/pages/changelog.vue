@@ -19,6 +19,7 @@
                 <li>Remove "Resource Monitor" from tools</li>
                 <li>Restyle all buttons</li>
                 <li>Various UI tweaks</li>
+                <li>Program now knows when SCRCPY is running</li>
             </ul>
         </section>
 

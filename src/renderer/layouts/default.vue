@@ -42,7 +42,7 @@ html, body, .v-application, .v-application--wrap {
 
 section {
   border: 2px solid #38373A;
-  border-radius: 1em;
+  border-radius: 1.5em;
   margin: 2em;
   padding: 1em;
 }

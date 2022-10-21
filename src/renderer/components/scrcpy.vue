@@ -1,7 +1,12 @@
 <template>
   <div>
 
-    <section style="margin-top: 0;">
+    <section style="margin-top: 0;" v-if="running">
+      <h2>SCRCPY Settings</h2>
+      <center>SCRCPY is currently running</center>
+    </section>
+
+    <section style="margin-top: 0;" v-if="!running">
       <h2>SCRCPY Settings</h2>
 
 
@@ -105,8 +110,14 @@ export default {
             this.dialog = true;
             this.dialogText = err;
           })
+          .then(e => {
+            this.running = false;
+          });
 
-        setTimeout(() => { this.loading = false; }, 2000) // Enable 'Start' Button
+          setTimeout(() => {
+            this.loading = false;
+            this.running = true;
+          }, 1000);
         
     }
 
@@ -115,6 +126,7 @@ export default {
   data() {
     return {
       loading: false,
+      running: false,
 
       dialog: false,
       dialogText: null,
