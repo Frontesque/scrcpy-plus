@@ -20,19 +20,14 @@
                 <li>Restyle all buttons</li>
                 <li>Various UI tweaks</li>
                 <li>Program now knows when SCRCPY is running</li>
+                <li>Upgrade Dependencies</li>
             </ul>
         </section>
 
         <section>
             <h3>1.5.2</h3>
             <ul>
-                <li>Upgrade Dependencies:</li>
-                <span style="white-space: pre-line; color: #999;">
-                    @nuxtjs/vuetify    ^1.12.1  →  ^1.12.3
-                    electron           ^19.0.7  →  ^20.1.0
-                    electron-builder  ^22.14.5  →  ^23.3.3
-                    vuetify            ^2.5.10  →   ^2.6.9
-                </span>
+                <li>Upgrade Dependencies</li>
             </ul>
         </section>
 
