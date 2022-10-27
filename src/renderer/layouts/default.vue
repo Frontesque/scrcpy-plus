@@ -1,22 +1,24 @@
 <template>
   <div>
-    <p class="titleBar"><img src="~/assets/icon.png" style="height: 17px; transform: translatey(2px)" /> SCRCPY+</p>
+
+
+    <div class="titleBar">
+
+      <div :class="os == 'darwin' ? 'centerTitleBar' : ''">
+        <img src="~/assets/icon.png" class="titleBarImage" />
+        <span>SCRCPY+</span>
+      </div>
+    
+    </div>
+
+
     <v-app dark>
       <nuxt />
     </v-app>
   </div>
 </template>
 
-<style>
-/* :root { color-scheme: dark; } */ /* Basic Dark Theme */
-body::-webkit-scrollbar {
-  width: 0.25em;
-}
-body::-webkit-scrollbar-thumb {
-  background-color: #8867c0;
-  border-radius: 1em;
-  -webkit-app-region: drag;
-}
+<style scoped>
 .titleBar {
   -webkit-app-region: drag;
   color: white;
@@ -30,8 +32,27 @@ body::-webkit-scrollbar-thumb {
   text-overflow: clip;
   user-select: none;
 }
+.centerTitleBar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.titleBarImage {
+  height: 17px;
+  transform: translateY(2px);
+}
+</style>
 
-
+<style>
+/* :root { color-scheme: dark; } */ /* Basic Dark Theme */
+body::-webkit-scrollbar {
+  width: 0.25em;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #8867c0;
+  border-radius: 1em;
+  -webkit-app-region: drag;
+}
 p {
   word-break: break-word;
 }
@@ -65,3 +86,18 @@ section {
   border: 2px solid #8867c0;
 }
 </style>
+
+<script>
+const os = require("os");
+
+export default {
+  data() {
+    return {
+      os: null,
+    }
+  },
+  created() {
+    this.os = os.platform(); // 'win32' 'darwin' 'linux'
+  }
+}
+</script>

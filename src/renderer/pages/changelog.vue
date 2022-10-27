@@ -21,6 +21,9 @@
                 <li>Various UI tweaks</li>
                 <li>Program now knows when SCRCPY is running</li>
                 <li>Upgrade Dependencies</li>
+                <li>Add settings menu back</li>
+                <li>Fix MacOS window options displaying over title bar</li>
+                <li>Rework "Device" section</li>
             </ul>
         </section>
 

@@ -18,7 +18,7 @@
           <v-icon v-text="item.icon" style="margin-right: 0; transform: translateY(-10%)" small />
           {{item.title}}
         </v-list-item-title>
-        <p v-text="item.data" class="accent--text" />
+        <p class="accent--text">{{item.data}} <span v-if="item.subCommand">({{ item.subDataPrepend }}{{ item.subData }})</span></p>
       </div>
     </v-list-item>
 
@@ -44,31 +44,30 @@
             icon: "mdi-devices",
             command: "adb shell getprop ro.product.model",
             data: null,
-          },
-          {
-            title: "Device Codename",
-            icon: "mdi-cellphone-key",
-            command: "adb shell getprop ro.product.device",
-            data: null,
+            subCommand: "adb shell getprop ro.product.device",
+            subData: null,
           },
           {
             title: "Android Version",
             icon: "mdi-android",
             command: "adb shell getprop ro.build.version.release",
             data: null,
+            subCommand: "adb shell getprop ro.build.version.sdk",
+            subData: null,
+            subDataPrepend: "API "
           },
           {
-            title: "Build Number",
+            title: "System Build Number",
             icon: "mdi-wrench",
             command: "adb shell getprop ro.build.id",
             data: null,
           },
           {
-            title: "SDK Version",
-            icon: "mdi-android-studio",
-            command: "adb shell getprop ro.build.version.sdk",
+            title: "Security Patch",
+            icon: "mdi-security",
+            command: "adb shell getprop ro.build.version.security_patch",
             data: null,
-          }
+          },
         ]
       }
     },
@@ -78,7 +77,10 @@
         this.loading = true;
         for (const i in this.deviceInfo) {
           const data = await this.$execute(this.deviceInfo[i].command);
-          this.deviceInfo[i].data = data;
+          this.deviceInfo[i].data = data.trim();
+          if (!this.deviceInfo[i].subCommand) continue;
+          const subData = await this.$execute(this.deviceInfo[i].subCommand);
+          this.deviceInfo[i].subData = subData.trim();
         }
         this.loading = false;
       },
