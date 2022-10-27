@@ -5,11 +5,7 @@
     <scrcpyPlusInfo />
     <device :device.sync="deviceConnected" style="margin-bottom: 0;" />
     
-    <div style="display: flex; width: 100%;" v-if="deviceConnected">
-      <tools />
-      <adb />
-    </div>
-
+    <tools v-if="deviceConnected" />
     <scrcpy v-if="deviceConnected" />
     <!--   End Import Modules   -->
   </div>

@@ -14,7 +14,7 @@
                 
                 <v-tooltip top v-if="item.tooltip" style="padding: 0;">
                     <template v-slot:activator="{ on, attrs }">
-                        <v-icon v-bind="attrs" v-on="on" color="#999" small style="margin-left: 0.25em;">mdi-help-circle-outline</v-icon>
+                        <v-icon v-bind="attrs" v-on="on" color="#999" small style="margin-left: 0.25em; height: 2em;">mdi-help-circle-outline</v-icon>
                     </template>
                     <span>{{ item.tooltip }}</span>
                 </v-tooltip>

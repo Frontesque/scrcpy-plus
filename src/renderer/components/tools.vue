@@ -1,5 +1,5 @@
 <template>
-    <section style="margin-right: 0.5em;">
+    <section>
         <h2>Tools <v-chip color="primary" style="margin-left: 0.5em; height: 2em;">Beta</v-chip></h2>
         <div class="accent--text">All tools are written by me for SCRCPY+. All bug reports should go through the GitHub!</div>
 

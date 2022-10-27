@@ -24,6 +24,7 @@
                 <li>Add settings menu back</li>
                 <li>Fix MacOS window options displaying over title bar</li>
                 <li>Rework "Device" section</li>
+                <li>Remove "ADB Quick Actions" section</li>
             </ul>
         </section>
 
