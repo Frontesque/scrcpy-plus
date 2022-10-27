@@ -14,6 +14,8 @@ module.exports = {
     devicePollRate: 1250,
   },
   components: true,
+  plugins: ['~/plugins/execute.js','~/plugins/utils.js','~/plugins/fileManager.js', '~/plugins/mirror.js'],
+
 
   ssr: false,
   target: 'static',
@@ -22,7 +24,6 @@ module.exports = {
     meta: [{ charset: "utf-8" }]
   },
   loading: false,
-  plugins: ['~/plugins/execute.js','~/plugins/utils.js','~/plugins/fileManager.js'],
   buildModules: [],
   modules: [
     '@nuxtjs/vuetify',
