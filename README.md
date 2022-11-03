@@ -19,6 +19,11 @@
 - WINDOWS:       None; SCRCPY and ADB come packaged with the app in both the portable and installer versions.
 - LINUX & Mac:   Both SCRCPY & ADB need to be installed to your computer per [your distro's instructions](https://github.com/Genymobile/scrcpy#linux).
 
+On macOS, you need to sync the dock path to the system path. You can do this by running the following command in your terminal:
+```bash
+launchctl setenv PATH $PATH
+```
+
 ### SCRCPY
 You can view the project that this is based off of here:
 https://github.com/Genymobile/scrcpy
