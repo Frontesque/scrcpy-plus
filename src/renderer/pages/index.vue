@@ -6,7 +6,8 @@
     <device :device.sync="deviceConnected" style="margin-bottom: 0;" />
     
     <tools v-if="deviceConnected" />
-    <scrcpy v-if="deviceConnected" />
+    <scrcpy v-if="deviceConnected && !mirrorEngine" />
+    <mirror v-if="deviceConnected && mirrorEngine" />
     <!--   End Import Modules   -->
   </div>
 </template>
@@ -20,6 +21,8 @@ export default {
       deviceConnected: false,
     }
   },
-
+  computed: {
+    mirrorEngine: vm => localStorage.getItem("set-mirror") == 'true' ? true : false
+  }
 }
 </script>
