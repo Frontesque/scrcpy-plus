@@ -37,12 +37,13 @@ export default {
     },
 
     mounted() {
+        const vm = this;
         for (let key of Object.keys(localStorage)) { 
             if(!key.startsWith("set-")) continue;
             for (const i in this.settings) {
                 if (key == this.settings[i].key) {
-                    this.settings[i].data = Boolean(localStorage.getItem(key));
-                    console.log(this.settings[i])
+                    vm.settings[i].data = (localStorage.getItem(key) == 'true' ? true : false);
+                    console.log(vm.settings[i])
                 }
             }
         };
