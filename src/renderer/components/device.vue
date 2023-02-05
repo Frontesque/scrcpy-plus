@@ -88,8 +88,8 @@
       checkDevice() {
         this.$execute("adb devices -l")
           .then((data) => {
-            if (data.includes("device product:")) { // Device Detected
-              if (data.includes("device product:") != this.device) {
+            if (data.includes("product:")) { // Device Detected
+              if (data.includes("product:") != this.device) {
                 this.refreshList();
               }
               this.device = true;
