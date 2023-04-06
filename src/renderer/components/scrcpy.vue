@@ -35,7 +35,7 @@
 
 
             <!--   Sliders   -->
-            <div>Bitrate {{ bitrate }}M</div>
+            <div>Video Bitrate {{ bitrate }}M</div>
             <v-slider v-model="bitrate" max="64" min="1" hint="A higher bitrate creates a clearer image but may increase lag"      dense persistent-hint />
             <!--   End Sliders   -->
 
@@ -81,7 +81,7 @@
         <v-divider />
         <v-card-actions>
           <v-spacer />
-          <v-btn class="primaryButton" text @click="dialog = false">Close</v-btn>
+          <v-btn rounded class="primaryButton" text @click="dialog = false">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -104,9 +104,11 @@ export default {
         }
         //console.log("scrcpy"+flags);
 
-        this.$execute(`scrcpy --bit-rate ${this.bitrate}M`+flags)
-          .catch((err) => {
-            if (typeof err != "object" && err.startsWith("INFO:")) return; // Catch information outputs
+        this.$execute(`scrcpy --video-bit-rate ${this.bitrate}M`+flags)
+          .catch(err => {
+            //if (typeof err != "object" && err.startsWith("INFO:")) return; // Catch information outputs
+            if (err.startsWith("WARN:")) return; // Catch default close
+            console.log(err)
             this.dialog = true;
             this.dialogText = err;
           })

@@ -25,6 +25,8 @@
                 <li>Fix MacOS window options displaying over title bar</li>
                 <li>Rework "Device" section</li>
                 <li>Remove "ADB Quick Actions" section</li>
+                <li>Port to SCRCPY v2</li>
+                <li>Due to SCRCPY v2, audio is now supported</li>
             </ul>
         </section>
 
