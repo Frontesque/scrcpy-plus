@@ -11,7 +11,7 @@
 - 💾 **Partition Dumper**       • *Coming Soon*
 
 ### Download
-- Windows [v1.5.2 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.5.2/scrcpy-plus-1.5.2-installer-win-x64.exe) - [v1.5.2 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.5.2/scrcpy-plus-1.5.2-portable-win-x64.zip)
+- Windows [v2.0.0 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.0/scrcpy-plus-2.0.0-win-x64-installer.exe) - [v2.0.0 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.0/scrcpy-plus-2.0.0-win-x64-portable.zip)
 - Linux [v1.4.1 Portable (114 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip)
 - MacOS [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)
 
@@ -31,9 +31,9 @@ https://github.com/Genymobile/scrcpy
 Thanks a ton Genymobile!
 
 ### Screenshots
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/EwCFwM4n.gif" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/pSYUw8an.gif" height="400" />
 
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/h9SaT1Vv.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/UN8KRbIc.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/nR9bPpdW.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/FpD7bxKj.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/C9mnAlgf.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/3bJk1qIF.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/10aSqcoY.png" height="400" />
+<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/jPR5i1bQ.png" height="400" />
