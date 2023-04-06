@@ -10,7 +10,7 @@
             <v-text-field outlined rounded v-model="path" label="Path" style="margin: 0 1em -1.5em 1em" disabled />
             <v-card-actions>
                 <div v-for="(item, i) in actions" :key="i" style="margin-right: 0.5em;">
-                    <v-btn rounded :color="item.color" @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
+                    <v-btn :style="selected ? `border: 2px solid ${item.color};` : ''" rounded @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
                 </div>
             </v-card-actions>
             
@@ -83,7 +83,6 @@ export default {
                 {
                     name: "Back",
                     icon: "mdi-arrow-up",
-                    color: "primary",
                     action: this.back,
                     requireSelected: false,
                 },

@@ -9,7 +9,7 @@
             </v-card-title>
             <v-card-actions>
                 <div v-for="(item, i) in actions" :key="i" style="margin-right: 0.5em;">
-                    <v-btn rounded :color="item.color" @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
+                    <v-btn :style="selected ? `border: 2px solid ${item.color};` : ''" rounded @click="item.action()" :disabled="selected == null && item.requireSelected != false"><v-icon v-text="item.icon" style="margin-right: 0.5em;" />{{ item.name }}</v-btn>
                 </div>
             </v-card-actions>
             <v-checkbox v-model="showSystem" label="Show System Apps" style="margin-left: 1em;" />
@@ -91,13 +91,13 @@ export default {
                 {
                     name: "Enable",
                     icon: "mdi-plus",
-                    color: "primary",
+                    color: "green",
                     action: this.enable,
                 },
                 {
                     name: "Disable",
                     icon: "mdi-minus",
-                    color: "primary",
+                    color: "yellow",
                     action: this.disable,
                 },
                 {

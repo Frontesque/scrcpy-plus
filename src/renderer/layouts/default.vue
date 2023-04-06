@@ -45,6 +45,11 @@
 
 <style>
 /* :root { color-scheme: dark; } */ /* Basic Dark Theme */
+
+:root {
+  --primary: #8867c0;
+}
+
 body::-webkit-scrollbar {
   width: 0.25em;
 }
@@ -83,7 +88,7 @@ section {
   border: 2px solid rgba(255,255,255,0.1);
 }
 .primaryButton {
-  border: 2px solid #8867c0;
+  border: 2px solid var(--primary);
 }
 </style>
 
