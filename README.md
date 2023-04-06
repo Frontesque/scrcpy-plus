@@ -2,6 +2,8 @@
 
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
+## THANKS FOR 20K DOWNLOADS
+
 ### Features
 - 🚩 **Supports Most SCRCPY Flags**
 - 📱 **Device Information**     • *Get Model Information About the Active Device*
@@ -11,8 +13,8 @@
 - 💾 **Partition Dumper**       • *Coming Soon*
 
 ### Download
-- Windows [v2.0.0 Installer (85 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.0/scrcpy-plus-2.0.0-win-x64-installer.exe) - [v2.0.0 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.0/scrcpy-plus-2.0.0-win-x64-portable.zip)
-- Linux [v1.4.1 Portable (114 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip)
+- Windows [v2.0.0 Installer (90 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.0/scrcpy-plus-2.0.0-win-x64-installer.exe) - [v2.0.0 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.0/scrcpy-plus-2.0.0-win-x64-portable.zip)
+- Linux [v1.4.1 Portable (127 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip)
 - MacOS [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)
 
 ### Prerequisites
