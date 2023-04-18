@@ -27,7 +27,7 @@
     "@xpda-dev/webpack-step": "^0.1.6",
     "cross-env": "^7.0.3",
     "deepmerge": "^4.2.2",
-    "electron": "^20.3.3",
+    "electron": "^24.1.2",
     "electron-builder": "^23.6.0",
     "electron-devtools-installer": "^3.2.0",
     "nuxt": "^2.15.8",
