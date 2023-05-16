@@ -23,7 +23,9 @@
 
 #### Download via winget:
 
-```ps
+NOTE: This is a community-provided method. Please do not report any issues you face, from using this method.
+
+```bash
 winget install Front.scrcpy+
 ```
 
