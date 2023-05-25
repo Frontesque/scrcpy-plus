@@ -10,7 +10,7 @@
     "postinstall": "electron-builder install-app-deps "
   },
   "keywords": [],
-  "author": "Front <27463495+Frontesque@users.noreply.github.com>",
+  "author": "Frontesque <27463495+Frontesque@users.noreply.github.com>",
   "license": "MIT",
   "homepage": "https://github.com/michalzaq12/electron-nuxt/blob/master/README.md",
   "engines": {
