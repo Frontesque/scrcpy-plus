@@ -49,9 +49,6 @@ Thanks a ton Genymobile!
 
 ### Screenshots
 
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/pSYUw8an.gif" height="400" />
-
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/C9mnAlgf.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/3bJk1qIF.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/10aSqcoY.png" height="400" />
-<img src="https://api.celeste.photos/uploads/ee556ec1-7ac3-44ea-a1f0-541667d58879/jPR5i1bQ.png" height="400" />
+<img src="https://api.celeste.photos/upload/5kyTNOr" height="400" />
+<img src="https://api.celeste.photos/upload/NOyGNji" height="400" />
+<img src="https://api.celeste.photos/upload/6qfSUsN" height="400" />
