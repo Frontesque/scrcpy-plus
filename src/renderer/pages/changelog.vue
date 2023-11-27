@@ -9,6 +9,14 @@
         </section>
 
         <section>
+            <h3>2.0.2</h3>
+            <ul>
+                <li>Bump SCRCPY version 2.1.1 -> 2.3.0</li>
+                <li>Add Discord invite to app</li>
+            </ul>
+        </section>
+
+        <section>
             <h3>2.0.1</h3>
             <ul>
                 <li>Bump SCRCPY version 2.0.0 -> 2.1.1</li>

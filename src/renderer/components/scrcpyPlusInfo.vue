@@ -20,6 +20,10 @@
             <v-icon>mdi-script-text</v-icon>
             SCRCPY+ Changelog
           </v-btn>
+          <v-btn rounded @click="$utils.openExternal('https://discord.gg/APQyKz9e9w')" class="primaryButton">
+            <img src="@/assets/discord-icon.svg" style="width: 1.8em; margin-right: 1em;" />
+            Discord
+          </v-btn>
           <!--
           <v-btn rounded to="/settings" class="primaryButton">
             <v-icon>mdi-cog</v-icon>

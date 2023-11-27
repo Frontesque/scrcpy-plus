@@ -7,7 +7,7 @@
 
 module.exports = {
   env: {
-    version: "2.0.1",
+    version: "2.0.2",
     scrcpyPath: "resources/scrcpy/",
 
     releasesUrl: "https://api.github.com/repos/Frontesque/scrcpy-plus/releases",
