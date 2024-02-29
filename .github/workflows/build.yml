@@ -1,6 +1,9 @@
 name: build
 on: 
-  workflow_dispatch
+  workflow_dispatch:
+  push:
+    branches:
+      - vue3
 
 env:
   NODE_VERSION: 20
