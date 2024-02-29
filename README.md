@@ -17,8 +17,8 @@
 
 #### Standard Installation:
 
-- Windows [v2.0.2 Installer (90 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.2/scrcpy-plus-2.0.2-win-x64-installer.exe) - [v2.0.2 Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.0.2/scrcpy-plus-2.0.2-win-x64-portable.zip)
-- Linux [v1.4.1 Portable (127 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip)
+- Windows [Installer (90 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-installer.exe) - [Portable (115 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-portable.zip)
+- Linux [Portable (127 MB)](https://github.com/Frontesque/scrcpy-plus/releases/download/1.4.1/scrcpy-plus-1.4.1-portable-linux-x64.zip) (LEGACY BUILD)
 - MacOS [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)
 
 #### Download via winget:
