@@ -16,10 +16,6 @@
         <h4>SCRCPY <span style="color: #999">{{ scrcpyVersion }}</span></h4>
         <h4>ADB <span style="color: #999">{{ adbVersion }}</span></h4>
         <v-card-actions style="padding: 0.5em 0 0 0;">
-          <v-btn rounded to="/changelog" class="primaryButton">
-            <v-icon>mdi-script-text</v-icon>
-            SCRCPY+ Changelog
-          </v-btn>
           <v-btn rounded @click="$utils.openExternal('https://discord.gg/APQyKz9e9w')" class="primaryButton">
             <img src="@/assets/discord-icon.svg" style="width: 1.8em; margin-right: 1em;" />
             Discord
