@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
-## THANKS FOR 40K DOWNLOADS
+## THANKS FOR 60K DOWNLOADS
 
 ### Features
 
