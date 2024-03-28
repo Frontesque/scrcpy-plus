@@ -15,19 +15,18 @@
 
 ### Download
 
-#### Standard Installation:
+| Platform   | Portable | Installer | Comments |
+| :-------   | :------: | :----:    | :------- |
+| 🪟 Windows | [v2.1.0](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-portable.zip)  | [v2.1.0](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-installer.exe)         | SCRCPY Bundled        |
+| 🐧 Linux   | [v2.1.0](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-linux-x64-portable.zip)  | N/A         | SCRCPY and ADB must be installed prior to running        |
+| 🍎 MacOS   | N/A  | N/A         | [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)        |
 
-- Windows [Installer](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-installer.exe) - [Portable](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-portable.zip)
-- Linux [Portable](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-linux-x64-portable.zip)
-- MacOS [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)
+### Community Downloads
+NOTE: These are community-provided methods. Please use official downloads if you wish to report an issue.
 
-#### Download via winget:
-
-NOTE: This is a community-provided method. Please do not report any issues you face, from using this method.
-
-```bash
-winget install Frontesque.scrcpy+
-```
+| Platform   | Link | Command |
+| :-------   | :--: | :------ |
+| 🪟 WinGet | [Winstall](https://winstall.app/apps/Frontesque.scrcpy+)  | `winget install Frontesque.scrcpy+`      
 
 ### Prerequisites
 
