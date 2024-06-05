@@ -4,7 +4,7 @@ module.exports = {
     daisyui: {
         themes: [
             {
-                dark: {
+                scrcpyplus: {
                   ...require("daisyui/src/theming/themes")["dark"],
                   primary: "#8867c0",
                 },

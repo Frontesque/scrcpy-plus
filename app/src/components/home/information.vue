@@ -12,7 +12,7 @@
     </div>
 
     <div class="card-actions justify-end">
-      <button class="btn">Join the Discord</button>
+      <button class="btn btn-ghost">Join the Discord</button>
       <router-link to="/settings">
         <button class="btn btn-primary">Settings</button>
       </router-link>
@@ -27,6 +27,9 @@ export default {
     return {
       scrcpyPlusVersion: this.$version
     }
+  },
+  mounted() {
+    this.spb.execute('test');
   }
 }
 </script>

@@ -2,7 +2,10 @@
     <div class="card section bg-base-300 shadow-xl">
       <div class="card-body">
     
-        <h2 class="card-title">Devices</h2>
+        <div class="flex">
+            <h2 class="card-title">Devices</h2>
+            <button class="btn btn-primary min-h-8 h-8 ml-auto">Add wireless device</button>
+        </div>
         
         <div role="tablist" class="tabs tabs-boxed">
             <a v-for="device, i in devices" role="tab" class="tab" :class="device.selected ? 'tab-active' : ''" @click="select(device, i)">{{ device.name }}</a>
