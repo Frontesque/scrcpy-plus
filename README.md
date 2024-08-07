@@ -2,7 +2,10 @@
 
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
-## THANKS FOR 60K DOWNLOADS
+## THANKS FOR 90K DOWNLOADS
+
+### Notice
+The tools required to build SCRCPY+ v2 are getting very old. This makes it difficult to make new changes to the app. I'm currently working on a complete rewrite (v3) of the app. If you're interested in following progress on v3, feel free to join [the SCRCPY+ community Discord](https://discord.gg/APQyKz9e9w).
 
 ### Features
 
