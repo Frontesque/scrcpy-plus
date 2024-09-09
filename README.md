@@ -20,7 +20,7 @@ The tools required to build SCRCPY+ v2 are getting very old. This makes it diffi
 
 | Platform   | Portable | Installer | Comments |
 | :-------   | :------: | :----:    | :------- |
-| 🪟 Windows | [v2.1.0](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-portable.zip)  | [v2.1.0](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-win-x64-installer.exe)         | SCRCPY Bundled        |
+| 🪟 Windows | [v2.1.1](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.1/scrcpy-plus-2.1.1-win-x64-portable.zip)  | [v2.1.1](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.1/scrcpy-plus-2.1.1-win-x64-installer.exe)         | SCRCPY Bundled        |
 | 🐧 Linux   | [v2.1.0](https://github.com/Frontesque/scrcpy-plus/releases/download/2.1.0/scrcpy-plus-2.1.0-linux-x64-portable.zip)  | N/A         | SCRCPY and ADB must be installed prior to running        |
 | 🍎 MacOS   | N/A  | N/A         | [Build guide](https://github.com/Frontesque/scrcpy-plus/blob/main/BUILDING.md)        |
 
