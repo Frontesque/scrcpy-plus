@@ -28,12 +28,6 @@ export default {
                     title: "File Manager",
                     icon: "mdi-folder-open",
                     to: "/tools/files"
-                },
-                {
-                    title: "Partition Dumper",
-                    icon: "mdi-zip-box",
-                    to: "/tools/dump",
-                    disabled: true
                 }
             ],
 
