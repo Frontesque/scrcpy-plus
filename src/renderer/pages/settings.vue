@@ -11,14 +11,6 @@
         <section>
             <div v-for="item, i in settings" :key="i" style="display: flex;">
                 <v-switch inset :label="item.description" style="margin: 0;" @change="updateSetting(item.key, this)" v-model="item.data" />
-                
-                <v-tooltip top v-if="item.tooltip" style="padding: 0;">
-                    <template v-slot:activator="{ on, attrs }">
-                        <v-icon v-bind="attrs" v-on="on" color="#999" small style="margin-left: 0.25em; height: 2em;">mdi-help-circle-outline</v-icon>
-                    </template>
-                    <span>{{ item.tooltip }}</span>
-                </v-tooltip>
-
             </div>
         </section>
 
@@ -30,8 +22,8 @@ export default {
     data() {
         return {
             settings: [
-                { key: "set-mirror", description: "Use 'Mirror' engine", tooltip: "Replace SCRCPY with a custom renderer known as Mirror Engine" },
-                { key: "set-rememberSettings", description: "Remember SCRCPY settings" },
+                //{ key: "setting.mirror", description: "Use 'Mirror' engine" },
+                { key: "setting.save_scrcpy_settings", description: "Remember SCRCPY settings", data: false },
             ]
         }
     },
@@ -39,7 +31,7 @@ export default {
     mounted() {
         const vm = this;
         for (let key of Object.keys(localStorage)) { 
-            if(!key.startsWith("set-")) continue;
+            if(!key.startsWith("setting.")) continue;
             for (const i in this.settings) {
                 if (key == this.settings[i].key) {
                     vm.settings[i].data = (localStorage.getItem(key) == 'true' ? true : false);

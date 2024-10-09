@@ -94,15 +94,16 @@
 export default {
   
   methods: {
-
     async scrcpy() {
         this.loading = true; // Disable 'Start' Button
-
         let flags = new String();
         for (const i in this.selectedArgs) {
           flags += ' '+this.selectedArgs[i].arg;
         }
-        //console.log("scrcpy"+flags);
+        
+        //---   Save SCRCPY Flags   ---//
+        if (localStorage.getItem("setting.save_scrcpy_settings") == 'true') localStorage.setItem('scrcpy_settings', JSON.stringify(this.selectedArgs));
+        //-----------------------------//
 
         this.$execute(`scrcpy --video-bit-rate ${this.bitrate}M`+flags)
           .catch(err => {
@@ -122,7 +123,15 @@ export default {
           }, 1000);
         
     }
+  },
 
+  mounted() {
+    if (localStorage.getItem("setting.save_scrcpy_settings") == 'true') {
+      const data = JSON.parse(localStorage.getItem("scrcpy_settings") || '[]');
+      for (const i in data) {
+        this.selectedArgs.push(data[i]);
+      }
+    }
   },
   
   data() {

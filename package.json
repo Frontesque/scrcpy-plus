@@ -1,6 +1,6 @@
 {
   "name": "scrcpy-plus",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "A GUI for scrcpy",
   "main": "./dist/main/index.js",
   "scripts": {

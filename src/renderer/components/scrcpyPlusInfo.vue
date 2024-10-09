@@ -20,12 +20,10 @@
             <img src="@/assets/discord-icon.svg" style="width: 1.8em; margin-right: 1em;" />
             Discord
           </v-btn>
-          <!--
           <v-btn rounded to="/settings" class="primaryButton">
             <v-icon>mdi-cog</v-icon>
             Settings
           </v-btn>
-          -->
         </v-card-actions>
       </section>
 
