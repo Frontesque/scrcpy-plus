@@ -14,7 +14,6 @@
 - 📶 **Wireless Connectivity** • _Connect to a Device on your WiFi Network_
 - 📦 **Easily Manage Packages** • _Remove System Bloat Without Root_
 - 📂 **File Manager** • _Download & Delete Files_
-- 💾 **Partition Dumper** • _Coming Soon_  
 
 ### Prerequisites
 
