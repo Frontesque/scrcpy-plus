@@ -2,7 +2,10 @@
 
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
-## THANKS FOR 90K DOWNLOADS
+## [Downloads](https://scrcpyplus.frontesque.me/downloads.html#stable)
+### THANKS FOR 90K DOWNLOADS
+
+<hr/>
 
 ### Features
 
@@ -12,9 +15,6 @@
 - 📦 **Easily Manage Packages** • _Remove System Bloat Without Root_
 - 📂 **File Manager** • _Download & Delete Files_
 - 💾 **Partition Dumper** • _Coming Soon_  
-
-## Downloads
-[Download page](https://scrcpyplus.frontesque.me/downloads.html#stable)
 
 ### Prerequisites
 
