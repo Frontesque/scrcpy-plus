@@ -3,7 +3,8 @@
 <img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
 
 ## [Downloads](https://scrcpyplus.frontesque.me/downloads.html#stable)
-### THANKS FOR 90K DOWNLOADS
+### THANKS FOR 100K DOWNLOADS
+[Click here to view all downloads](https://scrcpyplus.frontesque.me/downloads.html#stable)
 
 <hr/>
 
