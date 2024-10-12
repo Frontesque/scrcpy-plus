@@ -4,13 +4,13 @@ This is the guide to building the latest version of SCRCPY+ for all operating sy
 
 ## Prerequisites 
 - Windows
-    - [Node v18](https://nodejs.org/en/)
+    - [Node v20](https://nodejs.org/en/)
     - Yarn Package Manager // run `npm i -g yarn`
 - Linux
-    - [Node v18](https://nodejs.org/en/)
+    - [Node v20](https://nodejs.org/en/)
     - Yarn Package Manager // run `sudo npm i -g yarn`
 - MacOS
-    - [Node v16](https://nodejs.org/en/)
+    - [Node v20](https://nodejs.org/en/)
     - Yarn Package Manager // run `sudo npm i -g yarn`
 
 ## Build
