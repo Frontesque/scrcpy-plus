@@ -102,7 +102,10 @@ export default {
         }
         
         //---   Save SCRCPY Flags   ---//
-        if (localStorage.getItem("setting.save_scrcpy_settings") == 'true') localStorage.setItem('scrcpy_settings', JSON.stringify(this.selectedArgs));
+        if (localStorage.getItem("setting.save_scrcpy_settings") == 'true') {
+          localStorage.setItem('data.scrcpy_settings', JSON.stringify(this.selectedArgs));
+          localStorage.setItem('data.scrcpy_bitrate', this.bitrate);
+        };
         //-----------------------------//
 
         this.$execute(`scrcpy --video-bit-rate ${this.bitrate}M`+flags)
@@ -127,7 +130,8 @@ export default {
 
   mounted() {
     if (localStorage.getItem("setting.save_scrcpy_settings") == 'true') {
-      const data = JSON.parse(localStorage.getItem("scrcpy_settings") || '[]');
+      const data = JSON.parse(localStorage.getItem("data.scrcpy_settings") || '[]');
+      this.bitrate = parseInt(localStorage.getItem("data.scrcpy_bitrate") || 8);
       for (const i in data) {
         this.selectedArgs.push(data[i]);
       }
