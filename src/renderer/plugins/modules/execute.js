@@ -16,7 +16,6 @@ module.exports = (cmd) => {
             opts["shell"] = "/bin/zsh"
             opts["env"] = process.env
             opts["env"]["PATH"] += ":/opt/homebrew/bin"
-            // command = "source ~/.zshrc; " + command;
         }
         exec(
             command, 
