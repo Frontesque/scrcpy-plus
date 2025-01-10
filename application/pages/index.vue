@@ -18,6 +18,10 @@ export default {
         set_active_device(serial) {
             this.active_device = serial;
         }
+    },
+    mounted() {
+        const locale = localStorage.getItem('scrcpyplus.locale') || 'en';
+        this.$i18n.setLocale(locale);
     }
 }
 </script>
