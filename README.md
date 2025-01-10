@@ -1,6 +1,6 @@
 # SCRCPY+
 
-<img src="https://github.com/Frontesque/scrcpy-plus/raw/main/icons/SCRCPY%2B.png" alt="scrcpy-plus icon" width="200"/>
+<img src="https://github.com/Frontesque/scrcpy-plus/blob/main/application/src-tauri/icons/Square150x150Logo.png?raw=true" alt="scrcpy-plus icon" width="200"/>
 
 ## [Downloads](https://scrcpyplus.frontesque.me/downloads.html#stable)
 ### THANKS FOR 100K DOWNLOADS
