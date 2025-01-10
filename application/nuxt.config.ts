@@ -4,6 +4,10 @@ export default defineNuxtConfig({
     ssr: false,
     modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
     i18n: {
-        vueI18n: './languages/i18n.config.ts' // if you are using custom path, default
+        vueI18n: './i18n/i18n.config.ts', // if you are using custom path, default
+        locales: [
+            { code: 'en', file: 'en.json' },
+            { code: 'it', file: 'it.json' },
+        ]
     }
 })

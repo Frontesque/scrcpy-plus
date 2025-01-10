@@ -3,9 +3,11 @@
         <!--   Header   -->
         <div class="card bg-base-200 w-full mb-8">
             <div class="p-8 flex">
-                <button class="btn btn-primary w-12" @click="$router.go(-1)">
-                    <icon name="reply" size="45x45" />
-                </button>
+                <NuxtLink to="/">
+                    <button class="btn btn-primary w-12">
+                        <icon name="reply" size="45x45" />
+                    </button>
+                </NuxtLink>
                 <p class="text-3xl ml-4 mt-1">{{ $t('settings') }}</p>
             </div>
         </div>
