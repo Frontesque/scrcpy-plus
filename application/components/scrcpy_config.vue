@@ -4,7 +4,7 @@
             <!--   Version Information   -->
             <p class="card-title">SCRCPY</p>
 
-            <button class="btn btn-primary" @click="start_scrcpy">{{ $t('start') }}</button>
+            <button class="btn btn-primary text-white" @click="start_scrcpy">{{ $t('start') }}</button>
         </div>
     </div>
 </template>

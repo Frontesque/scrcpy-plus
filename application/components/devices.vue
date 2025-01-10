@@ -14,7 +14,7 @@
 
             <div v-if="devices.length > 0">
                 <div role="tablist" class="tabs tabs-boxed">
-                    <a role="tab" class="tab" :class="active_device == device ? 'tab-active' : ''" v-for="device in devices" @click="set_active(device)">{{ device }}</a>
+                    <a role="tab" class="tab force-text-white" :class="active_device == device ? 'tab-active' : ''" v-for="device in devices" @click="set_active(device)">{{ device }}</a>
                 </div>
 
                 <div v-if="active_device">
@@ -36,6 +36,12 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+.force-text-white {
+    color: white !important;
+}
+</style>
 
 <script>
 import { invoke } from "@tauri-apps/api/core";
