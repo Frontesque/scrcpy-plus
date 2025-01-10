@@ -19,6 +19,10 @@
                     <option value="en" :selected="locale == 'en'">English</option>
                     <option value="it" :selected="locale == 'it'">Italiano</option>
                 </select>
+                <p class="opacity-50">
+                    <span class="mr-2">{{ $t('translation_credits') }}</span>
+                    <span>{{ $t('translation_credits_value') }}</span>
+                </p>
 
                 <div class="mt-8 flex" v-for="item, i in settings">
                     <input type="checkbox" class="toggle checkbox-primary mr-2" @change="updateSetting(item.key, $event)" :checked="item.checked" />

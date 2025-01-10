@@ -4,6 +4,8 @@ export default defineI18nConfig(() => ({
     fallbackLocale: 'en',
     messages: {
       en: {
+        translation_credits: "Translation Credits:",
+        translation_credits_value: "Frontesque",
         settings: "Settings",
         language: "Language",
         dnc_updates: "Do not check for updates",
@@ -33,6 +35,8 @@ export default defineI18nConfig(() => ({
         success: "Success",
       },
       it: {
+        translation_credits: "Traduzione Di:",
+        translation_credits_value: "Frontesque",
         settings: 'Impostazioni',
         language: "Lingua",
         dnc_updates: "Non controllare gli aggiornamenti",
