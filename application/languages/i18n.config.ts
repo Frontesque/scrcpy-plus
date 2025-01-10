@@ -6,7 +6,7 @@ export default defineI18nConfig(() => ({
       en: {
         settings: "Settings",
         language: "Language",
-        dnc_updates: "Don't check for updates",
+        dnc_updates: "Do not check for updates",
         rscrcpy_config: "Remember SCRCPY config",
         devices: "Devices",
         no_device: "No device selected",
