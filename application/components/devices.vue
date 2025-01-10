@@ -30,7 +30,7 @@
                 <p v-else>{{ $t('no_device') }}</p>
             </div>
             <div v-else>
-                <p>No devices detected</p>
+                <p>{{ $t('no_device2') }}</p>
             </div>
 
         </div>

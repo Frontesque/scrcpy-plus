@@ -8,24 +8,24 @@
                     <button class="btn btn-primary w-12" @click="$router.go(-1)">
                         <icon name="reply" size="45x45" />
                     </button>
-                    <p class="text-3xl ml-4 mt-1">Wireless Connection Setup</p>
+                    <p class="text-3xl ml-4 mt-1">{{ $t('wcs_title') }}</p>
                 </div>
 
-                <p class="mt-8">Android 11+ is required for a wireless connection to be established.</p>
-                <a class="text-primary" href="https://developer.android.com/tools/adb#connect-to-a-device-over-wi-fi" target="_blank">More information on pairing</a>
+                <p class="mt-8">{{ $t('wcs_subtitle') }}</p>
+                <a class="text-primary" href="https://developer.android.com/tools/adb#connect-to-a-device-over-wi-fi" target="_blank">{{ $t('pairing_info') }}</a>
             </div>
         </div>
 
         <div class="card bg-base-200 w-full mb-8" v-if="step == 0">
             <div class="p-8">
                 
-                <p class="card-title">Wi-Fi Pairing</p>
-                <input type="text" id="pair_code" placeholder="Pairing Code (6 digits)" class="input input-bordered w-full mt-2" />
-                <input type="text" id="pair_ip_port" placeholder="IP address & Port (eg. 192.168.1.10:42801)" class="input input-bordered w-full my-2" />
+                <p class="card-title">{{ $t('wifi_pairing') }}</p>
+                <input type="text" id="pair_code" :placeholder="$t('code')" class="input input-bordered w-full mt-2" />
+                <input type="text" id="pair_ip_port" :placeholder="$t('ip_and_port')" class="input input-bordered w-full my-2" />
 
                 <div class="card-actions justify-end">
-                    <button class="btn" rounded :disabled="pairingLoading" @click="step++">Skip</button>
-                    <button class="btn btn-primary" :loading="pairingLoading" @click="pair">Connect</button>
+                    <button class="btn" rounded :disabled="pairingLoading" @click="step++">{{ $t('skip') }}</button>
+                    <button class="btn btn-primary" :loading="pairingLoading" @click="pair">{{ $t('connect') }}</button>
                 </div>
 
             </div>
@@ -34,12 +34,12 @@
         <div class="card bg-base-200 w-full mb-8" v-if="step == 1">
             <div class="p-8">
                 
-                <p class="card-title">Connecting</p>
-                <input type="text" id="connect_ip_port" placeholder="IP address & Port (eg. 192.168.1.10:42801)" class="input input-bordered w-full my-2" />
+                <p class="card-title">{{ $t('connecting') }}</p>
+                <input type="text" id="connect_ip_port" :placeholder="$t('ip_and_port')" class="input input-bordered w-full my-2" />
 
                 <div class="card-actions justify-end">
-                    <button class="btn" rounded :disabled="pairingLoading" @click="step--">Back</button>
-                    <button class="btn btn-primary" :loading="pairingLoading" @click="connect">Connect</button>
+                    <button class="btn" rounded :disabled="pairingLoading" @click="step--">{{ $t('back') }}</button>
+                    <button class="btn btn-primary" :loading="pairingLoading" @click="connect">{{ $t('connect') }}</button>
                 </div>
 
             </div>
@@ -49,7 +49,7 @@
             <div class="p-8">
                 <center>
                     <icon name="link" size="50x50" />
-                    <h1 class="text-2xl">Success</h1>
+                    <h1 class="text-2xl">{{ $t('success') }}</h1>
                 </center>
             </div>
         </div>
