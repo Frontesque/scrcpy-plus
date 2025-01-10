@@ -13,8 +13,7 @@
 - 🚩 **Supports Most SCRCPY Flags**
 - 📱 **Device Information** • _Get Model Information About the Active Device_
 - 📶 **Wireless Connectivity** • _Connect to a Device on your WiFi Network_
-- 📦 **Easily Manage Packages** • _Remove System Bloat Without Root_
-- 📂 **File Manager** • _Download & Delete Files_
+- 🗣️ **Multi-Language Support** • _Use SCRCPY+ in your native language_
 
 ### Prerequisites
 
