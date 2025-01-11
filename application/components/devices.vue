@@ -3,7 +3,7 @@
         <div class="card-body">
             <!--   Version Information   -->
             <div class="flex">
-                <p class="card-title">{{ $t('devices') }}</p>
+                <p class="card-title text-white">{{ $t('devices') }}</p>
                 <NuxtLink to="/wireless_setup">
                     <button class="btn btn-primary text-white max-h-8 min-h-8 h-8">
                         <icon size="18x18" name="wifi" />
