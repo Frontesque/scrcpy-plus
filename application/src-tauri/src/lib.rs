@@ -12,8 +12,8 @@ fn environment() -> Value {
 
 #[tauri::command]
 fn get_dependency_versions() -> Value {
-  let scrcpy_version: String = scrcpy(vec!["--version"]).split_whitespace().nth(1).expect("Unable to find SCRCPY").to_string();
-  let adb_version:    String = adb(vec!["--version"]).split_whitespace().nth(6).expect("Unable to find ADB").to_string();
+  let scrcpy_version: String = scrcpy(vec!["--version"]).split_whitespace().nth(1).unwrap_or("Unable to find SCRCPY").to_string();
+  let adb_version:    String = adb(vec!["--version"]).split_whitespace().nth(6).unwrap_or("Unable to find ADB").to_string();
   return json!({
     "scrcpy_plus":  env!("CARGO_PKG_VERSION"),
     "scrcpy":       scrcpy_version,
