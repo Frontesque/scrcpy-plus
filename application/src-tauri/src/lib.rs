@@ -37,7 +37,7 @@ fn run_scrcpy(args: Vec<&str>) {
   scrcpy(args_copy);
 }
 
-#[cfg_attr(mobile, tauri::mobile_entry_point)]
+// #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
   tauri::Builder::default()
     .invoke_handler(tauri::generate_handler![get_dependency_versions, exec_adb, exec_scrcpy, run_scrcpy, environment])
