@@ -10,7 +10,7 @@
                     <option v-for="item, i in args" :value="i">
                         <span>{{ item.arg }}:</span>
                         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <span>{{ item.description }}</span>
+                        <span>{{ $t(`scrcpy_flags.${item.arg}`) }}</span>
                     </option>
                 </select>
 
@@ -35,7 +35,7 @@
                         <input type="checkbox" checked="checked" class="checkbox checkbox-primary" @change="remove_flag(i)" />
                         <div class="ml-2">
                             <p class="text-white">{{ arg.arg }}</p>
-                            <p>{{ arg.description }}</p>
+                            <p>{{ $t(`scrcpy_flags.${arg.arg}`) }}</p>
                         </div>
                     </div>
                 </div>
@@ -65,20 +65,20 @@ export default {
             active_args: new Array(),
 
             args: [
-                { type: "boolean", arg: "--turn-screen-off",         description: "Turn off the screen on the physical device" },
-                { type: "boolean", arg: "--no-audio",                description: "Disable streaming audio from the device" },
-                { type: "boolean", arg: "--stay-awake",              description: "Prevent the device from sleeping" },
-                { type: "boolean", arg: "--no-control",              description: "Disable mouse/keyboard passthrough" },
-                { type: "boolean", arg: "--disable-screensaver",     description: "What it says" },
-                { type: "boolean", arg: "--otg",                     description: "Simulate physical hardware connections for input devices" },
-                { type: "boolean", arg: "--forward-all-clicks",      description: "Pass all mouse actions to the device" },
-                { type: "boolean", arg: "--power-off-on-close",      description: "Turn off the screen when exiting the application" },
-                { type: "boolean", arg: "--always-on-top",           description: "Make scrcpy always the foreground window" },
-                { type: "boolean", arg: "--prefer-text",             description: "By default, letters are injected using key events, so that the keyboard behaves as expected in games (typically for WASD keys). But this may cause issues." },
-                { type: "boolean", arg: "--raw-key-events",          description: "The opposite of 'prefer text'" },
-                { type: "boolean", arg: "--no-key-repeat",           description: "By default, holding a key down generates repeated key events. This can cause performance problems in some games, where these events are useless anyway." },
-                { type: "boolean", arg: "--show-touches",            description: "Show physical touches and clicks" },
-                { type: "boolean", arg: "--lock-video-orientation",  description: "Prevent the device screen from rotating." },
+                { type: "boolean", arg: "--turn-screen-off"         },
+                { type: "boolean", arg: "--no-audio"                },
+                { type: "boolean", arg: "--stay-awake"              },
+                { type: "boolean", arg: "--no-control"              },
+                { type: "boolean", arg: "--disable-screensaver"     },
+                { type: "boolean", arg: "--otg"                     },
+                { type: "boolean", arg: "--forward-all-clicks"      },
+                { type: "boolean", arg: "--power-off-on-close"      },
+                { type: "boolean", arg: "--always-on-top"           },
+                { type: "boolean", arg: "--prefer-text"             },
+                { type: "boolean", arg: "--raw-key-events"          },
+                { type: "boolean", arg: "--no-key-repeat"           },
+                { type: "boolean", arg: "--show-touches"            },
+                { type: "boolean", arg: "--lock-video-orientation"  },
             ]
         }
     },

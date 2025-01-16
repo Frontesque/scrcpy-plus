@@ -27,5 +27,21 @@
     "connect": "Connect",
     "skip": "Skip",
     "back": "Back",
-    "success": "Success"
+    "success": "Success",
+    "scrcpy_flags": {
+        "--turn-screen-off"        : "Turn off the screen on the physical device",
+        "--no-audio"               : "Disable streaming audio from the device",
+        "--stay-awake"             : "Prevent the device from sleeping",
+        "--no-control"             : "Disable mouse/keyboard passthrough",
+        "--disable-screensaver"    : "What it says",
+        "--otg"                    : "Simulate physical hardware connections for input devices",
+        "--forward-all-clicks"     : "Pass all mouse actions to the device",
+        "--power-off-on-close"     : "Turn off the screen when exiting the application",
+        "--always-on-top"          : "Make scrcpy always the foreground window",
+        "--prefer-text"            : "By default, letters are injected using key events, so that the keyboard behaves as expected in games (typically for WASD keys). But this may cause issues.",
+        "--raw-key-events"         : "The opposite of 'prefer text'",
+        "--no-key-repeat"          : "By default, holding a key down generates repeated key events. This can cause performance problems in some games, where these events are useless anyway.",
+        "--show-touches"           : "Show physical touches and clicks",
+        "--lock-video-orientation" : "Prevent the device screen from rotating."
+    }
 }
