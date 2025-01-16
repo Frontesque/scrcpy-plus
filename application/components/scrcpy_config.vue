@@ -3,10 +3,10 @@
         <!--   Add Flag Dialog (Modal)   -->
         <dialog id="flag_builder_modal" class="modal">
             <div class="modal-box bg-base-300">
-                <h3 class="text-lg font-bold">Add Flag</h3>
+                <h3 class="text-lg font-bold">{{ $t('add_flag') }}</h3>
                 
                 <select class="select select-bordered w-full" id="select_arg">
-                    <option disabled selected>Select a flag...</option>
+                    <option disabled selected>{{ $t('add_flag') }}...</option>
                     <option v-for="item, i in args" :value="i">
                         <span>{{ item.arg }}:</span>
                         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -29,7 +29,7 @@
                 <p class="card-title text-white">SCRCPY</p>
 
                 <!--   Active Flags Renderer   -->
-                <p class="mt-8 text-white">Flags</p>
+                <p class="mt-8 text-white">{{ $t('flags') }}</p>
                 <div v-for="arg, i in active_args">
                     <div v-if="arg.type === 'boolean'" class="flex">
                         <input type="checkbox" checked="checked" class="checkbox checkbox-primary" @change="remove_flag(i)" />
@@ -43,7 +43,7 @@
                 <!--   Add Flag Button   -->
                 <button class="btn bg-base-300 text-white" onclick="flag_builder_modal.showModal()">
                     <icon name="plus" size="20x20" />
-                    <span>Add Flag</span>
+                    <span>{{ $t('add_flag') }}</span>
                 </button>
 
                 <!--   Start Button   -->

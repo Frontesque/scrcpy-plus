@@ -28,6 +28,8 @@
     "skip": "Skip",
     "back": "Back",
     "success": "Success",
+    "flags": "Flags",
+    "add_flag": "Add Flag",
     "scrcpy_flags": {
         "--turn-screen-off"        : "Turn off the screen on the physical device",
         "--no-audio"               : "Disable streaming audio from the device",

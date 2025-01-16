@@ -27,5 +27,7 @@
     "connect": "Collegamento",
     "skip": "Saltare",
     "back": "Precedente",
-    "success": "Riuscito"
+    "success": "Riuscito",
+    "flags": "Opzioni",
+    "add_flag": "Aggiungere Opzione"
 }
