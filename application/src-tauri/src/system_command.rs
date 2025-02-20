@@ -1,12 +1,17 @@
 use std::process::Command;
+#[cfg(windows)]
 use std::os::windows::process::CommandExt;
 use std::str::from_utf8;
 
-const CREATE_NO_WINDOW: u32 = 0x08000000;
-
 fn execute(command: &str, args: Vec<&str>) -> String {
+    #[cfg(windows)]
     let command_capture = Command::new(&command)
-        .creation_flags(CREATE_NO_WINDOW)
+        .creation_flags(0x08000000)
+        .args(&args)
+        .output();
+
+    #[cfg(not(windows))]
+    let command_capture = Command::new(&command)
         .args(&args)
         .output();
 
@@ -27,7 +32,17 @@ pub fn scrcpy(args: Vec<&str>) -> String {
     return execute("resources/scrcpy/scrcpy.exe", args);
 }
 
+#[cfg(not(windows))]
+pub fn scrcpy(args: Vec<&str>) -> String {
+    return execute("scrcpy", args);
+}
+
 #[cfg(windows)]
 pub fn adb(args: Vec<&str>) -> String {
     return execute("resources/scrcpy/adb.exe", args);
+}
+
+#[cfg(not(windows))]
+pub fn adb(args: Vec<&str>) -> String {
+    return execute("adb", args);
 }
