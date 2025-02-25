@@ -26,8 +26,9 @@ export default {
     },
     async mounted() {
         this.currentVersion = process.env.version;
-        this.repo = await this.$axios.$get(process.env.releasesUrl).catch(err => console.log(err));
-        this.latestVersion = this.repo[0].name;
+        
+        const release = await this.get_latest_release();
+        this.latestVersion = release.tag_name;
         
         const latest = this.latestVersion.split(".");
         const current = this.currentVersion.split(".");
@@ -40,6 +41,14 @@ export default {
     },
 
     methods: {
+        async get_latest_release() {
+            this.repo = await this.$axios.$get(process.env.releasesUrl).catch(err => console.log(err));
+            for (const i in this.repo) {
+                if (this.repo[i].prerelease === false) {
+                    return this.repo[i];
+                }
+            }
+        },
         open() {
             require('electron').shell.openExternal(this.repo[0].html_url)
         }
