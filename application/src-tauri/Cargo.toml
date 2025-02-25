@@ -12,7 +12,7 @@ rust-version = "1.82"
 
 [lib]
 name = "scrcpyplus_lib"
-crate-type = ["staticlib", "cdylib", "rlib", "lib"]
+crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
 tauri-build = { version = "2.0.0-rc.0", features = [] }

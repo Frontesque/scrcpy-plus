@@ -30,13 +30,26 @@ export default {
             repo: []
         }
     },
+    methods: {
+        async get_latest_release(env) {
+            this.repo = await $fetch(env.releases_url);
+            for (const i in this.repo) {
+                if (this.repo[i].prerelease === false) {
+                    return this.repo[i];
+                }
+            }
+        },
+        open() {
+            require('electron').shell.openExternal(this.repo[0].html_url)
+        }
+    },
     async mounted() {
         if (localStorage.getItem("setting.disable_update_check") == "true") return;
         const environment = await invoke("environment");
         this.currentVersion = environment.app_version;
-        this.repo = await $fetch(environment.releases_url);
-        this.latestVersion = this.repo[0].name;
-        
+        const release = await this.get_latest_release(environment);
+        this.latestVersion = release.tag_name;
+
         const latest = this.latestVersion.split(".");
         const current = this.currentVersion.split(".");
         for (const i in latest) {
@@ -44,12 +57,6 @@ export default {
                 console.log("UPDATE AVAILABLE")
                 return this.updateAvailable = true;
             }
-        }
-    },
-
-    methods: {
-        open() {
-            require('electron').shell.openExternal(this.repo[0].html_url)
         }
     }
 }
