@@ -8,8 +8,9 @@ This is the guide to building the latest version of SCRCPY+ for all operating sy
     - [Rust](https://rustup.rs/)
 
 ## Build
+***ALL COMMANDS ARE RUN IN THE 'application' FOLDER OF THE PROJECT***
+
 - Windows, Linux & MacOS
-    ***ALL COMMANDS ARE RUN IN THE 'application' FOLDER OF THE PROJECT***
     - run `npm install`
     - run `npm run tauri build`
-    - 🎉 The compiled project should be in the `build` folder
+    - 🎉 The compiled project should be in the `application/src-tauri/target/release` folder
