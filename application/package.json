@@ -14,7 +14,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "^9.0.0-rc.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "@tauri-apps/cli": "2.0.0-beta.17",
+    "@tauri-apps/cli": "^2.2.7",
     "daisyui": "^4.12.23",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",

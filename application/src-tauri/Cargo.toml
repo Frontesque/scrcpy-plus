@@ -1,23 +1,23 @@
 [package]
-name = "app"
+name = "scrcpy-plus"
 version = "3.0.0"
 description = "SCRCPY Plus"
 authors = ["Frontesque"]
 license = ""
 repository = ""
 edition = "2021"
-rust-version = "1.70"
+rust-version = "1.82"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-name = "app_lib"
-crate-type = ["staticlib", "cdylib", "rlib"]
+name = "scrcpyplus_lib"
+crate-type = ["staticlib", "cdylib", "rlib", "lib"]
 
 [build-dependencies]
-tauri-build = { version = "2.0.0-beta.15", features = [] }
+tauri-build = { version = "2.0.0-rc.0", features = [] }
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "2.0.0-beta.19", features = [] }
+tauri = { version = "2.2.0-rc.0", features = [] }
