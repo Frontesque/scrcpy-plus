@@ -13,17 +13,24 @@ This is the guide to building the latest version of SCRCPY+ for all operating sy
       ```
     - **Fedora/RHEL-based:**
       ```bash
-      sudo dnf install gtk3-devel libsoup3-devel javascriptcoregtk4.1-devel webkit2gtk4.1-devel
+      sudo dnf install webkit2gtk4.1-devel openssl-devel curl wget file libappindicator-gtk3-devel librsvg2-devel
+      sudo dnf group install "c-development"
       ```
     - **Arch-based:**
       ```bash
       sudo pacman -S gtk3 libsoup webkit2gtk
       ```
+  \* More information available at https://v2.tauri.app/start/prerequisites/
 
 ## Build
 ***ALL COMMANDS ARE RUN IN THE 'application' FOLDER OF THE PROJECT***
 
-- Windows, Linux & MacOS
+- Linux & MacOS
+    - run `npm install`
+    - run `NO_STRIP=true npm run tauri build`
+    - 🎉 The compiled project should be in the `application/src-tauri/target/release` folder
+
+- Windows
     - run `npm install`
     - run `npm run tauri build`
     - 🎉 The compiled project should be in the `application/src-tauri/target/release` folder
