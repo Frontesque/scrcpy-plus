@@ -3,8 +3,8 @@ name = "scrcpy-plus"
 version = "3.0.0"
 description = "SCRCPY Plus"
 authors = ["Frontesque"]
-license = ""
-repository = ""
+license = "GPL-3.0-only"
+repository = "https://github.com/Frontesque/scrcpy-plus"
 edition = "2021"
 rust-version = "1.82"
 
