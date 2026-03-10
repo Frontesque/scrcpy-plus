@@ -45,5 +45,7 @@
         "--no-key-repeat"          : "By default, holding a key down generates repeated key events. This can cause performance problems in some games, where these events are useless anyway.",
         "--show-touches"           : "Show physical touches and clicks",
         "--lock-video-orientation" : "Prevent the device screen from rotating."
-    }
+    },
+    "error_scrcpy_not_found": "Unable to find SCRCPY",
+    "error_adb_not_found": "Unable to find ADB"
 }
