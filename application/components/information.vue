@@ -37,6 +37,12 @@ export default {
     },
     async mounted() {
         this.version = await invoke("get_dependency_versions");
+        if (this.version.scrcpy === "error_scrcpy_not_found") {
+            this.version.scrcpy = this.$t('error_scrcpy_not_found');
+        }
+        if (this.version.adb === "error_adb_not_found") {
+            this.version.adb = this.$t('error_adb_not_found');
+        }
     }
 }
 </script>
