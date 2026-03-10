@@ -46,6 +46,10 @@
                     <span>{{ $t('add_flag') }}</span>
                 </button>
 
+                <!--   Custom Flags   -->
+                <p class="mt-8 text-white">{{ $t('custom_flags') }}</p>
+                <input type="text" :placeholder="$t('custom_flags_placeholder')" class="input input-bordered w-full" v-model="custom_flags" />
+
                 <!--   Start Button   -->
                 <button class="btn btn-primary text-white mt-16" @click="start_scrcpy">
                     <icon name="play" size="20x20" />
@@ -63,6 +67,7 @@ export default {
     data() {
         return {
             active_args: new Array(),
+            custom_flags: "",
 
             args: [
                 { type: "boolean", arg: "--turn-screen-off"         },
@@ -100,6 +105,14 @@ export default {
 
             for (const i in this.active_args) {
                 scrcpy_start_args.push(this.active_args[i].arg);
+            }
+
+            if (this.custom_flags && this.custom_flags.trim().length > 0) {
+                // Split custom flags by space and add them to the arguments list
+                const extra_flags = this.custom_flags.trim().split(/\s+/);
+                for (const flag of extra_flags) {
+                    scrcpy_start_args.push(flag);
+                }
             }
 
             const scrcpy_output = await invoke("run_scrcpy", { args: scrcpy_start_args });
