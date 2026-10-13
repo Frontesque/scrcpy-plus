@@ -29,5 +29,7 @@
     "skip": "Saltare",
     "back": "Precedente",
     "success": "Riuscito",
-    "launch_options": "Opzioni di avvio"
+    "launch_options": "Opzioni di avvio",
+    "video_bitrate": "Bitrate video",
+    "advanced": "Avanzate"
 }

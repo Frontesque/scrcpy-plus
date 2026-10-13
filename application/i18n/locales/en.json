@@ -30,6 +30,8 @@
     "back": "Back",
     "success": "Success",
     "launch_options": "Launch Options",
+    "video_bitrate": "Video Bitrate",
+    "advanced": "Advanced",
     "scrcpy_options": {
         "--turn-screen-off": "Turn off phone screen",
         "--no-audio": "Mute audio",
