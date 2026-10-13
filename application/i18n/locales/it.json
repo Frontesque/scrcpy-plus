@@ -31,5 +31,6 @@
     "success": "Riuscito",
     "launch_options": "Opzioni di avvio",
     "video_bitrate": "Bitrate video",
+    "custom_flags": "Opzioni personalizzate",
     "advanced": "Avanzate"
 }

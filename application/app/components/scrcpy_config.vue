@@ -27,6 +27,10 @@
                             <p>{{ $t(`scrcpy_flags.${option.arg}`) }}</p>
                         </div>
                     </label>
+                    <div>
+                        <p class="text-white">{{ $t('custom_flags') }}</p>
+                        <input type="text" class="input input-bordered w-full" placeholder="--max-size=1024 --crop=1224:1440:0:0" v-model="custom_flags" />
+                    </div>
                 </div>
             </div>
 
@@ -54,6 +58,7 @@ export default {
     data() {
         return {
             active_args: [],
+            custom_flags: "",
 
             basic_options: [
                 { arg: "--turn-screen-off" },
@@ -87,6 +92,10 @@ export default {
             let scrcpy_start_args = ["-s", this.device];
 
             scrcpy_start_args.push(...this.active_args);
+            // Split on whitespace, keeping quoted segments together
+            for (const m of this.custom_flags.matchAll(/"([^"]*)"|'([^']*)'|(\S+)/g)) {
+                scrcpy_start_args.push(m[1] ?? m[2] ?? m[3]);
+            }
             if (this.bitrate !== 8) scrcpy_start_args.push(`--video-bit-rate=${this.bitrate}M`);
 
             const device = this.device;

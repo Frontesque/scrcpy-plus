@@ -31,6 +31,7 @@
     "success": "Success",
     "launch_options": "Launch Options",
     "video_bitrate": "Video Bitrate",
+    "custom_flags": "Custom Flags",
     "advanced": "Advanced",
     "scrcpy_options": {
         "--keyboard=uhid": "Hide on-screen keyboard",
