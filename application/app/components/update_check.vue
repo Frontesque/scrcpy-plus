@@ -21,6 +21,7 @@
 
 <script>
 import { invoke } from "@tauri-apps/api/core";
+import { openUrl } from "@tauri-apps/plugin-opener";
 export default {
     data() {
         return {
@@ -40,7 +41,7 @@ export default {
             }
         },
         open() {
-            require('electron').shell.openExternal(this.repo[0].html_url)
+            openUrl(this.repo[0].html_url)
         }
     },
     async mounted() {
