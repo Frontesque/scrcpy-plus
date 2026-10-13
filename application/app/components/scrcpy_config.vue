@@ -14,6 +14,38 @@
 
             <div class="collapse collapse-arrow bg-base-300">
                 <input type="checkbox" />
+                <div class="collapse-title text-white">{{ $t('display_settings') }}</div>
+                <div class="collapse-content space-y-3">
+                    <label class="flex cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" v-model="custom_window_name" />
+                        <p class="ml-2 text-white">{{ $t('custom_window_name') }}</p>
+                    </label>
+                    <input v-if="custom_window_name" type="text" class="input input-bordered w-full" v-model="window_title" />
+                    <label v-for="option in window_options" :key="option.arg" class="flex cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" :value="option.arg" v-model="active_args" />
+                        <div class="ml-2">
+                            <p class="text-white">{{ $t(`scrcpy_options.${option.arg}`) }}</p>
+                            <p>{{ $t(`scrcpy_flags.${option.arg}`) }}</p>
+                        </div>
+                    </label>
+                    <label class="flex cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" :disabled="virtual_display" v-model="custom_display_id" />
+                        <p class="ml-2 text-white">{{ $t('custom_display_id') }}</p>
+                    </label>
+                    <input v-if="custom_display_id && !virtual_display" type="number" min="0" step="1" class="input input-bordered w-full" v-model="display_id" />
+                    <label class="flex cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" v-model="virtual_display" />
+                        <div class="ml-2">
+                            <p class="text-white">{{ $t('virtual_display') }}</p>
+                            <p>{{ $t('virtual_display_desc') }}</p>
+                        </div>
+                    </label>
+                    <input v-if="virtual_display" type="text" class="input input-bordered w-full" placeholder="1920x1080/420" v-model="virtual_display_size" />
+                </div>
+            </div>
+
+            <div class="collapse collapse-arrow bg-base-300">
+                <input type="checkbox" />
                 <div class="collapse-title text-white">{{ $t('advanced') }}</div>
                 <div class="collapse-content space-y-3">
                     <div>
@@ -56,6 +88,12 @@ export default {
         return {
             active_args: [],
             custom_flags: "",
+            custom_window_name: false,
+            window_title: "",
+            custom_display_id: false,
+            display_id: "",
+            virtual_display: false,
+            virtual_display_size: "",
 
             basic_options: [
                 { arg: "--turn-screen-off" },
@@ -63,6 +101,9 @@ export default {
                 { arg: "--stay-awake" },
                 { arg: "--no-control" },
                 { arg: "--keyboard=uhid" },
+            ],
+            window_options: [
+                { arg: "--lock-video-orientation" },
             ],
             advanced_options: [
                 { arg: "--disable-screensaver" },
@@ -74,13 +115,18 @@ export default {
                 { arg: "--raw-key-events" },
                 { arg: "--no-key-repeat" },
                 { arg: "--show-touches" },
-                { arg: "--lock-video-orientation" },
             ]
         }
     },
     watch: {
         active_args() { this.save_config(); },
         custom_flags() { this.save_config(); },
+        custom_window_name() { this.save_config(); },
+        custom_display_id() { this.save_config(); },
+        window_title() { this.save_config(); },
+        display_id() { this.save_config(); },
+        virtual_display() { this.save_config(); },
+        virtual_display_size() { this.save_config(); },
         bitrate() { this.save_config(); },
     },
     created() {
@@ -103,6 +149,12 @@ export default {
             localStorage.setItem("scrcpyplus.scrcpy_config", JSON.stringify({
                 active_args: this.active_args,
                 custom_flags: this.custom_flags,
+                custom_window_name: this.custom_window_name,
+                custom_display_id: this.custom_display_id,
+                window_title: this.window_title,
+                display_id: this.display_id,
+                virtual_display: this.virtual_display,
+                virtual_display_size: this.virtual_display_size,
                 bitrate: this.bitrate,
             }));
         },
@@ -111,9 +163,15 @@ export default {
             try {
                 const saved = JSON.parse(localStorage.getItem("scrcpyplus.scrcpy_config"));
                 if (!saved) return;
-                const known = [...this.basic_options, ...this.advanced_options].map(o => o.arg);
+                const known = [...this.basic_options, ...this.window_options, ...this.advanced_options].map(o => o.arg);
                 if (Array.isArray(saved.active_args)) this.active_args = saved.active_args.filter(a => known.includes(a));
                 if (typeof saved.custom_flags == "string") this.custom_flags = saved.custom_flags;
+                this.custom_window_name = saved.custom_window_name === true;
+                this.custom_display_id = saved.custom_display_id === true;
+                if (typeof saved.window_title == "string") this.window_title = saved.window_title;
+                if (saved.display_id === "" || Number.isInteger(Number(saved.display_id))) this.display_id = saved.display_id;
+                if (typeof saved.virtual_display == "boolean") this.virtual_display = saved.virtual_display;
+                if (typeof saved.virtual_display_size == "string") this.virtual_display_size = saved.virtual_display_size;
                 if (saved.bitrate >= 1 && saved.bitrate <= 32) this.bitrate = saved.bitrate;
             } catch (e) {}
         },
@@ -121,6 +179,13 @@ export default {
             let scrcpy_start_args = ["-s", this.device];
 
             scrcpy_start_args.push(...this.active_args);
+            if (this.custom_window_name && this.window_title.trim()) scrcpy_start_args.push(`--window-title=${this.window_title.trim()}`);
+            if (this.virtual_display) {
+                const size = this.virtual_display_size.trim();
+                scrcpy_start_args.push(size ? `--new-display=${size}` : "--new-display");
+            } else if (this.custom_display_id && this.display_id !== "" && this.display_id !== null) {
+                scrcpy_start_args.push(`--display-id=${this.display_id}`);
+            }
             // Split on whitespace, keeping quoted segments together
             for (const m of this.custom_flags.matchAll(/"([^"]*)"|'([^']*)'|(\S+)/g)) {
                 scrcpy_start_args.push(m[1] ?? m[2] ?? m[3]);

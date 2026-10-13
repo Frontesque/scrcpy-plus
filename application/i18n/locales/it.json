@@ -32,5 +32,10 @@
     "launch_options": "Opzioni di avvio",
     "video_bitrate": "Bitrate video",
     "custom_flags": "Opzioni personalizzate",
+    "display_settings": "Impostazioni display",
+    "custom_window_name": "Nome finestra personalizzato",
+    "custom_display_id": "ID display personalizzato",
+    "virtual_display": "Display virtuale",
+    "virtual_display_desc": "Crea un display virtuale separato sul telefono (Android 10+). Dimensione opzionale, es. 1920x1080/420",
     "advanced": "Avanzate"
 }

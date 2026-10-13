@@ -32,6 +32,11 @@
     "launch_options": "Launch Options",
     "video_bitrate": "Video Bitrate",
     "custom_flags": "Custom Flags",
+    "display_settings": "Display Settings",
+    "custom_window_name": "Custom window name",
+    "custom_display_id": "Custom display ID",
+    "virtual_display": "Virtual display",
+    "virtual_display_desc": "Create a separate virtual display on the phone (Android 10+). Optional size, e.g. 1920x1080/420",
     "advanced": "Advanced",
     "scrcpy_options": {
         "--keyboard=uhid": "Hide on-screen keyboard",
