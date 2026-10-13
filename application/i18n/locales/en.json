@@ -49,6 +49,7 @@
     "reset": "Reset",
     "advanced": "Advanced",
     "scrcpy_options": {
+        "--no-video": "Audio only",
         "--keyboard=uhid": "Hide on-screen keyboard",
         "--turn-screen-off": "Turn off phone screen",
         "--no-audio": "Mute audio",
@@ -66,6 +67,7 @@
         "--lock-video-orientation": "Lock screen rotation"
     },
     "scrcpy_flags": {
+        "--no-video"               : "Stream only the phone's audio, without showing its screen",
         "--keyboard=uhid"          : "Types as a physical keyboard, so the phone's on-screen keyboard stays hidden",
         "--turn-screen-off"        : "Turn off the screen on the physical device",
         "--no-audio"               : "Disable streaming audio from the device",
