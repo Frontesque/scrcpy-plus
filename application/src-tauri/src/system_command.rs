@@ -1,7 +1,6 @@
 use std::process::Command;
 #[cfg(windows)]
 use std::os::windows::process::CommandExt;
-use std::str::from_utf8;
 #[cfg(windows)]
 use std::sync::Mutex;
 #[cfg(windows)]
@@ -49,8 +48,7 @@ fn execute(command: &str, args: Vec<&str>) -> String {
         },
     };
 
-    let output_str: &str = from_utf8(&output.stdout).expect("Unable to convert utf8 to string");
-    return output_str.to_string();
+    return String::from_utf8_lossy(&output.stdout).to_string();
 }
 
 #[cfg(windows)]

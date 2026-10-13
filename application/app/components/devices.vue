@@ -55,6 +55,7 @@ export default {
             devices: new Array(),
             active_device: undefined,
             unauthorized: false,
+            selecting: undefined,
             active_device_information: {
                 model: "",
                 model_id: "",
@@ -68,7 +69,10 @@ export default {
     methods: {
 
         async set_active(device) {
+            this.selecting = device;
             await this.get_device_info(device);
+            // A newer selection happened while adb was responding
+            if (this.selecting !== device) return;
             this.$emit('device', device);
             this.active_device = device;
         },
@@ -97,6 +101,7 @@ export default {
                 if (i == 0) continue;
                 if (entry == "") continue;
                 if (entry == "\r") continue;
+                if (entry.startsWith("*")) continue; // adb daemon status lines
                 if (entry.includes("\t")) {
                     devices_output.push(entry.split("\t")[0]);
                 } else {
@@ -104,6 +109,10 @@ export default {
                 }
             }
             this.devices = devices_output;
+            if (this.active_device && !devices_output.includes(this.active_device)) {
+                this.active_device = undefined;
+                this.$emit('device', false);
+            }
             if (devices_output.length === 1 && this.active_device !== devices_output[0]) {
                 await this.set_active(devices_output[0]);
             }

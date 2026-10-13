@@ -204,13 +204,14 @@ export default {
             scrcpy_start_args.push(...this.active_args);
             if (this.custom_window_name && this.window_title.trim()) scrcpy_start_args.push(`--window-title=${this.window_title.trim()}`);
             const crop = this.crop;
-            if (this.custom_crop && [crop.width, crop.height, crop.x, crop.y].every(v => v !== "" && v !== null)) {
+            const is_uint = v => /^\d+$/.test(String(v).trim());
+            if (this.custom_crop && [crop.width, crop.height, crop.x, crop.y].every(is_uint)) {
                 scrcpy_start_args.push(`--crop=${crop.width}:${crop.height}:${crop.x}:${crop.y}`);
             }
             if (this.virtual_display) {
                 const size = this.virtual_display_size.trim();
                 scrcpy_start_args.push(size ? `--new-display=${size}` : "--new-display");
-            } else if (this.custom_display_id && this.display_id !== "" && this.display_id !== null) {
+            } else if (this.custom_display_id && is_uint(this.display_id)) {
                 scrcpy_start_args.push(`--display-id=${this.display_id}`);
             }
             // Split on whitespace, keeping quoted segments together
@@ -220,9 +221,12 @@ export default {
             if (this.bitrate !== 8) scrcpy_start_args.push(`--video-bit-rate=${this.bitrate}M`);
 
             const device = this.device;
+            if (!device || this.running[device]) return;
             this.running[device] = true;
             try {
                 await invoke("run_scrcpy", { args: scrcpy_start_args });
+            } catch (e) {
+                console.error("Failed to start scrcpy", e);
             } finally {
                 this.running[device] = false;
             }

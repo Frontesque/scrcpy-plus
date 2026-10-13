@@ -28,36 +28,42 @@ export default {
             updateAvailable: false,
             currentVersion: new String(),
             latestVersion: new String(),
-            repo: []
+            repo: [],
+            release_url: ""
         }
     },
     methods: {
         async get_latest_release(env) {
             this.repo = await $fetch(env.releases_url);
-            for (const i in this.repo) {
-                if (this.repo[i].prerelease === false) {
-                    return this.repo[i];
-                }
+            return this.repo.find(release => release.prerelease === false && !release.draft);
+        },
+        // Compares dotted versions numerically, ignoring a leading "v" and any suffix
+        is_newer(latest, current) {
+            const parse = v => String(v).replace(/^v/i, "").split(/[.-]/).map(n => parseInt(n, 10) || 0);
+            const a = parse(latest), b = parse(current);
+            for (let i = 0; i < Math.max(a.length, b.length); i++) {
+                const x = a[i] ?? 0, y = b[i] ?? 0;
+                if (x !== y) return x > y;
             }
+            return false;
         },
         open() {
-            openUrl(this.repo[0].html_url)
+            openUrl(this.release_url);
         }
     },
     async mounted() {
         if (localStorage.getItem("setting.disable_update_check") == "true") return;
-        const environment = await invoke("environment");
-        this.currentVersion = environment.app_version;
-        const release = await this.get_latest_release(environment);
-        this.latestVersion = release.tag_name;
-
-        const latest = this.latestVersion.split(".");
-        const current = this.currentVersion.split(".");
-        for (const i in latest) {
-            if (latest[i] > current[i]) {
-                console.log("UPDATE AVAILABLE")
-                return this.updateAvailable = true;
-            }
+        try {
+            const environment = await invoke("environment");
+            this.currentVersion = environment.app_version;
+            const release = await this.get_latest_release(environment);
+            if (!release) return;
+            this.latestVersion = release.tag_name;
+            this.release_url = release.html_url;
+            this.updateAvailable = this.is_newer(this.latestVersion, this.currentVersion);
+        } catch (e) {
+            // Offline or rate limited: skip the update check
+            console.warn("Update check failed", e);
         }
     }
 }
