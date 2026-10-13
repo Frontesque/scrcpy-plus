@@ -49,7 +49,7 @@
     "reset": "Reset",
     "advanced": "Advanced",
     "scrcpy_options": {
-        "--no-video": "Audio only",
+        "--no-video": "No video",
         "--keyboard=uhid": "Hide on-screen keyboard",
         "--turn-screen-off": "Turn off phone screen",
         "--no-audio": "Mute audio",

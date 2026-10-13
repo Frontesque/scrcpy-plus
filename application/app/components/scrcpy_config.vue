@@ -116,9 +116,9 @@ export default {
             ],
             window_options: [
                 { arg: "--lock-video-orientation" },
+                { arg: "--no-video" },
             ],
             advanced_options: [
-                { arg: "--no-video" },
                 { arg: "--disable-screensaver" },
                 { arg: "--otg" },
                 { arg: "--forward-all-clicks" },
