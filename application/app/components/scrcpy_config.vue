@@ -60,6 +60,7 @@ export default {
                 { arg: "--no-audio" },
                 { arg: "--stay-awake" },
                 { arg: "--no-control" },
+                { arg: "--keyboard=uhid" },
             ],
             advanced_options: [
                 { arg: "--disable-screensaver" },

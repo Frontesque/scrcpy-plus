@@ -33,6 +33,7 @@
     "video_bitrate": "Video Bitrate",
     "advanced": "Advanced",
     "scrcpy_options": {
+        "--keyboard=uhid": "Hide on-screen keyboard",
         "--turn-screen-off": "Turn off phone screen",
         "--no-audio": "Mute audio",
         "--stay-awake": "Keep phone awake",
@@ -49,6 +50,7 @@
         "--lock-video-orientation": "Lock screen rotation"
     },
     "scrcpy_flags": {
+        "--keyboard=uhid"          : "Types as a physical keyboard, so the phone's on-screen keyboard stays hidden",
         "--turn-screen-off"        : "Turn off the screen on the physical device",
         "--no-audio"               : "Disable streaming audio from the device",
         "--stay-awake"             : "Prevent the device from sleeping",
