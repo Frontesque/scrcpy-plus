@@ -12,7 +12,7 @@
                 </div>
             </label>
 
-            <button class="btn btn-primary text-white mt-16" @click="start_scrcpy">
+            <button class="btn btn-primary text-white mt-16" :disabled="running[device]" @click="start_scrcpy">
                 <icon name="play" size="20x20" />
                 <span>{{ $t('start') }}</span>
             </button>
@@ -24,6 +24,10 @@
 import { invoke } from "@tauri-apps/api/core";
 export default {
     props: ["device"],
+    setup() {
+        // Shared state so running sessions survive navigating between pages
+        return { running: useState("scrcpy_running", () => ({})) };
+    },
     data() {
         return {
             active_args: [],
@@ -52,7 +56,13 @@ export default {
 
             scrcpy_start_args.push(...this.active_args);
 
-            const scrcpy_output = await invoke("run_scrcpy", { args: scrcpy_start_args });
+            const device = this.device;
+            this.running[device] = true;
+            try {
+                await invoke("run_scrcpy", { args: scrcpy_start_args });
+            } finally {
+                this.running[device] = false;
+            }
         },
     }
 }

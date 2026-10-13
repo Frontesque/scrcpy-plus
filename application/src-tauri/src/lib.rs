@@ -32,9 +32,14 @@ fn exec_scrcpy(args: Vec<&str>) -> String {
 }
 
 #[tauri::command]
-fn run_scrcpy(args: Vec<&str>) {
-  let args_copy: Vec<&str> = args.to_owned();
-  scrcpy(args_copy);
+async fn run_scrcpy(args: Vec<String>) -> Result<(), String> {
+  // Runs on a dedicated blocking thread and resolves once the scrcpy window is closed
+  tauri::async_runtime::spawn_blocking(move || {
+    let args_ref: Vec<&str> = args.iter().map(|a| a.as_str()).collect();
+    scrcpy(args_ref);
+  })
+  .await
+  .map_err(|e| e.to_string())
 }
 
 // #[cfg_attr(mobile, tauri::mobile_entry_point)]
