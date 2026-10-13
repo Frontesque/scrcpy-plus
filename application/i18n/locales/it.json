@@ -29,6 +29,5 @@
     "skip": "Saltare",
     "back": "Precedente",
     "success": "Riuscito",
-    "flags": "Opzioni",
-    "add_flag": "Aggiungere Opzione"
+    "launch_options": "Opzioni di avvio"
 }
