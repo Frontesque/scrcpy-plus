@@ -37,6 +37,11 @@
     "custom_display_id": "Custom display ID",
     "virtual_display": "Virtual display",
     "virtual_display_desc": "Create a separate virtual display on the phone (Android 10+). Optional size, e.g. 1920x1080/420",
+    "custom_crop": "Custom crop",
+    "crop_width": "Width",
+    "crop_height": "Height",
+    "crop_x": "X offset",
+    "crop_y": "Y offset",
     "advanced": "Advanced",
     "scrcpy_options": {
         "--keyboard=uhid": "Hide on-screen keyboard",

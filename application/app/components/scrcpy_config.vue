@@ -33,6 +33,16 @@
                         </div>
                     </label>
                     <label class="flex cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" v-model="custom_crop" />
+                        <p class="ml-2 text-white">{{ $t('custom_crop') }}</p>
+                    </label>
+                    <div v-if="custom_crop" class="grid grid-cols-2 gap-2">
+                        <label v-for="field in ['width', 'height', 'x', 'y']" :key="field">
+                            <span class="text-white">{{ $t(`crop_${field}`) }}</span>
+                            <input type="number" min="0" step="1" class="input input-bordered w-full" v-model="crop[field]" />
+                        </label>
+                    </div>
+                    <label class="flex cursor-pointer">
                         <input type="checkbox" class="checkbox checkbox-primary" :disabled="virtual_display" v-model="custom_display_id" />
                         <p class="ml-2 text-white">{{ $t('custom_display_id') }}</p>
                     </label>
@@ -91,6 +101,8 @@ export default {
             custom_window_name: false,
             window_title: "",
             custom_display_id: false,
+            custom_crop: false,
+            crop: { width: "", height: "", x: "0", y: "0" },
             display_id: "",
             virtual_display: false,
             virtual_display_size: "",
@@ -123,6 +135,8 @@ export default {
         custom_flags() { this.save_config(); },
         custom_window_name() { this.save_config(); },
         custom_display_id() { this.save_config(); },
+        custom_crop() { this.save_config(); },
+        crop: { handler() { this.save_config(); }, deep: true },
         window_title() { this.save_config(); },
         display_id() { this.save_config(); },
         virtual_display() { this.save_config(); },
@@ -151,6 +165,8 @@ export default {
                 custom_flags: this.custom_flags,
                 custom_window_name: this.custom_window_name,
                 custom_display_id: this.custom_display_id,
+                custom_crop: this.custom_crop,
+                crop: this.crop,
                 window_title: this.window_title,
                 display_id: this.display_id,
                 virtual_display: this.virtual_display,
@@ -168,6 +184,12 @@ export default {
                 if (typeof saved.custom_flags == "string") this.custom_flags = saved.custom_flags;
                 this.custom_window_name = saved.custom_window_name === true;
                 this.custom_display_id = saved.custom_display_id === true;
+                this.custom_crop = saved.custom_crop === true;
+                if (saved.crop && typeof saved.crop == "object") {
+                    for (const k of ["width", "height", "x", "y"]) {
+                        if (saved.crop[k] === "" || Number.isInteger(Number(saved.crop[k]))) this.crop[k] = String(saved.crop[k]);
+                    }
+                }
                 if (typeof saved.window_title == "string") this.window_title = saved.window_title;
                 if (saved.display_id === "" || Number.isInteger(Number(saved.display_id))) this.display_id = saved.display_id;
                 if (typeof saved.virtual_display == "boolean") this.virtual_display = saved.virtual_display;
@@ -180,6 +202,10 @@ export default {
 
             scrcpy_start_args.push(...this.active_args);
             if (this.custom_window_name && this.window_title.trim()) scrcpy_start_args.push(`--window-title=${this.window_title.trim()}`);
+            const crop = this.crop;
+            if (this.custom_crop && [crop.width, crop.height, crop.x, crop.y].every(v => v !== "" && v !== null)) {
+                scrcpy_start_args.push(`--crop=${crop.width}:${crop.height}:${crop.x}:${crop.y}`);
+            }
             if (this.virtual_display) {
                 const size = this.virtual_display_size.trim();
                 scrcpy_start_args.push(size ? `--new-display=${size}` : "--new-display");

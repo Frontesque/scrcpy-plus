@@ -37,5 +37,10 @@
     "custom_display_id": "ID display personalizzato",
     "virtual_display": "Display virtuale",
     "virtual_display_desc": "Crea un display virtuale separato sul telefono (Android 10+). Dimensione opzionale, es. 1920x1080/420",
+    "custom_crop": "Ritaglio personalizzato",
+    "crop_width": "Larghezza",
+    "crop_height": "Altezza",
+    "crop_x": "Offset X",
+    "crop_y": "Offset Y",
     "advanced": "Avanzate"
 }
