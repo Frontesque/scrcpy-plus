@@ -49,10 +49,7 @@ export default {
     setup() {
         // Shared state so running sessions survive navigating between pages
         const running = useState("scrcpy_running", () => ({}));
-        const bitrate = useState("scrcpy_bitrate", () => {
-            const saved = Number(localStorage.getItem("scrcpyplus.bitrate"));
-            return saved >= 1 && saved <= 32 ? saved : 8;
-        });
+        const bitrate = useState("scrcpy_bitrate", () => 8);
         return { running, bitrate };
     },
     data() {
@@ -81,12 +78,44 @@ export default {
             ]
         }
     },
+    watch: {
+        active_args() { this.save_config(); },
+        custom_flags() { this.save_config(); },
+        bitrate() { this.save_config(); },
+    },
+    created() {
+        this.load_config();
+    },
     methods: {
         set_bitrate(event) {
             // Ignore events fired while the collapsed drawer hides the slider
             if (event.target.offsetWidth === 0) return;
             this.bitrate = Number(event.target.value);
-            localStorage.setItem("scrcpyplus.bitrate", this.bitrate);
+        },
+        remember_enabled() {
+            return localStorage.getItem("setting.save_scrcpy_config") == "true";
+        },
+        save_config() {
+            if (!this.remember_enabled()) {
+                localStorage.removeItem("scrcpyplus.scrcpy_config");
+                return;
+            }
+            localStorage.setItem("scrcpyplus.scrcpy_config", JSON.stringify({
+                active_args: this.active_args,
+                custom_flags: this.custom_flags,
+                bitrate: this.bitrate,
+            }));
+        },
+        load_config() {
+            if (!this.remember_enabled()) return;
+            try {
+                const saved = JSON.parse(localStorage.getItem("scrcpyplus.scrcpy_config"));
+                if (!saved) return;
+                const known = [...this.basic_options, ...this.advanced_options].map(o => o.arg);
+                if (Array.isArray(saved.active_args)) this.active_args = saved.active_args.filter(a => known.includes(a));
+                if (typeof saved.custom_flags == "string") this.custom_flags = saved.custom_flags;
+                if (saved.bitrate >= 1 && saved.bitrate <= 32) this.bitrate = saved.bitrate;
+            } catch (e) {}
         },
         async start_scrcpy() {
             let scrcpy_start_args = ["-s", this.device];
