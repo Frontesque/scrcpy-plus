@@ -8,6 +8,7 @@
     "devices": "デバイス",
     "no_device": "デバイスが未選択です",
     "no_device2": "デバイスが未検出です",
+    "unauthorized": "未承認",
     "connect_wirelessly": "ワイヤレス接続",
     "model": "モデル",
     "android_version": "Android バージョン",

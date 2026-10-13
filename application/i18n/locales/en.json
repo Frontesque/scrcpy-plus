@@ -8,6 +8,7 @@
     "devices": "Devices",
     "no_device": "No device selected",
     "no_device2": "No devices detected",
+    "unauthorized": "Unauthorized",
     "connect_wirelessly": "Connect Wirelessly",
     "model": "Model",
     "android_version": "Android Version",

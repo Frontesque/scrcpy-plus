@@ -8,6 +8,7 @@
     "devices": "Telefoni",
     "no_device": "Dispositivo non selezionato",
     "no_device2": "Nessun dispositivo rilevato",
+    "unauthorized": "Non autorizzato",
     "connect_wirelessly": "Connessione Wi-Fi",
     "model": "Modella",
     "android_version": "Versione Android",

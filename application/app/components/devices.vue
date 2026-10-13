@@ -17,11 +17,14 @@
                     <a role="tab" class="tab force-text-white" :class="active_device == device ? 'tab-active' : ''" v-for="device in devices" @click="set_active(device)">{{ device }}</a>
                 </div>
 
-                <div v-if="active_device">
+                <div v-if="active_device && unauthorized">
+                    <p class="mt-4 text-white">{{ $t('unauthorized') }}</p>
+                </div>
+                <div v-else-if="active_device">
                     <p class="mt-4 text-white flex"><icon class="mt-1 mr-2" size="18x18" name="mobile" /> {{ $t('model') }}</p>
-                    <p>{{ active_device_information.model }} ({{ active_device_information.model_id.trim() }})</p>
+                    <p>{{ active_device_information.model }} ({{ active_device_information.model_id }})</p>
                     <p class="mt-4 text-white flex"><icon class="mt-1 mr-2" size="18x18" name="android" /> {{ $t('android_version') }}</p>
-                    <p>{{ active_device_information.version }} (API {{ active_device_information.sdk.trim() }})</p>
+                    <p>{{ active_device_information.version }} (API {{ active_device_information.sdk }})</p>
                     <p class="mt-4 text-white flex"><icon class="mt-1 mr-2" size="18x18" name="wrench" /> {{ $t('build_number') }}</p>
                     <p>{{ active_device_information.build }}</p>
                     <p class="mt-4 text-white flex"><icon class="mt-1 mr-2" size="18x18" name="shield" /> {{ $t('security_patch') }}</p>
@@ -51,6 +54,7 @@ export default {
         return {
             devices: new Array(),
             active_device: undefined,
+            unauthorized: false,
             active_device_information: {
                 model: "",
                 model_id: "",
@@ -72,13 +76,14 @@ export default {
         // The majority of this function should be converted to rust
         // It is currently a javascript function to allow this program to be written faster
         async get_device_info(serial) {
-            this.active_device_information.model            = await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.product.model"] });
-            this.active_device_information.model_id         = await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.product.device"] });
-            this.active_device_information.version          = await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.version.release"] });
-            this.active_device_information.sdk              = await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.version.sdk"] });
-            this.active_device_information.build            = await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.id"] });
-            this.active_device_information.security_patch   = await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.version.security_patch"] });
-            return;
+            this.active_device_information.model            = (await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.product.model"] })).trim();
+            this.active_device_information.model_id         = (await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.product.device"] })).trim();
+            this.active_device_information.version          = (await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.version.release"] })).trim();
+            this.active_device_information.sdk              = (await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.version.sdk"] })).trim();
+            this.active_device_information.build            = (await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.id"] })).trim();
+            this.active_device_information.security_patch   = (await invoke("exec_adb", { args: ["-s", serial, "shell", "getprop", "ro.build.version.security_patch"] })).trim();
+            const info = this.active_device_information;
+            this.unauthorized = !info.model && !info.model_id && !info.version && !info.sdk && !info.build;
         },
 
         // The majority of this function should be converted to rust
@@ -99,13 +104,16 @@ export default {
                 }
             }
             this.devices = devices_output;
+            if (devices_output.length === 1 && this.active_device !== devices_output[0]) {
+                await this.set_active(devices_output[0]);
+            }
         }
     },
     mounted() {
         this.refresh_devices();
         this.interval = setInterval(this.refresh_devices, 5000);
     },
-    beforeDestroy() {
+    beforeUnmount() {
       clearInterval(this.interval); // Prevent Memory Leak
     }
 }
