@@ -21,6 +21,10 @@
                         <p class="ml-2 text-white">{{ $t('custom_window_name') }}</p>
                     </label>
                     <input v-if="custom_window_name" type="text" class="input input-bordered w-full" v-model="window_title" />
+                    <div>
+                        <p class="text-white">{{ $t('video_bitrate') }}: {{ bitrate }} Mbps</p>
+                        <input type="range" min="1" max="32" step="1" class="range range-primary range-sm" :value="bitrate" @input="set_bitrate" />
+                    </div>
                     <label v-for="option in window_options" :key="option.arg" class="flex cursor-pointer">
                         <input type="checkbox" class="checkbox checkbox-primary" :value="option.arg" v-model="active_args" />
                         <div class="ml-2">
@@ -48,10 +52,6 @@
                 <input type="checkbox" />
                 <div class="collapse-title text-white">{{ $t('advanced') }}</div>
                 <div class="collapse-content space-y-3">
-                    <div>
-                        <p class="text-white">{{ $t('video_bitrate') }}: {{ bitrate }} Mbps</p>
-                        <input type="range" min="1" max="32" step="1" class="range range-primary range-sm" :value="bitrate" @input="set_bitrate" />
-                    </div>
                     <label v-for="option in advanced_options" :key="option.arg" class="flex cursor-pointer">
                         <input type="checkbox" class="checkbox checkbox-primary" :value="option.arg" v-model="active_args" />
                         <div class="ml-2">
