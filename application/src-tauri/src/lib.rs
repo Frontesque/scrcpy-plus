@@ -6,9 +6,20 @@ use system_command::{ scrcpy, adb };
 fn environment() -> Value {
   return json!({
     "app_version":  env!("CARGO_PKG_VERSION"),
-    "releases_url": "https://api.github.com/repos/Frontesque/scrcpy-plus/releases"
+    "releases_url": "https://api.github.com/repos/Frontesque/scrcpy-plus/releases",
+    "is_windows":   cfg!(windows)
   });
 }
+
+#[cfg(windows)]
+#[tauri::command]
+fn set_binary_paths(scrcpy_path: Option<String>, adb_path: Option<String>) {
+  system_command::set_custom_paths(scrcpy_path, adb_path);
+}
+
+#[cfg(not(windows))]
+#[tauri::command]
+fn set_binary_paths(_scrcpy_path: Option<String>, _adb_path: Option<String>) {}
 
 #[tauri::command]
 fn get_dependency_versions() -> Value {
@@ -46,7 +57,8 @@ async fn run_scrcpy(args: Vec<String>) -> Result<(), String> {
 pub fn run() {
   tauri::Builder::default()
     .plugin(tauri_plugin_opener::init())
-    .invoke_handler(tauri::generate_handler![get_dependency_versions, exec_adb, exec_scrcpy, run_scrcpy, environment])
+    .plugin(tauri_plugin_dialog::init())
+    .invoke_handler(tauri::generate_handler![get_dependency_versions, exec_adb, exec_scrcpy, run_scrcpy, environment, set_binary_paths])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

@@ -42,6 +42,11 @@
     "crop_height": "Height",
     "crop_x": "X offset",
     "crop_y": "Y offset",
+    "scrcpy_executable": "SCRCPY executable",
+    "adb_executable": "ADB executable",
+    "bundled_default": "Using bundled version",
+    "browse": "Browse",
+    "reset": "Reset",
     "advanced": "Advanced",
     "scrcpy_options": {
         "--keyboard=uhid": "Hide on-screen keyboard",

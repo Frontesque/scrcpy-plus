@@ -42,5 +42,10 @@
     "crop_height": "Altezza",
     "crop_x": "Offset X",
     "crop_y": "Offset Y",
+    "scrcpy_executable": "Eseguibile SCRCPY",
+    "adb_executable": "Eseguibile ADB",
+    "bundled_default": "Versione inclusa in uso",
+    "browse": "Sfoglia",
+    "reset": "Ripristina",
     "advanced": "Avanzate"
 }

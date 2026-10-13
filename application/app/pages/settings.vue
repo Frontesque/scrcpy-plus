@@ -32,7 +32,17 @@
                     <p>{{ $t(item.title) }}</p>
                 </div>
 
-                
+
+                <div v-if="is_windows" class="mt-8">
+                    <div v-for="bin in binaries" :key="bin.key" class="mb-4">
+                        <p>{{ $t(bin.title) }}</p>
+                        <div class="flex gap-2">
+                            <input type="text" class="input w-full" readonly :value="paths[bin.key]" :placeholder="$t('bundled_default')" />
+                            <button class="btn btn-primary text-white" @click="pick_binary(bin)">{{ $t('browse') }}</button>
+                            <button class="btn" :disabled="!paths[bin.key]" @click="clear_binary(bin)">{{ $t('reset') }}</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -44,6 +54,8 @@ const { setLocale } = useI18n()
 </script>
 
 <script>
+import { invoke } from "@tauri-apps/api/core";
+import { open } from "@tauri-apps/plugin-dialog";
 export default {
     data() {
         return {
@@ -51,6 +63,15 @@ export default {
                 { key: "setting.disable_update_check", title: "dnc_updates" },
                 { key: "setting.save_scrcpy_config",   title: "rscrcpy_config"  }
             ],
+            is_windows: false,
+            binaries: [
+                { key: "scrcpy_path", title: "scrcpy_executable" },
+                { key: "adb_path",    title: "adb_executable" }
+            ],
+            paths: {
+                scrcpy_path: localStorage.getItem("scrcpyplus.scrcpy_path") || "",
+                adb_path:    localStorage.getItem("scrcpyplus.adb_path") || ""
+            },
             locale: localStorage.getItem("scrcpyplus.locale") || 'en',
         }
     },
@@ -59,13 +80,36 @@ export default {
             localStorage.setItem(key, event.target.checked);
             console.log(key, event.target.checked);
         },
+        async apply_binary_paths() {
+            await invoke("set_binary_paths", {
+                scrcpyPath: this.paths.scrcpy_path || null,
+                adbPath: this.paths.adb_path || null
+            });
+        },
+        async pick_binary(bin) {
+            const selected = await open({
+                multiple: false,
+                directory: false,
+                filters: [{ name: "Executable", extensions: ["exe"] }]
+            });
+            if (typeof selected !== "string") return;
+            this.paths[bin.key] = selected;
+            localStorage.setItem(`scrcpyplus.${bin.key}`, selected);
+            await this.apply_binary_paths();
+        },
+        async clear_binary(bin) {
+            this.paths[bin.key] = "";
+            localStorage.removeItem(`scrcpyplus.${bin.key}`);
+            await this.apply_binary_paths();
+        },
         set_language(event) {
             const new_locale = event.target.value;
             localStorage.setItem("scrcpyplus.locale", new_locale);
             console.log("scrcpyplus.locale", new_locale);
         }
     },
-    mounted() {
+    async mounted() {
+        this.is_windows = (await invoke("environment")).is_windows === true;
         const vm = this;
         for (let key of Object.keys(localStorage)) { 
             if(!key.startsWith("setting.")) continue;
