@@ -25,6 +25,14 @@
                         <p class="text-white">{{ $t('video_bitrate') }}: {{ bitrate }} Mbps</p>
                         <input type="range" min="1" max="32" step="1" class="range range-primary range-sm" :value="bitrate" @input="set_bitrate" />
                     </div>
+                    <label class="flex cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" v-model="record_screen" />
+                        <p class="ml-2 text-white">{{ $t('record_screen') }}</p>
+                    </label>
+                    <div v-if="record_screen" class="flex gap-2">
+                        <input type="text" class="input input-bordered w-full" readonly :value="record_path" :placeholder="$t('choose_recording_file')" />
+                        <button class="btn btn-primary text-white" @click="pick_record_path">{{ $t('browse') }}</button>
+                    </div>
                     <label v-for="option in window_options" :key="option.arg" class="flex cursor-pointer">
                         <input type="checkbox" class="checkbox checkbox-primary" :value="option.arg" v-model="active_args" />
                         <div class="ml-2">
@@ -86,6 +94,7 @@
 
 <script>
 import { invoke } from "@tauri-apps/api/core";
+import { save } from "@tauri-apps/plugin-dialog";
 export default {
     props: ["device"],
     setup() {
@@ -102,6 +111,8 @@ export default {
             window_title: "",
             custom_display_id: false,
             custom_crop: false,
+            record_screen: false,
+            record_path: "",
             crop: { width: "", height: "", x: "0", y: "0" },
             display_id: "",
             virtual_display: false,
@@ -137,6 +148,8 @@ export default {
         custom_window_name() { this.save_config(); },
         custom_display_id() { this.save_config(); },
         custom_crop() { this.save_config(); },
+        record_screen() { this.save_config(); },
+        record_path() { this.save_config(); },
         crop: { handler() { this.save_config(); }, deep: true },
         window_title() { this.save_config(); },
         display_id() { this.save_config(); },
@@ -167,6 +180,8 @@ export default {
                 custom_window_name: this.custom_window_name,
                 custom_display_id: this.custom_display_id,
                 custom_crop: this.custom_crop,
+                record_screen: this.record_screen,
+                record_path: this.record_path,
                 crop: this.crop,
                 window_title: this.window_title,
                 display_id: this.display_id,
@@ -186,6 +201,8 @@ export default {
                 this.custom_window_name = saved.custom_window_name === true;
                 this.custom_display_id = saved.custom_display_id === true;
                 this.custom_crop = saved.custom_crop === true;
+                this.record_screen = saved.record_screen === true;
+                if (typeof saved.record_path == "string") this.record_path = saved.record_path;
                 if (saved.crop && typeof saved.crop == "object") {
                     for (const k of ["width", "height", "x", "y"]) {
                         if (saved.crop[k] === "" || Number.isInteger(Number(saved.crop[k]))) this.crop[k] = String(saved.crop[k]);
@@ -198,6 +215,13 @@ export default {
                 if (saved.bitrate >= 1 && saved.bitrate <= 32) this.bitrate = saved.bitrate;
             } catch (e) {}
         },
+        async pick_record_path() {
+            const selected = await save({
+                defaultPath: this.record_path || "recording.mp4",
+                filters: [{ name: "Video", extensions: ["mp4", "mkv"] }]
+            });
+            if (typeof selected === "string") this.record_path = selected;
+        },
         async start_scrcpy() {
             let scrcpy_start_args = ["-s", this.device];
 
@@ -207,6 +231,9 @@ export default {
             const is_uint = v => /^\d+$/.test(String(v).trim());
             if (this.custom_crop && [crop.width, crop.height, crop.x, crop.y].every(is_uint)) {
                 scrcpy_start_args.push(`--crop=${crop.width}:${crop.height}:${crop.x}:${crop.y}`);
+            }
+            if (this.record_screen && this.record_path) {
+                scrcpy_start_args.push(`--record=${this.record_path}`);
             }
             if (this.virtual_display) {
                 const size = this.virtual_display_size.trim();

@@ -47,5 +47,8 @@
     "bundled_default": "Versione inclusa in uso",
     "browse": "Sfoglia",
     "reset": "Ripristina",
+    "disconnect": "Disconnetti",
+    "record_screen": "Registra schermo",
+    "choose_recording_file": "Scegli dove salvare la registrazione",
     "advanced": "Avanzate"
 }

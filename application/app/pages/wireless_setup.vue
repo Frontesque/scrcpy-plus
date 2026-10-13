@@ -21,7 +21,7 @@
                 
                 <p class="card-title">{{ $t('wifi_pairing') }}</p>
                 <input type="text" id="pair_code" :placeholder="$t('code')" class="input input-bordered w-full mt-2" />
-                <input type="text" id="pair_ip_port" :placeholder="$t('ip_and_port')" class="input input-bordered w-full my-2" />
+                <input type="text" id="pair_ip_port" v-model="pair_ip_port" :placeholder="$t('ip_and_port')" class="input input-bordered w-full my-2" />
 
                 <div class="card-actions justify-end">
                     <button class="btn" rounded :disabled="pairingLoading" @click="step++">{{ $t('skip') }}</button>
@@ -35,7 +35,7 @@
             <div class="p-8">
                 
                 <p class="card-title">{{ $t('connecting') }}</p>
-                <input type="text" id="connect_ip_port" :placeholder="$t('ip_and_port')" class="input input-bordered w-full my-2" />
+                <input type="text" id="connect_ip_port" v-model="connect_ip_port" :placeholder="$t('ip_and_port')" class="input input-bordered w-full my-2" />
 
                 <div class="card-actions justify-end">
                     <button class="btn" rounded :disabled="pairingLoading" @click="step--">{{ $t('back') }}</button>
@@ -71,7 +71,15 @@ export default {
             notice: null,
             step: 0,
             connectingLoading: false,
+            pair_ip_port: "",
+            connect_ip_port: localStorage.getItem("scrcpyplus.last_ip_port") || "",
         }
+    },
+
+    created() {
+        // The pairing port changes every time, so only the saved IP is prefilled
+        const last_ip = this.connect_ip_port.split(":")[0];
+        if (last_ip) this.pair_ip_port = `${last_ip}:`;
     },
 
     methods: {
@@ -87,13 +95,14 @@ export default {
         },
 
         async connect() {
-            const ip = document.getElementById("connect_ip_port").value;
+            const ip = this.connect_ip_port.trim();
             if (ip == "") return; // Ensure No Error
 
             const data = await invoke("exec_adb", { args: ["connect", ip] });
             console.log(data);
             this.notice = data;
             if (data.includes("connected")) {
+                localStorage.setItem("scrcpyplus.last_ip_port", ip);
                 this.step++;
                 setTimeout(() => {
                     this.$router.go(-1)

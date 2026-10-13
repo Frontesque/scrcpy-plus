@@ -17,6 +17,10 @@
                     <a role="tab" class="tab force-text-white" :class="active_device == device ? 'tab-active' : ''" v-for="device in devices" @click="set_active(device)">{{ device }}</a>
                 </div>
 
+                <button v-if="active_device && is_wireless(active_device)" class="btn btn-sm mt-4" @click="disconnect(active_device)">
+                    {{ $t('disconnect') }}
+                </button>
+
                 <div v-if="active_device && unauthorized">
                     <p class="mt-4 text-white">{{ $t('unauthorized') }}</p>
                 </div>
@@ -67,6 +71,20 @@ export default {
         }
     },
     methods: {
+
+        is_wireless(serial) {
+            // Wireless serials look like "192.168.1.5:5555" or "adb-XXXX._adb-tls-connect._tcp"
+            return serial.includes(":") || serial.includes("._adb-tls-connect._tcp");
+        },
+
+        async disconnect(serial) {
+            await invoke("exec_adb", { args: ["disconnect", serial] });
+            if (this.active_device === serial) {
+                this.active_device = undefined;
+                this.$emit('device', false);
+            }
+            await this.refresh_devices();
+        },
 
         async set_active(device) {
             this.selecting = device;

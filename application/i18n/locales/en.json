@@ -47,6 +47,9 @@
     "bundled_default": "Using bundled version",
     "browse": "Browse",
     "reset": "Reset",
+    "disconnect": "Disconnect",
+    "record_screen": "Record screen",
+    "choose_recording_file": "Choose where to save the recording",
     "advanced": "Advanced",
     "scrcpy_options": {
         "--no-video": "No video",
