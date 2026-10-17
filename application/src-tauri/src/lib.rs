@@ -1,5 +1,7 @@
 use serde_json::{ json, Value };
 mod system_command;
+mod downloader;
+use tauri::Manager;
 use system_command::{ scrcpy, adb };
 
 #[tauri::command]
@@ -7,19 +9,26 @@ fn environment() -> Value {
   return json!({
     "app_version":  env!("CARGO_PKG_VERSION"),
     "releases_url": "https://api.github.com/repos/Frontesque/scrcpy-plus/releases",
-    "is_windows":   cfg!(windows)
+    "is_windows":   cfg!(windows),
+    "os":           std::env::consts::OS,
+    "arch":         std::env::consts::ARCH
   });
 }
 
-#[cfg(windows)]
 #[tauri::command]
 fn set_binary_paths(scrcpy_path: Option<String>, adb_path: Option<String>) {
   system_command::set_custom_paths(scrcpy_path, adb_path);
 }
 
-#[cfg(not(windows))]
+// Downloads a scrcpy release archive and extracts it to the app data folder,
+// returning the paths of the extracted scrcpy and adb executables.
 #[tauri::command]
-fn set_binary_paths(_scrcpy_path: Option<String>, _adb_path: Option<String>) {}
+async fn download_scrcpy(app: tauri::AppHandle, url: String, version: String) -> Result<Value, String> {
+  let base = app.path().app_data_dir().map_err(|e| e.to_string())?;
+  tauri::async_runtime::spawn_blocking(move || downloader::download_and_extract(&base, &url, &version))
+    .await
+    .map_err(|e| e.to_string())?
+}
 
 #[tauri::command]
 fn get_dependency_versions() -> Value {
@@ -58,7 +67,7 @@ pub fn run() {
   tauri::Builder::default()
     .plugin(tauri_plugin_opener::init())
     .plugin(tauri_plugin_dialog::init())
-    .invoke_handler(tauri::generate_handler![get_dependency_versions, exec_adb, exec_scrcpy, run_scrcpy, environment, set_binary_paths])
+    .invoke_handler(tauri::generate_handler![get_dependency_versions, exec_adb, exec_scrcpy, run_scrcpy, environment, set_binary_paths, download_scrcpy])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

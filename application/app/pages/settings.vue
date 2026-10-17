@@ -31,18 +31,22 @@
                     <input type="checkbox" class="toggle checkbox-primary mr-2" @change="updateSetting(item.key, $event)" :checked="item.checked" />
                     <p>{{ $t(item.title) }}</p>
                 </div>
+            </div>
+        </div>
 
-
-                <div v-if="is_windows" class="mt-8">
-                    <div v-for="bin in binaries" :key="bin.key" class="mb-4">
-                        <p>{{ $t(bin.title) }}</p>
-                        <div class="flex gap-2">
-                            <input type="text" class="input w-full" readonly :value="paths[bin.key]" :placeholder="$t('bundled_default')" />
-                            <button class="btn btn-primary text-white" @click="pick_binary(bin)">{{ $t('browse') }}</button>
-                            <button class="btn" :disabled="!paths[bin.key]" @click="clear_binary(bin)">{{ $t('reset') }}</button>
-                        </div>
+        <div class="card bg-base-200 w-full mb-8">
+            <div class="card-body">
+                <div v-for="bin in binaries" :key="bin.key" class="mb-4">
+                    <p>{{ $t(bin.title) }}</p>
+                    <div class="flex gap-2">
+                        <input type="text" class="input w-full" readonly :value="paths[bin.key]" :placeholder="$t('bundled_default')" />
+                        <button class="btn btn-primary text-white" @click="pick_binary(bin)">{{ $t('browse') }}</button>
+                        <button class="btn" :disabled="!paths[bin.key]" @click="clear_binary(bin)">{{ $t('reset') }}</button>
                     </div>
                 </div>
+                <NuxtLink to="/scrcpy_manager">
+                    <button class="btn btn-primary text-white">{{ $t('manage_versions') }}</button>
+                </NuxtLink>
             </div>
         </div>
 
@@ -90,7 +94,7 @@ export default {
             const selected = await open({
                 multiple: false,
                 directory: false,
-                filters: [{ name: "Executable", extensions: ["exe"] }]
+                filters: this.is_windows ? [{ name: "Executable", extensions: ["exe"] }] : []
             });
             if (typeof selected !== "string") return;
             this.paths[bin.key] = selected;
