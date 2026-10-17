@@ -53,6 +53,8 @@
     "fetch_failed": "Impossibile recuperare le versioni",
     "downloading": "Download in corso…",
     "loading": "Caricamento…",
+    "adb_missing": "ADB non trovato",
+    "adb_missing_desc": "Impossibile trovare ADB. Scarica l'ultima versione con il gestore SCRCPY.",
     "browse": "Sfoglia",
     "reset": "Ripristina",
     "disconnect": "Disconnetti",

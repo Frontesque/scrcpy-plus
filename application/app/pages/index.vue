@@ -1,6 +1,7 @@
 <template>
     <div class="p-8">
         <update_check />
+        <adb_check />
         <information />
         <devices @device="set_active_device" />
         <scrcpy_config v-if="active_device" :device="active_device" />

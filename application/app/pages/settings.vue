@@ -41,7 +41,6 @@
                     <div class="flex gap-2">
                         <input type="text" class="input w-full" readonly :value="paths[bin.key]" :placeholder="$t('bundled_default')" />
                         <button class="btn btn-primary text-white" @click="pick_binary(bin)">{{ $t('browse') }}</button>
-                        <button class="btn" :disabled="!paths[bin.key]" @click="clear_binary(bin)">{{ $t('reset') }}</button>
                     </div>
                 </div>
                 <NuxtLink to="/scrcpy_manager">
