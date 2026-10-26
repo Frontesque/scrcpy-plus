@@ -2,7 +2,7 @@
 
 <img src="https://github.com/Frontesque/scrcpy-plus/blob/main/application/src-tauri/icons/Square150x150Logo.png?raw=true" alt="scrcpy-plus icon" width="200"/>
 
-## [Download SCRCPY+ 3.0.0](https://scrcpyplus.frontesque.me/downloads.html)
+## [Download SCRCPY+ v3](https://scrcpyplus.frontesque.me/downloads.html)
 ### THANKS FOR 175K DOWNLOADS
 [Click here to view all downloads](https://scrcpyplus.frontesque.me/downloads.html)
 
