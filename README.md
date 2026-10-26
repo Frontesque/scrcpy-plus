@@ -27,15 +27,6 @@
 - 📶 **Wireless Connectivity** • _Connect to a Device on your WiFi Network_
 - 🗣️ **Multi-Language Support** • _Use SCRCPY+ in your native language (English, Italiano, 日本語)_
 
-### Prerequisites
-
-- LINUX & Mac: Both SCRCPY & ADB need to be installed to your computer per [your distro's instructions](https://github.com/Genymobile/scrcpy#linux).
-
-
-Some options need a recent SCRCPY: `--keyboard=uhid` needs 2.4+, virtual display needs 3.0+ and Android 10+, and audio features need 2.0+.
-
-Want to build it yourself? See [BUILDING.md](BUILDING.md).
-
 ### SCRCPY Credits
 
 You can view the project that this is based off of here:
